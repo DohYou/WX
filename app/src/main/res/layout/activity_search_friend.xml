@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    android:background="@color/all_line_bg"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:text="取消"
+            android:id="@+id/tv_search_friend_cancel"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/text_size_15"
+            android:textColor="@color/blue5D6F94"
+            android:layout_alignParentRight="true"
+            android:layout_height="match_parent"/>
+
+
+        <FrameLayout
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
+            android:layout_width="match_parent"
+            android:background="@drawable/re_solid_r20_white"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="12dp"
+            android:layout_toLeftOf="@+id/tv_search_friend_cancel">
+
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:background="@drawable/message_find_gray"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="12dp"/>
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:layout_marginLeft="40dp"
+                android:hint="搜索"
+                android:textSize="@dimen/text_size_13"
+                android:textColor="@color/black333333"
+                android:id="@+id/et_search_friend_content"
+                android:inputType="number"/>
+
+        </FrameLayout>
+
+    </RelativeLayout>
+
+    <!--搜索-->
+    <FrameLayout
+        android:visibility="gone"
+        android:id="@+id/fl_search_friend_show"
+        android:layout_width="match_parent"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:background="@color/white"
+        android:layout_height="50dp">
+        
+        <ImageView
+            android:id="@+id/iv_search_friend_head"
+            android:layout_gravity="center_vertical"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:scaleType="fitXY"
+            android:background="@drawable/add_friendsearch"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:maxLines="1"
+            android:gravity="center_vertical"
+            android:paddingLeft="60dp"
+            android:textSize="@dimen/text_size_15"
+            android:ellipsize="end"
+            android:textColor="@color/black333333"
+            android:id="@+id/tv_search_friend_show"/>
+        
+    </FrameLayout>
+
+    <!--  没有 用户-->
+    <TextView
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/white"
+        android:text="该用户不存在"
+        android:gravity="center"
+        android:textColor="@color/grayB3B3B3"
+        android:textSize="@dimen/text_size_16"
+        android:id="@+id/tv_search_no_friend"/>
+
+
+
+</LinearLayout>

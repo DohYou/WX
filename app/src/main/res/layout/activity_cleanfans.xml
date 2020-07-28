@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/grayF5F5F5"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <include
+        layout="@layout/title_layout"/>
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="116dp"
+            android:layout_height="119dp"
+            android:background="@drawable/bigclean"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="81dp"
+            android:id="@+id/iv_clean"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_15"
+            android:textColor="#B3B3B3"
+            android:text="可检测被删除/拉黑状态的好友和客户"
+            android:gravity="center"
+            android:layout_below="@id/iv_clean"
+            android:layout_marginTop="33dp"
+            android:id="@+id/tv_seefans"/>
+        
+        <TextView
+            android:layout_width="162dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:textSize="@dimen/text_size_15"
+            android:textColor="@color/all_activity_FFFFFF"
+            android:background="#237EFE"
+            android:text="开始检测"
+            android:gravity="center"
+            android:layout_below="@id/tv_seefans"
+            android:layout_marginTop="28dp"/>
+
+    </RelativeLayout>
+
+    
+</LinearLayout>

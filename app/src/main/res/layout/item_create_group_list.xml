@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:id="@+id/ll_item_create_group_list"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/header"
+        android:text="A"
+        android:textSize="@dimen/text_size_15"
+        android:paddingLeft="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:textColor="@color/grayB3B3B3"
+        android:background="@color/all_line_bg"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="58dp">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dp"
+            android:id="@+id/iv_item_create_group_list" />
+
+        <ImageView
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dp"
+            android:id="@+id/iv_item_create_group_list_head"
+            android:layout_toRightOf="@+id/iv_item_create_group_list"/>
+
+        <TextView
+            android:layout_toRightOf="@+id/iv_item_create_group_list_head"
+            android:id="@+id/iv_item_create_group_list_head_name"
+            android:textSize="@dimen/text_size_15"
+            android:layout_centerVertical="true"
+            android:textColor="@color/text_color_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+</LinearLayout>

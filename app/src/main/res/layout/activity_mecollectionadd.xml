@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/grayF5F5F5">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@color/all_activity_FFFFFF">
+
+        <ImageView
+            android:layout_width="44dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/turn_left"
+            android:padding="12dp"
+            android:id="@+id/iv_mecollectionadd_back"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/black333333"
+            android:textSize="@dimen/text_size_17"
+            android:text="新建收藏"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:textSize="@dimen/text_size_15"
+            android:textColor="@color/all_activity_FFFFFF"
+            android:background="@drawable/re_solid_r3_purple"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="15dp"
+            android:text="确定"
+            android:id="@+id/tv_mecollectionadd_save"
+            android:gravity="center"/>
+
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="10dp"
+        android:background="@color/all_activity_FFFFFF">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_15"
+            android:textColor="@color/black333333"
+            android:text="苹果原装充电器，厂家批发价"
+            android:gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="14dp"
+            android:id="@+id/tv_collectionadd_title"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_15"
+            android:textColor="@color/black333333"
+            android:text="10条起批，10条88元，20条158元"
+            android:gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/tv_collectionadd_title"
+            android:id="@+id/tv_collectionadd_price"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_below="@id/tv_collectionadd_price"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/re_solid_r5_gray">
+
+            <RelativeLayout
+                android:layout_width="57dp"
+                android:layout_height="57dp"
+                android:background="@drawable/re_solid_r5_whitegray"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="16dp"
+                android:id="@+id/rl_location">
+                
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="22dp"
+                    android:background="@drawable/dingwei_gray"
+                    android:layout_centerInParent="true"/>
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black333333"
+                android:textSize="@dimen/text_size_15"
+                android:layout_toRightOf="@id/rl_location"
+                android:text="世豪广场"
+                android:layout_marginTop="18dp"
+                android:layout_marginLeft="7dp"
+                android:id="@+id/tv_location_name"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#777777"
+                android:textSize="@dimen/text_size_15"
+                android:layout_toRightOf="@id/rl_location"
+                android:text="四川省成都市天府二街266号"
+                android:layout_marginLeft="7dp"
+                android:layout_below="@id/tv_location_name"/>
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="60dp"
+        android:layout_gravity="bottom"
+        android:background="#fff7f7f7">
+        
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+            
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/imagecollection"
+                android:layout_centerInParent="true"
+                android:id="@+id/iv_mecollectionadd_photo"/>
+            
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="29dp"
+                android:layout_height="23dp"
+                android:background="@drawable/takephoto"
+                android:layout_centerInParent="true"
+                android:id="@+id/iv_collectionadd_takephoto"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="21dp"
+                android:layout_height="26dp"
+                android:background="@drawable/dingwei"
+                android:layout_centerInParent="true"
+                android:id="@+id/iv_collectionadd_locate"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

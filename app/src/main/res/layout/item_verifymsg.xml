@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="50dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/all_activity_FFFFFF">
+    
+    <ImageView
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:background="@color/green0ABE63"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="15dp"
+        android:id="@+id/iv_verifymsg_header"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_15"
+        android:textColor="@color/black333333"
+        android:id="@+id/tv_verifymsg_name"
+        android:layout_marginLeft="13dp"
+        android:layout_centerVertical="true"
+        android:text="dadadada"
+        android:layout_toRightOf="@id/iv_verifymsg_header"/>
+
+    <TextView
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:textSize="@dimen/text_size_15"
+        android:text="接受"
+        android:textColor="@color/all_activity_FFFFFF"
+        android:id="@+id/tv_verifymsg_agree"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"
+        android:gravity="center"
+        android:background="@drawable/re_solid_r3_blue"/>
+
+    
+</RelativeLayout>

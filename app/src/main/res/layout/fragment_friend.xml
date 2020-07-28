@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@color/grayF5F5F5">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="@dimen/text_size_17"
+                android:textColor="@color/black333333"
+                android:text="好友通讯录"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"/>
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:background="@drawable/discovers_add"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="15dp"/>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:background="@drawable/re_solid_r20_white"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:background="@drawable/goodfriend_find"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dp"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="请输入昵称/汇集号/ID"
+                android:textSize="@dimen/text_size_13"
+                android:textColor="@color/grayBFBFBF"
+                android:layout_marginLeft="51dp"
+                android:background="@null"
+                android:layout_gravity="center_vertical"/>
+        </FrameLayout>
+
+    <com.tencent.qcloud.tim.uikit.modules.contact.ContactLayout
+        android:id="@+id/contact_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>
+

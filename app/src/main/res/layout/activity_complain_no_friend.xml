@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/grayF5F5F5">
+    
+    <FrameLayout android:background="@color/all_activity_FFFFFF"
+        android:layout_width="match_parent"
+        android:layout_height="44dp">
+        <ImageView
+            android:layout_width="44dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/turn_left"
+            android:padding="12dp"
+            android:id="@+id/iv_title_return"/>
+        <ImageView
+            android:layout_width="17dp"
+            android:layout_height="3dp"
+            android:background="@drawable/diandiandian"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="15dp"
+            android:id="@+id/iv_complain_nofriend_more"/>
+
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="137dp"
+        android:background="@color/all_activity_FFFFFF">
+
+        <ImageView
+            android:layout_width="81dp"
+            android:layout_height="81dp"
+            android:background="@drawable/re_solid_r40_head"
+            android:id="@+id/iv_complain_nofriend_head"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:text="赫敏格兰杰"
+            android:textColor="@color/black333333"
+            android:textSize="@dimen/text_size_19"
+            android:layout_marginLeft="110dp"
+            android:layout_marginTop="26dp"
+            android:gravity="center"
+            android:id="@+id/tv_complain_nofriend_name"/>
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="19dp"
+            android:textSize="@dimen/text_size_13"
+            android:textColor="@color/grayB3B3B3"
+            android:text="用户ID：8899966028"
+            android:gravity="center"
+            android:id="@+id/tv_complain_nofriend_userid"
+            android:layout_below="@id/tv_complain_nofriend_name"
+            android:layout_toRightOf="@id/iv_complain_nofriend_head"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="19dp"
+            android:textSize="@dimen/text_size_13"
+            android:textColor="@color/grayB3B3B3"
+            android:text="汇集号：dhgsaidu_vcfffsdd"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:id="@+id/tv_complain_nofriend_huiji"
+            android:layout_below="@id/tv_complain_nofriend_userid"
+            android:layout_toRightOf="@id/iv_complain_nofriend_head"
+            android:layout_marginLeft="14dp"/>
+        
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:id="@+id/iv_complain_nofriend_sex"
+            android:background="@drawable/female"
+            android:layout_toRightOf="@id/tv_complain_nofriend_name"
+            android:layout_marginTop="34dp"
+            android:layout_marginLeft="11dp"/>
+
+        <ImageView
+            android:layout_width="17dp"
+            android:layout_height="13dp"
+            android:background="@drawable/member1"
+            android:layout_toRightOf="@id/iv_complain_nofriend_sex"
+            android:layout_marginLeft="9dp"
+            android:id="@+id/iv_complain_nofriend_member"
+            android:layout_marginTop="34dp"/>
+
+    </RelativeLayout>
+    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textSize="@dimen/text_size_15"
+        android:textColor="@color/blue5D6F94"
+        android:background="@color/all_activity_FFFFFF"
+        android:gravity="center"
+        android:text="添加好友"
+        android:layout_marginTop="10dp"/>
+</LinearLayout>

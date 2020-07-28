@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/grayF5F5F5">
+
+    <include
+        layout="@layout/title_layout"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:background="@color/all_activity_FFFFFF">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_15"
+            android:textColor="@color/gray777777"
+            android:text="备注名称"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:hint="添加备注名称"
+            android:layout_marginLeft="100dp"
+            android:textSize="@dimen/text_size_15"
+            android:textColor="@color/grayB3B3B3"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:background="@color/grayE0E0E0"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="15dp"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:background="@color/all_activity_FFFFFF">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_15"
+            android:textColor="@color/gray777777"
+            android:text="标签"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:hint="添加标签对联系人分类"
+            android:layout_marginLeft="100dp"
+            android:textSize="@dimen/text_size_15"
+            android:textColor="@color/grayB3B3B3"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:background="@color/grayE0E0E0"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="15dp"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:background="@color/all_activity_FFFFFF">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_15"
+            android:textColor="@color/gray777777"
+            android:text="电话号码"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:hint="设置电话号码"
+            android:layout_marginLeft="100dp"
+            android:textSize="@dimen/text_size_15"
+            android:textColor="@color/grayB3B3B3"/>
+
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="440dp"
+        android:background="@color/all_activity_FFFFFF"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray787878"
+            android:textSize="@dimen/text_size_15"
+            android:text="描述"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:id="@+id/tv_describe"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_below="@id/tv_describe"
+            android:layout_marginTop="15dp"
+            android:layout_height="161dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/re_solid_gray_describe" />
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/setremarks_describe"
+                android:layout_toLeftOf="@id/tv_wordnumber_describe"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="7dp"
+                android:layout_marginRight="8dp"/>
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:text="0/3000"
+                android:textColor="@color/grayBFBFBF"
+                android:textSize="@dimen/text_size_12"
+                android:layout_marginBottom="7dp"
+                android:layout_marginRight="8dp"
+                android:id="@+id/tv_wordnumber_describe"/>
+
+        </RelativeLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textSize="@dimen/text_size_16"
+            android:textColor="@color/all_activity_FFFFFF"
+            android:background="@drawable/re_solid_r25_purple"
+            android:gravity="center"
+            android:text="立即保存"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="130dp"
+            android:layout_marginLeft="28dp"
+            android:layout_marginRight="28dp"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

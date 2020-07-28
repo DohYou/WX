@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="match_parent"
+    android:layout_height="156dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_marginTop="10dp"
+    android:background="@color/all_activity_FFFFFF">
+    
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/re_solid_friend_header"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="12dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_17"
+        android:textColor="@color/black333333"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="65dp"
+        android:text="派大星"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/grayB3B3B3"
+        android:textSize="@dimen/text_size_13"
+        android:gravity="center"
+        android:layout_gravity="right"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="22dp"
+        android:text="一分钟前"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_15"
+        android:textColor="@color/black333333"
+        android:gravity="center"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="65dp"
+        android:text="今天吃了可爱多，真开心~~~~~~~"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:background="@color/grayE0E0E0"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="103dp"/>
+
+    <ImageView
+        android:layout_width="16dp"
+        android:layout_height="15dp"
+        android:background="@drawable/heart_check"
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="25dp"
+        android:layout_marginRight="110dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_12"
+        android:textColor="@color/grayB3B3B3"
+        android:text="126"
+        android:layout_marginBottom="25dp"
+        android:layout_gravity="right|bottom"
+        android:layout_marginRight="85dp"/>
+
+    <ImageView
+        android:layout_width="17dp"
+        android:layout_height="16dp"
+        android:background="@drawable/moments_remark"
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="25dp"
+        android:layout_marginRight="50dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_12"
+        android:textColor="@color/grayB3B3B3"
+        android:text="65"
+        android:layout_marginBottom="25dp"
+        android:layout_gravity="right|bottom"
+        android:layout_marginRight="25dp"/>
+    
+</FrameLayout>

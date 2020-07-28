@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/grayF5F5F5">
+
+    <include
+        layout="@layout/title_layout"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="15dp"
+        android:layout_height="285dp"
+        android:background="@drawable/re_solid_r6_white"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp">
+        
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:orientation="horizontal"
+            android:id="@+id/rl_withdraw1">
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_13"
+                android:textColor="@color/black333333"
+                android:text="到账银行卡"
+                android:id="@+id/tv_withdraw_bankcard"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"/>
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginLeft="81dp"
+                android:background="@drawable/icbclogo"
+                android:layout_toRightOf="@id/tv_withdraw_bankcard"
+                android:id="@+id/iv_icbc_logo"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_13"
+                android:textColor="@color/redE93644"
+                android:layout_gravity="center"
+                android:text="工商银行(789)"
+                android:gravity="center_horizontal"
+                android:id="@+id/tv_withdrawbank"
+                android:layout_marginTop="15dp"
+                android:layout_toRightOf="@id/iv_icbc_logo"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_12"
+                android:textColor="@color/grayB3B3B3"
+                android:text="2小时到账"
+                android:layout_marginTop="5dp"
+                android:gravity="center_horizontal"
+                android:id="@+id/tv_twohours"
+                android:layout_below="@id/tv_withdrawbank"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_height"
+                android:background="@color/grayE6E6E6"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="102dp"
+            android:orientation="horizontal"
+            android:id="@+id/rl_withdraw2"
+            android:layout_below="@id/rl_withdraw1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_14"
+                android:textColor="@color/black333333"
+                android:text="提现金额"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:id="@+id/tv_withdraw_amount"/>
+            
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="23dp"
+                android:background="@drawable/rmblogo"
+                android:layout_below="@id/tv_withdraw_amount"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="20dp"/>
+            
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="15dp"
+                android:gravity="bottom"
+                android:textColor="@color/black333333"
+                android:textSize="@dimen/text_size_30"
+                android:inputType="number"
+                android:maxLength="10"
+                android:layout_marginBottom="23dp"
+                android:hint=""/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_height"
+                android:background="@color/grayE6E6E6"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"/>
+
+        </RelativeLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_below="@id/rl_withdraw2">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_12"
+                android:textColor="@color/gray999999"
+                android:text="当前可提现金额：888.00"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="11dp"
+                android:id="@+id/tv_now_withdraw"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_12"
+                android:textColor="@color/green0ABE63"
+                android:text="全部提现"
+                android:layout_gravity="right"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="11dp"
+                android:id="@+id/tv_all_withdraw"/>
+        </FrameLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:background="@drawable/re_solid_r4_purple"
+            android:textSize="15sp"
+            android:textColor="@color/all_activity_FFFFFF"
+            android:text="确认提现"
+            android:gravity="center"
+            android:id="@+id/sure_withdraw"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="17dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"/>
+
+    </RelativeLayout>
+
+
+    
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="50dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:textSize="@dimen/text_size_13"
+            android:textColor="@color/grayB3B3B3"
+            android:text="提示"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:textSize="@dimen/text_size_13"
+        android:textColor="@color/grayB3B3B3"
+        android:text="1、每人每日可提现三笔，每笔限额5000元"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:textSize="@dimen/text_size_13"
+        android:textColor="@color/grayB3B3B3"
+        android:layout_marginLeft="15dp"
+        android:text="2、提现手续费为提现金额*0.6%+1元支付通道费"/>
+
+
+
+
+
+
+</LinearLayout>

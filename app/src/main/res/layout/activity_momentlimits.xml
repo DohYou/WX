@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/grayF5F5F5">
+
+    <include
+        layout="@layout/title_layout"/>
+    
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:background="@color/all_activity_FFFFFF">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="@dimen/text_size_15"
+            android:textColor="@color/black333333"
+            android:text="不让他看我的朋友圈"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="15dp"/>
+        
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="25dp"
+            android:background="@drawable/purple_lock"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="15dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:background="@color/grayE0E0E0"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="15dp"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:background="@color/all_activity_FFFFFF">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="@dimen/text_size_15"
+            android:textColor="@color/black333333"
+            android:text="我不看他的朋友圈"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="15dp"/>
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="25dp"
+            android:background="@drawable/purple_lock"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="15dp"/>
+
+    </FrameLayout>
+
+
+</LinearLayout>

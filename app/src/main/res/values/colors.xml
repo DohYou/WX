@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="green0ABE63">#237EFE</color>
+
+    <color name="txtGray">#f4d7d7d7</color>
+    <color name="backgroundGray">#e1353434</color>
+    <color name="txt_grey">#A9A9A9</color>
+
+
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <!--所有虚线颜色-->
+    <color name="all_line_bg">#EEEEEE</color>
+    <!--界面背景纯白色-->
+    <color name="all_activity_FFFFFF">#FFFFFF</color>
+    <!--输入框未选中下划线颜色-->
+    <color name="input_no_select">#F2F2F2</color>
+    <!--输入框选中下划线颜色-->
+    <color name="input_select">#0ABE63</color>
+    <color name="black333333">#232323</color>
+    <color name="grayD9D9D9">#D9D9D9</color>
+    <color name="grayB3B3B3">#B3B3B3</color>
+    <color name="grayF5F5F5">#F5F5F5</color>
+    <color name="gray999999">#999999</color>
+    <color name="grayF2F2F2">#F2F2F2</color>
+    <color name="grayE6E6E6">#E6E6E6</color>
+    <color name="grayE0E0E0">#E0E0E0</color>
+    <color name="grayfff2f2f2">#fff2f2f2</color>
+    <color name="grayFAFAFA">#FAFAFA</color>
+    <color name="blue0580EE">#0580EE</color>
+    <color name="redFFEFED">#FFEFED</color>
+    <color name="redFF4B33">#FF4B33</color>
+    <color name="blue37AFFA">#37AFFA</color>
+    <color name="redE93644">#E93644</color>
+    <color name="redEB2F3D">#EB2F3D</color>
+    <color name="grayBFBFBF">#BFBFBF</color>
+    <color name="blue5D6F94">#5D6F94</color>
+    <color name="gray787878">#787878</color>
+    <color name="gray777777">#777777</color>
+    <color name="grayff606060">#ff606060</color>
+    <color name="blue81CBFF">#81CBFF</color>
+
+</resources>

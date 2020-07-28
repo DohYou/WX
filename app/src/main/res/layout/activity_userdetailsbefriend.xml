@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <include
+        layout="@layout/title_layout"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="137dp"
+        android:background="@color/all_activity_FFFFFF">
+
+        <ImageView
+            android:layout_width="81dp"
+            android:layout_height="81dp"
+            android:background="@drawable/re_solid_r40_head"
+            android:id="@+id/iv_userdetails_befriend_head"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:text="赫敏格兰杰"
+            android:textColor="@color/black333333"
+            android:textSize="@dimen/text_size_19"
+            android:layout_marginLeft="110dp"
+            android:layout_marginTop="26dp"
+            android:gravity="center"
+            android:id="@+id/iv_userdetails_befriend_name"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="19dp"
+            android:textSize="@dimen/text_size_13"
+            android:textColor="@color/grayB3B3B3"
+            android:text="用户ID：8899966028"
+            android:gravity="center"
+            android:id="@+id/iv_userdetails_befriend_userid"
+            android:layout_below="@id/iv_userdetails_befriend_name"
+            android:layout_toRightOf="@id/iv_userdetails_befriend_head"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="19dp"
+            android:textSize="@dimen/text_size_13"
+            android:textColor="@color/grayB3B3B3"
+            android:text="汇集号：dhgsaidu_vcfffsdd"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:id="@+id/iv_userdetails_befriend_huiji"
+            android:layout_below="@id/iv_userdetails_befriend_userid"
+            android:layout_toRightOf="@id/iv_userdetails_befriend_head"
+            android:layout_marginLeft="14dp"/>
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:id="@+id/iv_userdetails_befriend_sex"
+            android:background="@drawable/female"
+            android:layout_toRightOf="@id/iv_userdetails_befriend_name"
+            android:layout_marginTop="34dp"
+            android:layout_marginLeft="11dp"/>
+
+        <ImageView
+            android:layout_width="17dp"
+            android:layout_height="13dp"
+            android:background="@drawable/member1"
+            android:layout_toRightOf="@id/iv_userdetails_befriend_sex"
+            android:layout_marginLeft="9dp"
+            android:id="@+id/iv_userdetails_befriend_member"
+            android:layout_marginTop="34dp"/>
+
+    </RelativeLayout>
+    
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/all_activity_FFFFFF">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black333333"
+            android:textSize="@dimen/text_size_15"
+            android:text="设置标签"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"/>
+
+        <ImageView
+            android:layout_width="5dp"
+            android:layout_height="10dp"
+            android:background="@drawable/turn_right_smaller"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="15dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:background="@color/grayE0E0E0"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="15dp"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:background="@color/all_activity_FFFFFF">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black333333"
+            android:textSize="@dimen/text_size_15"
+            android:text="转移为  好友/客户"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/grayB3B3B3"
+            android:textSize="@dimen/text_size_15"
+            android:text="点击切换"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="42dp"/>
+
+        <ImageView
+            android:layout_width="5dp"
+            android:layout_height="10dp"
+            android:background="@drawable/turn_down_smaller"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="15dp"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:background="@color/all_activity_FFFFFF">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray787878"
+            android:textSize="@dimen/text_size_15"
+            android:text="好友"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"/>
+
+        <ImageView
+            android:layout_width="29dp"
+            android:layout_height="29dp"
+            android:background="@drawable/right_green"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="15dp"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:background="@color/all_activity_FFFFFF">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black333333"
+            android:textSize="@dimen/text_size_15"
+            android:text="客户"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"/>
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/right_gray"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="20dp"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/all_activity_FFFFFF">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black333333"
+            android:textSize="@dimen/text_size_15"
+            android:text="朋友圈"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"/>
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/pyq_pics"
+            android:layout_marginLeft="100dp"
+            android:layout_gravity="center_vertical"/>
+
+        <ImageView
+            android:layout_width="5dp"
+            android:layout_height="10dp"
+            android:background="@drawable/turn_right_smaller"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="15dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:background="@color/grayE0E0E0"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="15dp"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:background="@color/all_activity_FFFFFF">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black333333"
+            android:textSize="@dimen/text_size_15"
+            android:text="更多信息"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"/>
+
+        <ImageView
+            android:layout_width="5dp"
+            android:layout_height="10dp"
+            android:background="@drawable/turn_right_smaller"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="15dp"/>
+
+    </FrameLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textSize="@dimen/text_size_16"
+        android:textColor="@color/all_activity_FFFFFF"
+        android:background="@drawable/re_solid_r25_purple"
+        android:text="发送消息"
+        android:gravity="center"
+        android:layout_marginLeft="28dp"
+        android:layout_marginRight="28dp"
+        android:layout_marginTop="60dp"/>
+
+</LinearLayout>

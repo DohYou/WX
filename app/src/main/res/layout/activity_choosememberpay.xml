@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <include
+        layout="@layout/title_layout"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="59dp"
+        android:background="@color/all_activity_FFFFFF"
+        android:layout_marginTop="10dp"
+        android:id="@+id/rl_wechatpay">
+
+
+        <ImageView
+            android:layout_width="29dp"
+            android:layout_height="29dp"
+            android:background="@drawable/wechat"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="32dp"
+            android:layout_centerVertical="true"
+            android:id="@+id/iv_wechatpay"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:textColor="@color/grayB3B3B3"
+            android:textSize="@dimen/text_size_12"
+            android:text="微信"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/iv_wechatpay"
+            android:layout_centerVertical="true"/>
+
+        <ImageView
+            android:layout_width="13dp"
+            android:layout_height="13dp"
+            android:background="@drawable/topup_is_check"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:visibility="gone"
+            android:id="@+id/iv_wechatpayok"/>
+
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:layout_marginLeft="15dp"
+        android:background="@color/grayF2F2F2"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="59dp"
+        android:background="@color/all_activity_FFFFFF"
+        android:id="@+id/rl_zfbpay">
+
+
+
+        <ImageView
+            android:layout_width="29dp"
+            android:layout_height="29dp"
+            android:background="@drawable/zfb"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="32dp"
+            android:layout_centerVertical="true"
+            android:id="@+id/iv_zfb"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:textColor="@color/grayB3B3B3"
+            android:textSize="@dimen/text_size_12"
+            android:text="支付宝"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/iv_zfb"
+            android:layout_centerVertical="true"/>
+
+
+
+        <ImageView
+            android:layout_width="13dp"
+            android:layout_height="13dp"
+            android:background="@drawable/topup_is_check"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:id="@+id/ivzfbpayok"
+            android:visibility="gone"/>
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:textSize="@dimen/text_size_16"
+        android:background="@drawable/re_solid_r4_purple"
+        android:text="立即支付"
+        android:textColor="@color/all_activity_FFFFFF"
+        android:gravity="center"
+        android:id="@+id/pay_immediately"/>
+
+</LinearLayout>

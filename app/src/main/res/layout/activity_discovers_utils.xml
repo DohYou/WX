@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <include
+        layout="@layout/title_layout"/>
+
+    <com.ylr.hyy.utils.ItemViewGroup
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:background="@color/all_activity_FFFFFF"
+        android:id="@+id/itm_discover_utils1"
+        android:layout_marginTop="10dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:background="@color/grayF2F2F2"
+        android:layout_marginLeft="46dp"/>
+
+    <com.ylr.hyy.utils.ItemViewGroup
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:background="@color/all_activity_FFFFFF"
+        android:id="@+id/itm_discover_utils2"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:background="@color/grayF2F2F2"
+        android:layout_marginLeft="46dp"/>
+
+    <com.ylr.hyy.utils.ItemViewGroup
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:background="@color/all_activity_FFFFFF"
+        android:id="@+id/itm_discover_utils3"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:background="@color/grayF2F2F2"
+        android:layout_marginLeft="46dp"/>
+
+    <com.ylr.hyy.utils.ItemViewGroup
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:background="@color/all_activity_FFFFFF"
+        android:id="@+id/itm_discover_utils4"/>
+
+</LinearLayout>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.ylr.hyy">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 外部存储读权限，调试工具加载本地补丁需要 阿里-->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+
+    <!--未知来源权限-->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+
+    <!--注：如果您的App需要上传到google play store，您需要将READ_PHONE_STATE权限屏蔽掉或者移除，否则可能会被下架。-->
+    <!--bugly权限-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_LOGS"
+        tools:ignore="ProtectedPermissions" />
+
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:name="com.ylr.hyy.MVPApplication"
+        android:theme="@style/AppTheme"
+        tools:targetApi="n">
+
+
+        <activity android:name=".mvp.view.activity.login.LoginActivity"
+            android:windowSoftInputMode="stateVisible|adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.ylr.hyy.mvp.view.activity.me.MomentsFriendActivity"/>
+        <activity android:name="com.ylr.hyy.mvp.view.activity.login.GuideActivity" />
+        <activity android:name="com.ylr.hyy.mvp.view.activity.login.RegisterActivity"/>
+        <activity android:name="com.ylr.hyy.mvp.view.activity.login.FreezePeopleActivity"/>
+        <activity android:name="com.ylr.hyy.mvp.view.activity.login.FreezeCodeActivity"/>
+        <activity android:name="com.ylr.hyy.mvp.view.activity.login.FreezePasswordActivity"/>
+        <activity android:name="com.ylr.hyy.mvp.view.activity.login.UnfreezePasswordActivity"/>
+        <activity android:name="com.ylr.hyy.mvp.view.activity.login.UnfreezeCodeActivity"/>
+        <activity android:name="com.ylr.hyy.mvp.view.activity.login.UnfreezePeopleActivity"/>
+        <activity android:name="com.ylr.hyy.mvp.view.activity.me.BeMemberActivity"/>
+        <activity android:name="com.ylr.hyy.mvp.view.activity.me.CoinsSafetyChangePasswordNewActivity"/>
+        <activity android:name="com.ylr.hyy.mvp.view.activity.me.CoinsSafetyChangePasswordSureActivity"/>
+        <activity android:name="com.ylr.hyy.mvp.view.activity.me.CoinsSafetyForgetSureActivity"/>
+        <activity android:name="com.ylr.mvp.mvp.view.activity.me.CoinsSafetyForgetNewActivity"/>
+
+        <activity android:name="com.ylr.hyy.mvp.view.activity.me.CoinsSafetyForgetActivity"/>
+        <activity android:name="com.ylr.hyy.mvp.view.activity.me.CoinsSafetySetPasswordActivity"/>
+        <activity android:name="com.ylr.hyy.mvp.view.activity.me.MeCoinsActivity"/>
+        <activity android:name="com.ylr.hyy.mvp.view.activity.me.MeDetailsActivity"/>
+        <activity android:name="com.ylr.hyy.mvp.view.activity.me.CoinsSafetySettingActivity"/>
+        <activity android:name="com.ylr.hyy.mvp.view.activity.me.MeSettingActivity" />
+        <activity android:name="com.ylr.hyy.mvp.view.activity.me.MeSettingSafetyActivity" />
+        <activity android:name="com.ylr.hyy.mvp.view.activity.me.MeSettingSafetyForgetLoginPasswordActivity" />
+        <activity android:name="com.ylr.hyy.mvp.view.activity.me.MeSettingSafetySetLoginPasswordActivity" />
+        <activity android:name="com.ylr.hyy.mvp.view.activity.me.TopUpActivity" />
+        <activity android:name="com.ylr.hyy.mvp.view.activity.me.WithdrawActivity" />
+        <activity android:name="com.ylr.hyy.mvp.view.activity.me.MeNoAuditActivity" />
+        <activity android:name="com.ylr.hyy.mvp.view.activity.me.MeBankAddCardActivity" />
+        <activity android:name="com.ylr.hyy.mvp.view.activity.me.MeOftenProblemsActivity" />
+        <activity android:name="com.ylr.hyy.mvp.view.activity.MainActivity">
+
+        </activity>
+        <activity android:name="com.ylr.hyy.mvp.view.activity.message.MessageFindActivity" />
+        <activity android:name="com.ylr.hyy.mvp.view.activity.discovers.MomentsCustomerActivity" />
+        <activity android:name="com.ylr.hyy.mvp.view.activity.discovers.MomentsFriendMeActivity" />
+        <activity android:name="com.ylr.hyy.mvp.view.activity.me.MeCoinsBillDetailsActivity" />
+        <activity android:name="com.ylr.hyy.mvp.view.activity.me.MeChangeNameActivity" />
+        <activity android:name="com.ylr.hyy.mvp.view.activity.me.MeChangePhoneActivity" />
+        <activity android:name="com.ylr.hyy.mvp.view.activity.me.MeChangeSexActivity" />
+        <activity android:name="com.ylr.hyy.mvp.view.activity.me.MeChangeHJNumberActivity" />
+        <activity android:name="com.ylr.hyy.mvp.view.activity.discovers.DiscoversUtilsActivity" />
+        <activity android:name="com.ylr.hyy.mvp.view.activity.discovers.AiFinderActivity" />
+        <activity android:name="com.ylr.hyy.mvp.view.activity.discovers.AiHelperAddActivity" />
+        <activity android:name="com.ylr.hyy.mvp.view.activity.discovers.MomentsCustomerMeActivity" />
+        <activity android:name="com.ylr.hyy.mvp.view.activity.me.MeSettingCurrencyActivity" />
+        <activity android:name="com.ylr.hyy.mvp.view.activity.me.MeSettingPrivacyActivity" />
+        <activity android:name="com.ylr.hyy.mvp.view.activity.ChatActivity" />
+        <activity android:name="com.ylr.hyy.mvp.view.activity.me.HelpTwoActivity" />
+        <activity android:name="com.ylr.hyy.mvp.view.activity.me.HelpThreeActivity" />
+        <activity android:name="com.ylr.hyy.mvp.view.activity.me.HelpOneActivity" />
+        <activity android:name="com.ylr.hyy.mvp.view.activity.me.HelpFourActivity" />
+        <activity android:name="com.ylr.hyy.mvp.view.activity.me.HelpFiveActivity" />
+        <activity android:name="com.ylr.hyy.mvp.view.activity.me.MeAuditSuccessActivity" />
+        <activity android:name="com.ylr.hyy.mvp.view.activity.me.HeadImageActivity" />
+        <activity android:name="com.ylr.hyy.mvp.view.activity.discovers.PeopleSendHelperActivity" />
+        <activity android:name="com.ylr.hyy.mvp.view.activity.me.ReturnMoneyActivity" />
+        <activity android:name="com.ylr.hyy.mvp.view.activity.me.MeCollectionAddActivity" />
+        <activity android:name="com.ylr.hyy.mvp.view.activity.me.MeCollectionActivity" />
+        <activity android:name="com.ylr.hyy.mvp.view.activity.me.MeChangeSignatureActivity" />
+        <activity android:name="com.ylr.hyy.mvp.view.activity.me.MemberUseBookActivity" />
+        <activity android:name="com.ylr.hyy.mvp.view.activity.me.ChooseMemberPayActivity" />
+
+        <activity
+            android:name="com.ylr.hyy.wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="wx4f6b7fd484e9cecc" />
+            </intent-filter>
+        </activity>
+
+        <!--阿里热更新-->
+        <meta-data
+            android:name="com.taobao.android.hotfix.IDSECRET"
+            android:value="29322267" />
+        <meta-data
+            android:name="com.taobao.android.hotfix.APPSECRET"
+            android:value="844ef48336fe544fca06ab05bfa086b7" />
+        <meta-data
+            android:name="com.taobao.android.hotfix.RSASECRET"
+            android:value="MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQCXFznZzAiOGlqA4EvP3Xdda9jVY0zDKuaZGumtGignTm98hN8jWZJRyd2x7ikslPgxV01Twy0w5ViUnqdddQnAgroGjU8nRLFPLqhGjTDdfVxr3nZ8zRC0KBm2VZEFdLWmOnZlFvsxm+VIUbU7cPfH65OHFbDUOED3v7gqXL6NccT3v0i4jZh7TQKnICtq1SuU405JbYOXMPLH1I4VLmlolyD6bypDnTxuQtFNT+rg8US1+bhvuDHiFcOEVifnltfQkLGptrvoVVZN/irdpmhaqQsKo1ZbFFWvIZN+mFqxYLrBQ/E/ImXAdT/K7aGpTV3hiAWP3TZ1U725CbVZAfwfAgMBAAECggEBAIg5r7Y4aQo+ppUGJjR/eIzpnPIgeuiI+KrYghHJwKRX6tr5LfrAWtWVTWaM1eDVW8WY8iZwloE8d5ZgSYRQ7v78nt8jb1d3bup2pdAeow1AZyD2zhwOBF56vVwRYBTsOo9qrK7OfqMm7R48VUwHudAuDbDBFNLy+VinKlQ/lKsPon1hCwXVQ9hhQH3Sf6TrKxxmvqYPuUTNe6eY8yeAsIgwJ+r8q6Pg1owm6MWcfAFdMMIOu/7P0cZgnJwpey6fy4c83Td1Ai7gZpTL3hx98UPlvgwuu7Z+TzoWn2BztD2EWvWe56mB03+uztFoLq00E3saCYgDTE9AKcTxDWqq60kCgYEA0OyYf7IxocGtlvsXC382CSD7m7bJe/ltgg5bbVMAx+pwI30IbC/wS/gIcdOu00kk3Eplm+QrduOR9gNA7w/HmtUC+cBjzfcLNmBnXAy2X3QRotL1T+GbCngXrnwXf28V/w/vBXR7p3UyibxqnwPeyD3S5G05Kge2OSCGU2WAfEUCgYEAuSKdHZuVtl0g/vmT7PXY1YBuSOn2xPfK82h5tadzubCl+Uloz4jEO6fkqhqFsyMcn2TB1ONuDd5lkRAwBWUNP3TRLU5t5oe8UCSeLp42jhkkdFpe4opK0iOBGY/iPhk0aif42L6Py1mLGHRNeDbUefVtofTCzIJbZWOAjU6lZxMCgYEAyMhIOph++EyQzkOavxLPVHCdPeWptvpcEpxHo0YcvwQAJyr3WDmt/uRtAS+FmUp3ITpicjISz1wfH0W7NsR8eMFz7Z/Git97qBN34c/ZyNxcQpXo6Y8QmDwXzjk1v+N7STf/5scuOx33psUr1ow6o0g/EAYj5M+qgTZPwYAPvd0CgYBoFgvbj5O2edmJQOxn9zi3oINgvxmcV+xkuUJkXQb1SVmnNByXQb+CArzO3iZ5Nq5q9wz7EfrYFUdpLX6yKcQu/xBztnqXd4zqSgwdDZqCfaQ/PmfGWhYC2y9EHd8HJsiPPnXr9geGPouzbf/4LGt9Pf0rZx72N/wGntCxoZvgvQKBgQClPb97bN4jRHrnpFjqNPgxkypCdxxl2Mmog33XSHRSTTIJyLOKn8z+hxQStG1BCNU6YbUrrVfILu1t7GeYNuMfN8AfAPDv5Wbn+DEDREdlhsA5XLjIAUJMT5CNNXgIf+ZHJkDZRt6hsruwOUm8npct/NPghR6t7emEYrNHRLzZVw==" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"/>
+        </provider>
+
+        <!-- alipay -->
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind">
+        </activity>
+        <activity
+            android:name="com.alipay.sdk.auth.AuthActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind">
+        </activity>
+
+        <activity android:name=".mvp.view.activity.me.MeBankAddCardSuccessActivity" />
+        <activity android:name=".mvp.view.activity.discovers.SendMomentsActivity" />
+        <activity android:name=".mvp.view.activity.message.AddFriendActivity" />
+        <activity android:name=".mvp.view.activity.message.ChatDetailsActivity" />
+        <activity android:name=".mvp.view.activity.message.CreatePeopleTalkActivity" />
+        <activity android:name=".mvp.view.activity.message.SearchFriendActivity" />
+        <activity android:name=".mvp.view.activity.message.NoFriendActivity" />
+        <activity android:name=".mvp.view.activity.message.FriendNewsActivity" />
+        <activity android:name=".mvp.view.activity.message.VerifyMsgActivity" />
+        <activity android:name=".mvp.view.activity.message.CreateGroupActivity" />
+
+
+    </application>
+
+</manifest>

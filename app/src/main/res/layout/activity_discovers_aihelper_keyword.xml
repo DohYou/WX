@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/all_activity_FFFFFF"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <include
+        layout="@layout/title_layout"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_20"
+        android:textColor="@color/black333333"
+        android:text="添加关键字"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:layout_marginTop="44dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_13"
+        android:textColor="@color/black333333"
+        android:text="添加后订单助手xxxxxxxxxxxx"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="12dp"
+        android:id="@+id/tv_add_keyword_orderhelper"
+        android:gravity="center"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="58dp"
+        android:layout_height="45dp">
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@color/green0ABE63"
+            android:layout_marginLeft="33dp"
+            android:layout_gravity="center_vertical"/>
+
+        <FrameLayout
+            android:layout_width="253dp"
+            android:layout_marginLeft="83dp"
+            android:layout_height="45dp"
+            android:background="@drawable/re_solid_r5_gray">
+
+            <EditText
+                android:layout_width="253dp"
+                android:layout_height="45dp"
+                android:textSize="@dimen/text_size_15"
+                android:textColor="@color/black333333"
+                android:layout_marginLeft="16dp"
+                android:maxLength="10"
+                android:background="@drawable/re_solid_r5_gray"
+                android:id="@+id/et_add_keyword"/>
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:background="@drawable/delete_hjnumber"
+                android:layout_gravity="center_vertical|right"
+                android:layout_marginRight="12dp"
+                android:id="@+id/iv_add_keyword_delete"/>
+
+
+        </FrameLayout>
+
+    </FrameLayout>
+
+    <TextView
+        android:layout_width="162dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="25dp"
+        android:text="确定"
+        android:textColor="@color/all_activity_FFFFFF"
+        android:gravity="center"
+        android:background="@drawable/re_solid_r3_purple"
+        android:id="@+id/tv_add_keyword_sure"/>
+    
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/grayF5F5F5"
+        android:layout_marginTop="31dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="26dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/grayBFBFBF"
+            android:textSize="@dimen/text_size_13"
+            android:text="展示我添加的关键字"
+            android:layout_centerInParent="true"
+            android:id="@+id/tv_add_keyword_showkeyword"/>
+        
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="5dp"
+            android:layout_toRightOf="@id/tv_add_keyword_showkeyword"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="6dp"/>
+
+    </RelativeLayout>
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:id="@+id/rv_aihelper_add_showkeyword"/>
+</LinearLayout>

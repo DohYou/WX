@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="75dp"
+    android:background="@color/all_activity_FFFFFF"
+    android:id="@+id/item_billdetails"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+        android:layout_width="29dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_height="29dp"
+        android:background="@drawable/cashback"
+        android:id="@+id/iv_cashback"/>
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/iv_cashback"
+        android:textColor="@color/black333333"
+        android:textSize="@dimen/text_size_15"
+        android:text="返现金额"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/tv_amountofmoney"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_date"
+        android:layout_below="@id/tv_amountofmoney"
+        android:textSize="@dimen/text_size_13"
+        android:textColor="@color/grayB3B3B3"
+        android:layout_marginLeft="50dp"
+        android:text="2020-06-01"
+        android:layout_marginTop="5dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_15"
+        android:textColor="@color/green0ABE63"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="15dp"
+        android:text="+200.00"/>
+
+</RelativeLayout>

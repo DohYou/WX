@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/grayF5F5F5">
+
+    <include
+        layout="@layout/title_layout"/>
+
+    <RelativeLayout
+        android:layout_width="315dp"
+        android:layout_height="394dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/re_solid_r12_white">
+
+        <ImageView
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:background="@drawable/re_solid_avator"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/iv_my_two_head"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="23dp"
+            android:layout_toRightOf="@id/iv_my_two_head"
+            android:textSize="@dimen/text_size_16"
+            android:textColor="@color/black333333"
+            android:text="赫敏格兰杰"
+            android:layout_marginTop="42dp"
+            android:layout_marginLeft="17dp"
+            android:id="@+id/tv_my_two_name"/>
+        
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:background="@drawable/female"
+            android:id="@+id/me_two_sex"
+            android:layout_toRightOf="@id/tv_my_two_name"
+            android:layout_marginTop="45dp"
+            android:layout_marginLeft="6dp"/>
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="14dp"
+            android:background="@drawable/member2"
+            android:layout_toRightOf="@id/me_two_sex"
+            android:layout_marginTop="45dp"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/iv_my_two_member"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="15dp"
+            android:textSize="11sp"
+            android:textColor="@color/blue37AFFA"
+            android:id="@+id/tv_my_two_member"
+            android:layout_toRightOf="@id/iv_my_two_member"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="46dp"
+            android:text="会员"/>
+
+        <RelativeLayout
+            android:layout_width="225dp"
+            android:layout_height="225dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="105dp"
+            android:id="@+id/rl_my_two">
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="54dp"
+            android:layout_below="@id/rl_my_two">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="@dimen/text_size_15"
+                android:textColor="@color/black333333"
+                android:text="我的邀请码:12345"
+                android:layout_marginTop="13dp"
+                android:gravity="center"
+                android:id="@+id/tv_my_two_invite_code"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="41dp"
+        android:layout_marginTop="39dp">
+
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="41dp"
+            android:textSize="15sp"
+            android:textColor="@color/all_activity_FFFFFF"
+            android:text="保存到手机"
+            android:background="@drawable/re_solid_savephone"
+            android:gravity="center"
+            android:layout_gravity="center_vertical|left"
+            android:layout_marginLeft="50dp"/>
+
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="41dp"
+            android:background="@drawable/re_solid_share"
+            android:gravity="center"
+            android:text="分享"
+            android:layout_gravity="center_vertical|right"
+            android:textColor="@color/all_activity_FFFFFF"
+            android:textSize="15sp"
+            android:layout_marginRight="50dp"/>
+
+    </FrameLayout>
+
+
+
+</LinearLayout>

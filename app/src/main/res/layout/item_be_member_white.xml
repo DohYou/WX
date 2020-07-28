@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="105dp"
+    android:layout_height="80dp"
+    android:id="@+id/rl_be_member_bgw"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/re_solid_be_member_white">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:text="包月"
+        android:textSize="@dimen/text_size_15"
+        android:textColor="@color/black333333"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:id="@+id/tv_be_member_timew"/>
+
+    <ImageView
+        android:layout_width="52dp"
+        android:layout_height="16dp"
+        android:background="@drawable/nineninenine"
+        android:id="@+id/iv_ninewhite"/>
+
+    <TextView
+        android:layout_width="15dp"
+        android:layout_height="21dp"
+        android:layout_marginLeft="27dp"
+        android:textColor="@color/green0ABE63"
+        android:text="￥"
+        android:layout_marginTop="51dp"
+        android:id="@+id/tv_be_member_rmbw"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_30"
+        android:textColor="@color/green0ABE63"
+        android:gravity="center"
+        android:text="28"
+        android:id="@+id/tv_be_member_moneyw"
+        android:layout_marginLeft="41dp"
+        android:layout_below="@id/tv_be_member_timew"/>
+
+</RelativeLayout>

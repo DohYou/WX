@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@drawable/re_solid_white_topr24"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:id="@+id/tv_dialog_freeze_msg"
+        android:textSize="@dimen/text_size_15"
+        android:textColor="@color/black333333"
+        android:gravity="center"
+        android:text="短信冻结"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:background="@color/all_line_bg"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:id="@+id/tv_dialog_freeze_password"
+        android:textSize="@dimen/text_size_15"
+        android:textColor="@color/black333333"
+        android:gravity="center"
+        android:text="密码冻结"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:background="@color/all_line_bg"/>
+
+    <TextView
+        android:id="@+id/tv_dialog_freeze_help"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:textSize="@dimen/text_size_15"
+        android:textColor="@color/black333333"
+        android:gravity="center"
+        android:text="客服冻结"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/all_line_bg"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/tv_dialog_freeze_cancel"
+        android:layout_height="56dp"
+        android:textSize="@dimen/text_size_15"
+        android:textColor="@color/black333333"
+        android:gravity="center"
+        android:text="取消"/>
+
+</LinearLayout>

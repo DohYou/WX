@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:background="@color/grayF5F5F5">
+        <FrameLayout android:background="@color/black333333"
+            android:layout_width="match_parent"
+            android:layout_height="44dp">
+            <ImageView
+                android:layout_width="44dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/turn_left_white"
+                android:padding="12dp"
+                android:id="@+id/iv_title_return"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textSize="@dimen/text_size_12"
+                android:textColor="#CBCBCB"
+                android:gravity="center"
+                android:layout_gravity="center_vertical|right"
+                android:layout_marginRight="16dp"
+                android:text="用户体验说明"
+                android:id="@+id/tv_member_usebook"/>
+
+        </FrameLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="95dp"
+            android:background="@color/black333333">
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/re_solid_r75_gray"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="15dp"
+                android:id="@+id/iv_me_be_member_head"/>
+            <TextView
+                android:id="@+id/tv_be_member_name"
+                android:layout_width="wrap_content"
+                android:layout_height="39dp"
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@id/iv_me_be_member_head"
+                android:text="赫敏格兰杰"
+                android:textColor="@color/all_activity_FFFFFF"
+                android:textSize="@dimen/text_size_19" />
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:background="@drawable/female"
+                android:layout_toRightOf="@id/tv_be_member_name"
+                android:layout_marginLeft="11.5dp"
+                android:layout_marginTop="5dp"
+                android:id="@+id/iv_be_member_sex"/>
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="22dp"
+                android:background="@drawable/changedmember1"
+                android:layout_toRightOf="@id/iv_be_member_sex"
+                android:layout_marginLeft="7dp"
+                android:id="@+id/iv_be_member_level"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/text_size_15"
+                android:layout_toRightOf="@id/iv_be_member_level"
+                android:textSize="@dimen/text_size_11"
+                android:textColor="@color/blue81CBFF"
+                android:text="普通用户"
+                android:id="@+id/tv_is_member_text"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="2dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_14"
+                android:textColor="@color/all_activity_FFFFFF"
+                android:text="暂未开通会员服务"
+                android:id="@+id/tv_be_member_days"
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@id/iv_me_be_member_head"
+                android:layout_marginTop="38dp"/>
+        </RelativeLayout>
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"
+            android:layout_marginTop="-14dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/re_solid_r12_white_up"
+                android:paddingTop="14dp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size_15"
+                    android:textColor="@color/black333333"
+                    android:text="套餐类别"
+                    android:layout_marginLeft="15dp"/>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:overScrollMode="never"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/rv_be_member"/>
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="25dp"
+                    android:layout_height="30dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/text_size_13"
+                        android:text="连续包年：每月按照28元自动续费，可随时取消"
+                        android:textColor="@color/black333333"
+                        android:gravity="center"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="15dp"/>
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="25dp"
+                        android:background="@drawable/gray_lock"
+                        android:layout_gravity="right|center_vertical"
+                        android:layout_marginRight="15dp"
+                        android:id="@+id/iv_notalwaysbuy"/>
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="25dp"
+                        android:background="@drawable/lockblue"
+                        android:layout_gravity="right|center_vertical"
+                        android:layout_marginRight="15dp"
+                        android:id="@+id/iv_alwaysbuy"
+                        android:visibility="gone"/>
+
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="43dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginLeft="70dp"
+                    android:layout_marginRight="70dp"
+                    android:textSize="@dimen/text_size_16"
+                    android:background="@drawable/re_solid_r25_purple"
+                    android:text="立即开通"
+                    android:textColor="@color/all_activity_FFFFFF"
+                    android:gravity="center"
+                    android:id="@+id/be_member_immediately"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="29dp"
+                    android:background="@color/grayF5F5F5"/>
+
+
+                <com.ylr.hyy.utils.ResizableImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/forevermember" />
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+</LinearLayout>

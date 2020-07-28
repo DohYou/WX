@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/all_activity_FFFFFF">
+
+    <include
+        layout="@layout/title_layout"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="45dp">
+
+        <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_weight="1"
+        android:id="@+id/fl_billdetails_income">
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:textSize="@dimen/text_size_16"
+               android:textColor="@color/green0ABE63"
+               android:text="收入"
+               android:gravity="center"
+               android:layout_gravity="center"
+               android:id="@+id/tv_billdetails_income3"/>
+
+           <View
+               android:layout_width="75dp"
+               android:background="@color/green0ABE63"
+               android:layout_height="1.5dp"
+               android:layout_gravity="bottom|center_horizontal"
+               android:id="@+id/view_income"
+               android:visibility="visible"/>
+
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:id="@+id/fl_billdetails_pay">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_16"
+                android:textColor="@color/black333333"
+                android:text="支出"
+                android:gravity="center"
+                android:id="@+id/tv_billdetails_pay3"
+                android:layout_gravity="center"/>
+
+            <View
+                android:layout_width="75dp"
+                android:background="@color/green0ABE63"
+                android:layout_height="1.5dp"
+                android:layout_gravity="bottom|center_horizontal"
+                android:id="@+id/view_pay"
+                android:visibility="gone"/>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:id="@+id/fl_billdetails_withdraw">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_16"
+                android:textColor="@color/black333333"
+                android:text="提现"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:id="@+id/tv_billdetails_withdraw3"/>
+
+            <View
+                android:layout_width="75dp"
+                android:background="@color/green0ABE63"
+                android:layout_height="1.5dp"
+                android:layout_gravity="bottom|center_horizontal"
+                android:id="@+id/view_withdraw"
+                android:visibility="gone"/>
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/billdetails_f1_content">
+
+    </FrameLayout>
+
+</LinearLayout>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout android:layout_width="match_parent"
+    android:layout_height="130dp"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.ylr.hyy.utils.SwipeView
+        android:id="@+id/sview"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:background="@color/redEB2F3D"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/re_solid_r25_gray"
+                android:id="@+id/iv_addbankcard_image"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_16"
+                android:textColor="@color/all_activity_FFFFFF"
+                android:text="工商银行"
+                android:gravity="center"
+                android:layout_marginTop="15dp"
+                android:layout_toRightOf="@id/iv_addbankcard_image"
+                android:layout_marginLeft="14dp"
+                android:id="@+id/tv_addbankcard_bank"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_16"
+                android:textColor="#C1C1C1"
+                android:text="储蓄卡"
+                android:gravity="center"
+                android:layout_marginTop="2dp"
+                android:layout_below="@id/tv_addbankcard_bank"
+                android:layout_marginLeft="15dp"
+                android:id="@+id/tv_addbankcard_type"
+                android:layout_toRightOf="@id/iv_addbankcard_image"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="21sp"
+                android:textColor="@color/grayF2F2F2"
+                android:text="123242143213123231316587"
+                android:gravity="center"
+                android:layout_marginTop="9dp"
+                android:layout_below="@id/tv_addbankcard_type"
+                android:layout_marginLeft="15dp"
+                android:id="@+id/tv_addbankcard_cardcode"
+                android:layout_toRightOf="@id/iv_addbankcard_image"/>
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="删除"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:id="@+id/tv_item_bankcard_delete"
+            android:textSize="18sp"
+            android:background="@color/green0ABE63"
+            android:gravity="center"/>
+
+
+
+    </com.ylr.hyy.utils.SwipeView>
+
+
+</FrameLayout>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/grayF5F5F5"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <include
+        layout="@layout/title_layout"/>
+    
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:background="@color/all_activity_FFFFFF"
+        android:id="@+id/fl_frienddetails_more1">
+        
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:text="我和她共同的群聊"
+            android:gravity="center_vertical"/>
+        
+        <ImageView
+            android:layout_width="5dp"
+            android:layout_height="10dp"
+            android:background="@drawable/turn_right_smaller"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="15dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_15"
+            android:textColor="@color/grayB3B3B3"
+            android:text="17"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="30dp"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:background="@color/all_activity_FFFFFF"
+        android:layout_marginTop="10dp"
+        android:id="@+id/fl_frienddetails_more2">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:text="个性签名"
+            android:gravity="center_vertical"/>
+
+        <ImageView
+            android:layout_width="5dp"
+            android:layout_height="10dp"
+            android:background="@drawable/turn_right_smaller"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="15dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_15"
+            android:textColor="@color/grayB3B3B3"
+            android:text="派大星"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="30dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:background="@color/grayE0E0E0"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="15dp"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:background="@color/all_activity_FFFFFF"
+        android:id="@+id/fl_frienddetails_more3">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:text="来源"
+            android:gravity="center_vertical"/>
+
+        <ImageView
+            android:layout_width="5dp"
+            android:layout_height="10dp"
+            android:background="@drawable/turn_right_smaller"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="15dp"/>
+
+    </FrameLayout>
+</LinearLayout>

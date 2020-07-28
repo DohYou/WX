@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@color/all_activity_FFFFFF">
+
+        <ImageView
+            android:layout_width="44dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/turn_left"
+            android:id="@+id/iv_collection_back"
+            android:padding="12dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="@dimen/text_size_17"
+            android:textColor="@color/black333333"
+            android:text="我的收藏"
+            android:gravity="center"/>
+        
+        <FrameLayout
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:id="@+id/fl_collectionadd">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_gravity="right|center_vertical"
+                android:background="@drawable/collectionadd"
+                android:layout_marginRight="15dp"/>
+        </FrameLayout>
+
+    </FrameLayout>
+
+    
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:background="@color/grayF5F5F5"
+            android:layout_height="32dp"
+            android:layout_marginTop="10dp">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:background="@drawable/re_solid_r20_white"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="48dp">
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:background="@drawable/message_find_gray"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="18dp"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:hint="搜索"
+                    android:textSize="@dimen/text_size_13"
+                    android:textColor="@color/grayBFBFBF"
+                    android:layout_marginLeft="50dp"/>
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/blue5D6F94"
+                android:layout_gravity="right|center_vertical"
+                android:textSize="@dimen/text_size_15"
+                android:text="取消"
+                android:layout_marginRight="11dp"
+                android:gravity="center"
+                android:id="@+id/collection_cancel"/>
+
+        </FrameLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="@drawable/re_solid_r5_white"
+            android:layout_height="115dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="21dp"
+                android:layout_marginTop="24dp"
+                android:id="@+id/ll_mecollection">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/text_size_15"
+                    android:textColor="@color/blue5D6F94"
+                    android:text="图片/视频"
+                    android:gravity="center"
+                    android:id="@+id/tv_collection_pav"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/text_size_15"
+                    android:id="@+id/tv_collection_note"
+                    android:textColor="@color/blue5D6F94"
+                    android:text="笔记"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/text_size_15"
+                    android:id="@+id/tv_collection_location"
+                    android:textColor="@color/blue5D6F94"
+                    android:text="位置"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="21dp"
+                android:layout_marginTop="25dp"
+                android:layout_below="@+id/ll_mecollection">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/text_size_15"
+                    android:textColor="@color/blue5D6F94"
+                    android:text="聊天记录"
+                    android:id="@+id/tv_collection_talk"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/text_size_15"
+                    android:id="@+id/tv_collection_phonecall"
+                    android:textColor="@color/blue5D6F94"
+                    android:text="语音"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:id="@+id/tv_collection_file"
+                    android:textSize="@dimen/text_size_15"
+                    android:textColor="@color/blue5D6F94"
+                    android:text="文件"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+   
+
+
+</LinearLayout>

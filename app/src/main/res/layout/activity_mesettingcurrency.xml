@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/grayF5F5F5"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <include
+        layout="@layout/title_layout"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:orientation="horizontal"
+        android:background="@color/all_activity_FFFFFF"
+        android:id="@+id/me_setting_currency1"
+        android:layout_marginTop="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_15"
+            android:textColor="@color/black333333"
+            android:text="字体大小"
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="15dp"/>
+
+        <ImageView
+            android:layout_width="5dp"
+            android:layout_height="10dp"
+            android:background="@drawable/turn_right"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="10dp"/>
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:orientation="horizontal"
+        android:background="@color/all_activity_FFFFFF"
+        android:id="@+id/me_setting_currency2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_15"
+            android:textColor="@color/black333333"
+            android:text="一键清除聊天记录"
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="15dp"/>
+
+
+    </FrameLayout>
+
+
+</LinearLayout>

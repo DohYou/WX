@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/rl_be_member_bg"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/re_solid_be_member_white">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="18dp"
+        android:background="@drawable/nineninenine"
+        android:layout_toLeftOf="@+id/tv_be_member_time"
+        android:id="@+id/iv_ninegreen"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="包月"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_size_15"
+        android:layout_below="@+id/iv_ninegreen"
+        android:textColor="@color/black333333"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="4dp"
+        android:id="@+id/tv_be_member_time"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_30"
+        android:textColor="@color/green0ABE63"
+        android:gravity="center"
+        android:text="28"
+        android:layout_marginTop="6dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/tv_be_member_money"
+        android:layout_below="@id/tv_be_member_time"/>
+
+</RelativeLayout>

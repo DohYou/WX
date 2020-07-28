@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/grayF5F5F5"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_17"
+            android:textColor="@color/black333333"
+            android:text="消息"
+            android:layout_marginLeft="15dp"
+            android:layout_centerVertical="true"/>
+        
+        <ImageView
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:src="@drawable/message_find"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="60dp"
+            android:padding="14dp"
+            android:id="@+id/message_find"/>
+        
+        <ImageView
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:src="@drawable/discovers_add"
+            android:layout_marginRight="15dp"
+            android:padding="14dp"
+            android:id="@+id/message_add"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"/>
+
+    </RelativeLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="59dp"
+        android:background="@color/all_activity_FFFFFF">
+
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/fl_friend_msg">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="@dimen/text_size_16"
+                android:textColor="@color/green0ABE63"
+                android:text="好友消息"
+                android:id="@+id/tv_friendmsg"
+                android:gravity="center"/>
+
+            <View
+                android:layout_width="25dp"
+                android:layout_height="3dp"
+                android:background="@color/green0ABE63"
+                android:layout_gravity="bottom|center"
+                android:layout_marginBottom="11dp"
+                android:visibility="visible"
+                android:id="@+id/view_friendmsg"/>
+
+        </FrameLayout>
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:id="@+id/fl_customer_msg">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="@dimen/text_size_16"
+            android:textColor="@color/black333333"
+            android:text="客户消息"
+            android:gravity="center"
+            android:id="@+id/tv_customermsg"/>
+
+        <View
+            android:layout_width="25dp"
+            android:layout_height="3dp"
+            android:background="@color/green0ABE63"
+            android:layout_gravity="bottom|center"
+            android:layout_marginBottom="11dp"
+            android:visibility="gone"
+            android:id="@+id/view_customermsg"/>
+
+    </FrameLayout>
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:id="@+id/fl_people_msg">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="@dimen/text_size_16"
+            android:textColor="@color/black333333"
+            android:text="群聊消息"
+            android:gravity="center"
+            android:id="@+id/tv_peoplemsg"/>
+
+        <View
+            android:layout_width="25dp"
+            android:layout_height="3dp"
+            android:background="@color/green0ABE63"
+            android:layout_gravity="bottom|center"
+            android:layout_marginBottom="11dp"
+            android:visibility="gone"
+            android:id="@+id/view_peoplemsg"/>
+
+    </FrameLayout>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/friendmsg_f1content"
+        android:background="@color/all_activity_FFFFFF">
+    </FrameLayout>
+
+
+</LinearLayout>

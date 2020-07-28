@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@drawable/re_solid_white_topr24"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:id="@+id/tv_dialog_choose_freeze"
+        android:textSize="@dimen/text_size_15"
+        android:textColor="@color/black333333"
+        android:gravity="center"
+        android:text="冻结账号"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:background="@color/all_line_bg"
+        />
+
+    <TextView
+        android:id="@+id/tv_dialog_choose_unfreeze"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:textSize="@dimen/text_size_15"
+        android:textColor="@color/black333333"
+        android:gravity="center"
+        android:text="解冻账号"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/all_line_bg"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/tv_dialog_cancel"
+        android:layout_height="56dp"
+        android:textSize="@dimen/text_size_15"
+        android:textColor="@color/black333333"
+        android:gravity="center"
+        android:text="取消"/>
+
+</LinearLayout>

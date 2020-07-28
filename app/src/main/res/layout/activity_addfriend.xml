@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/grayF5F5F5"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/fl_addfriend"
+        android:background="@color/all_activity_FFFFFF">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/turn_left"
+            android:padding="16dp"
+            android:id="@+id/iv_addfriend_back"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="添加好友"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textSize="@dimen/text_size_17"
+            android:textColor="@color/black333333"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:background="@drawable/re_solid_r20_white"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/fl_addfriend_addfriend">
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:background="@drawable/message_find_gray"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="18dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="请输入手机号/汇集号"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/text_size_13"
+            android:id="@+id/et_addfriend_search"
+            android:textColor="@color/grayBFBFBF"
+            android:layout_marginLeft="50dp"/>
+        
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="20dp"
+            android:background="@drawable/voice"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="15dp"/>
+    </FrameLayout>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="59dp"
+        android:background="@color/all_activity_FFFFFF"
+        android:layout_marginTop="13dp"
+        android:id="@+id/rl_addfriend_scan">
+        
+        <ImageView
+            android:layout_width="19dp"
+            android:layout_height="19dp"
+            android:background="@drawable/scangray"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="21dp"
+            android:id="@+id/iv_addfriend_scan"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_15"
+            android:textColor="@color/green0ABE63"
+            android:text="扫一扫"
+            android:layout_toRightOf="@id/iv_addfriend_scan"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/tv_addfriend_scan"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_12"
+            android:textColor="@color/grayB3B3B3"
+            android:text="扫描二维码名片"
+            android:layout_toRightOf="@id/iv_addfriend_scan"
+            android:layout_marginLeft="20dp"
+            android:layout_below="@id/tv_addfriend_scan"/>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:background="@color/grayE0E0E0"
+        android:layout_marginLeft="60dp"
+        android:id="@+id/view_addfriend"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="59dp"
+        android:background="@color/all_activity_FFFFFF"
+        android:id="@+id/rl_addfriend_phone">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="29dp"
+            android:background="@drawable/phone_contact"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="21dp"
+            android:id="@+id/iv_addfriend_phone"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_15"
+            android:textColor="@color/green0ABE63"
+            android:text="手机联系人"
+            android:layout_toRightOf="@id/iv_addfriend_phone"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/tv_addfriend_phone"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_12"
+            android:textColor="@color/grayB3B3B3"
+            android:text="添加通讯录中的朋友"
+            android:layout_toRightOf="@id/iv_addfriend_phone"
+            android:layout_marginLeft="20dp"
+            android:layout_below="@id/tv_addfriend_phone"/>
+
+    </RelativeLayout>
+    
+</LinearLayout>

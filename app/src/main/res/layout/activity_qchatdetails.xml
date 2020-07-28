@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grayF5F5F5"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <include
+        layout="@layout/title_layout"/>
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="102dp"
+        android:background="@color/all_activity_FFFFFF">
+
+        <ImageView
+            android:layout_width="53dp"
+            android:layout_height="53dp"
+            android:background="@drawable/add_white"
+            android:layout_marginTop="7dp"
+            android:layout_marginLeft="29dp"
+            android:id="@+id/iv_talkuser"/>
+
+        <ImageView
+            android:layout_width="53dp"
+            android:layout_height="53dp"
+            android:background="@drawable/add_white"
+            android:layout_marginTop="7dp"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@id/iv_talkuser"/>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:orientation="horizontal"
+        android:background="@color/all_activity_FFFFFF"
+        android:layout_marginTop="10dp"
+        android:id="@+id/rl_findsendpicorvideo">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_15"
+            android:textColor="@color/black333333"
+            android:text="查找收发的图片/视频"
+            android:layout_centerVertical="true"
+            android:paddingLeft="15dp"/>
+
+        <ImageView
+            android:layout_width="5dp"
+            android:layout_height="10dp"
+            android:background="@drawable/turn_right"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:background="@color/grayE0E0E0"
+        android:layout_marginLeft="15dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:orientation="horizontal"
+        android:background="@color/all_activity_FFFFFF"
+        android:id="@+id/rl_findchatcontent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_15"
+            android:textColor="@color/black333333"
+            android:text="查找聊天内容"
+            android:layout_centerVertical="true"
+            android:paddingLeft="15dp"/>
+
+        <ImageView
+            android:layout_width="5dp"
+            android:layout_height="10dp"
+            android:background="@drawable/turn_right"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"/>
+    </RelativeLayout>
+
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:background="@color/all_activity_FFFFFF"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="@dimen/text_size_15"
+            android:textColor="@color/black333333"
+            android:text="置顶聊天"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="15dp"/>
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="25dp"
+            android:background="@drawable/gray_lock"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="15dp"
+            android:id="@+id/iv_chatdetails_off1"/>
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="25dp"
+            android:background="@drawable/lockblue"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="15dp"
+            android:visibility="gone"
+            android:id="@+id/iv_chatdetails_on1"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:background="@color/grayE0E0E0"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="15dp"/>
+
+    </FrameLayout>
+
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:background="@color/all_activity_FFFFFF">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="@dimen/text_size_15"
+            android:textColor="@color/black333333"
+            android:text="消息免打扰"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="15dp"/>
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="25dp"
+            android:background="@drawable/gray_lock"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="15dp"
+            android:id="@+id/iv_chatdetails_off2"/>
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="25dp"
+            android:background="@drawable/lockblue"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="15dp"
+            android:visibility="gone"
+            android:id="@+id/iv_chatdetails_on2"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:background="@color/grayE0E0E0"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="15dp"/>
+
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="92dp"
+        android:background="@color/all_activity_FFFFFF">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_15"
+            android:textColor="@color/black333333"
+            android:text="群消息定时清理"
+            android:paddingTop="15dp"
+            android:layout_marginLeft="15dp"
+            android:id="@+id/tv_chatdetais1"/>
+
+        <TextView
+            android:layout_width="273dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_13"
+            android:textColor="@color/grayB3B3B3"
+            android:text="开启后，会话中的所有已读消息将按设定的时间清理，并默开启截屏通知"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="4dp"
+            android:layout_below="@id/tv_chatdetais1"/>
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="25dp"
+            android:background="@drawable/gray_lock"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:id="@+id/iv_chatdetails_off3"/>
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="25dp"
+            android:background="@drawable/lockblue"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:visibility="gone"
+            android:id="@+id/iv_chatdetails_on3"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:background="@color/grayE0E0E0"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="15dp"/>
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:background="@color/all_activity_FFFFFF"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="@dimen/text_size_15"
+            android:textColor="@color/black333333"
+            android:text="截屏通知"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="15dp"/>
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="25dp"
+            android:background="@drawable/gray_lock"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="15dp"
+            android:id="@+id/iv_chatdetails_off4"/>
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="25dp"
+            android:background="@drawable/lockblue"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="15dp"
+            android:visibility="gone"
+            android:id="@+id/iv_chatdetails_on4"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:background="@color/grayE0E0E0"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="15dp"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:background="@color/all_activity_FFFFFF"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="@dimen/text_size_15"
+            android:textColor="@color/black333333"
+            android:text="安全加密"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="15dp"/>
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="20dp"
+            android:background="@drawable/suosecret"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="15dp"
+            android:id="@+id/iv_suosecret"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:background="@color/grayE0E0E0"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="15dp"/>
+
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:orientation="horizontal"
+        android:background="@color/all_activity_FFFFFF"
+        android:layout_marginTop="10dp"
+        android:id="@+id/rl_chatdetails_cleanchat">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_15"
+            android:textColor="@color/black333333"
+            android:text="清除聊天记录"
+            android:layout_centerVertical="true"
+            android:paddingLeft="15dp"/>
+
+        <ImageView
+            android:layout_width="5dp"
+            android:layout_height="10dp"
+            android:background="@drawable/turn_right"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp" />
+    </RelativeLayout>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:orientation="horizontal"
+        android:background="@color/all_activity_FFFFFF"
+        android:layout_marginTop="10dp"
+        android:id="@+id/rl_chatdetails_complain">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_15"
+            android:textColor="@color/black333333"
+            android:text="投诉"
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="15dp"/>
+
+        <ImageView
+            android:layout_width="5dp"
+            android:layout_height="10dp"
+            android:background="@drawable/turn_right"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="10dp"/>
+    </FrameLayout>
+
+</LinearLayout>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/all_activity_FFFFFF">
+
+    <include
+        layout="@layout/title_layout"/>
+
+    <ImageView
+        android:layout_width="82dp"
+        android:layout_height="82dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/freeze"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="37dp"
+        android:textSize="@dimen/text_size_16"
+        android:textColor="@color/black333333"
+        android:text="联系客服帮助"
+        android:layout_marginTop="18dp"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:textSize="@dimen/text_size_14"
+        android:textColor="@color/grayB3B3B3"
+        android:text="客服电话："
+        android:layout_marginTop="4dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginRight="55dp"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/re_solid_r25_purple"
+        android:text="立即解冻"
+        android:textSize="@dimen/text_size_18"
+        android:gravity="center"
+        android:id="@+id/tv_unfreeze_immediately_people"/>
+
+    <LinearLayout
+        android:layout_marginTop="240dp"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="33dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:textSize="@dimen/text_size_12"
+            android:textColor="@color/gray999999"
+            android:gravity="center"
+            android:text="验证码解冻  "
+            android:id="@+id/tv_unfreeze_code_people"/>
+
+        <TextView
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:textSize="@dimen/text_size_12"
+            android:textColor="@color/gray999999"
+            android:text="|  密码解冻"
+            android:id="@+id/tv_unfreeze_password_people"/>
+
+    </LinearLayout>
+</LinearLayout>
