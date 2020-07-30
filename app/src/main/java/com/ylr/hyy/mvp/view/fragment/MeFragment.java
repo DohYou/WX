@@ -14,7 +14,7 @@ import com.blankj.utilcode.util.SPUtils;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.tencent.qcloud.tim.uikit.component.picture.imageEngine.impl.GlideEngine;
-import com.ylr.hyy.mvp.view.activity.discovers.MomentsFriendMeActivity;
+import com.ylr.hyy.mvp.view.activity.discovers.MomentsActivity;
 import com.yzq.zxinglibrary.android.CaptureActivity;
 import com.yzq.zxinglibrary.common.Constant;
 import com.ylr.hyy.R;
@@ -23,7 +23,6 @@ import com.ylr.hyy.base.BaseFragment;
 import com.ylr.hyy.mvp.contract.MeDetailsContract;
 import com.ylr.hyy.mvp.model.MeDetailsModel;
 import com.ylr.hyy.mvp.presenter.MeDetailsPresenter;
-import com.ylr.hyy.mvp.view.activity.discovers.MomentsCustomerMeActivity;
 import com.ylr.hyy.mvp.view.activity.login.LoginActivity;
 import com.ylr.hyy.mvp.view.activity.me.BeMemberActivity;
 import com.ylr.hyy.mvp.view.activity.me.MeCoinsActivity;
@@ -120,9 +119,10 @@ public class MeFragment extends BaseFragment<MeDetailsContract.View,MeDetailsCon
     @OnClick({R.id.fragment_me1, R.id.fragment_me2, R.id.fragment_me3, R.id.fragment_me4, R.id.fragment_me5, R.id.fragment_me6,
             R.id.fragment_me7, R.id.fragment_me8,R.id.fragment_me9,R.id.rl_fragment_me_header_personal})
     public void onViewClicked(View view) {
+        Intent intent = new Intent();
         switch (view.getId()) {
             case R.id.fragment_me1://扫一扫
-                Intent intent = new Intent(activity, CaptureActivity.class);
+                intent.setClass(activity, CaptureActivity.class);
                 /*ZxingConfig是配置类
                  *可以设置是否显示底部布局，闪光灯，相册，
                  * 是否播放提示音  震动
@@ -141,10 +141,14 @@ public class MeFragment extends BaseFragment<MeDetailsContract.View,MeDetailsCon
                 startActivityForResult(intent, 1);
                 break;
             case R.id.fragment_me2://我的朋友圈
-                startActivity(new Intent(activity, MomentsFriendMeActivity.class));
+                intent.setClass(activity, MomentsActivity.class);
+                intent.putExtra("circle","0");
+                startActivity(intent);
                 break;
             case R.id.fragment_me3://我的客户圈
-                startActivity(new Intent(activity,MomentsCustomerMeActivity.class));
+                intent.setClass(activity, MomentsActivity.class);
+                intent.putExtra("circle","1");
+                startActivity(intent);
                 break;
             case R.id.fragment_me4://我的零钱
                 startActivity(new Intent(activity, MeCoinsActivity.class));

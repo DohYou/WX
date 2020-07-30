@@ -99,7 +99,7 @@ public class BeMemberActivity extends BaseActivity<MemberPriceContract.View, Mem
 
         adapter = new BeMemberAdapter(this);
         rvBeMember.setLayoutManager(new StaggeredGridLayoutManager(3, RecyclerView.VERTICAL));
-        rvBeMember.addItemDecoration(new RVSpace(SizeUtils.dp2px(6)));//item 距离
+        rvBeMember.addItemDecoration(new RVSpace(6,6,6,6));//item 距离
         rvBeMember.setAdapter(adapter);
 
         adapter.setOnSelectListener(new BeMemberAdapter.OnSelectListener() {

@@ -23,6 +23,7 @@ import com.ylr.hyy.mvp.model.MeDetailsModel;
 import com.ylr.hyy.mvp.model.MeNoAuditGetCodeModel;
 import com.ylr.hyy.mvp.model.MeNoAuditModel;
 import com.ylr.hyy.mvp.model.MemberPriceModel;
+import com.ylr.hyy.mvp.model.MomentsModel;
 import com.ylr.hyy.mvp.model.QiNiuModel;
 import com.ylr.hyy.mvp.model.SearchFriendModel;
 import com.ylr.hyy.mvp.model.WXPayModel;
@@ -37,8 +38,8 @@ import rx.Observer;
 
 public interface HttpService {
 
-// public  static String BASE_URL = "http://39.101.218.47:81/api/app/";
- public  static String BASE_URL = "http://192.168.1.4:81/api/app/";
+ public  static String BASE_URL = "http://39.101.218.47:81/api/app/";
+// public  static String BASE_URL = "http://192.168.1.4:81/api/app/";
 
     //获取验证码登录
     @POST("GetLoginCode")
@@ -202,5 +203,9 @@ public interface HttpService {
     //发布朋友圈
      @POST("SendMoments")
      Observable<Base> sendMoments(@Body RequestBody body);
+
+     //查看朋友圈
+    @POST("LooksMoments")
+    Observable<MomentsModel> upMomentsList(@Body RequestBody body);
 
 }

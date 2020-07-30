@@ -40,34 +40,34 @@ public class NinthPalaceViewGroup extends ViewGroup {
         this.context = context;
     }
 
-    public void addChild(List<String> data) {
-        if (data.size() == 1) {
+    public void addChild(String[] data) {
+        if (data.length == 1) {
             ImageView view = new ImageView(context);
             view.setOnClickListener(v -> {
                 if (onItemPosListener != null) {
-                    onItemPosListener.ItemClick(data.get(0));
+                    onItemPosListener.ItemClick(data[0]);
                 }
             });
             view.setScaleType(ImageView.ScaleType.CENTER_CROP);
 //            Glide.with(context).load(data.get(0)).into(view);
-            GlideEngine.loadImage(view,data.get(0));
+            GlideEngine.loadImage(view,data[0]);
 
             //计算原始图片的大小，如果宽大于父亲的宽就把它等比缩小到父亲的宽那么大，同理
             LayoutParams lp = new LayoutParams( SizeUtils.dp2px(220),  SizeUtils.dp2px(220));
             addView(view, lp);
         } else {
-            for (int i = 0; i < data.size(); i++) {
+            for (int i = 0; i < data.length; i++) {
                 if (i < 9) {
                     ImageView view = new ImageView(context);
                     int finalI = i;
                     view.setOnClickListener(v -> {
                         if (onItemPosListener != null) {
-                            onItemPosListener.ItemClick(data.get(finalI));
+                            onItemPosListener.ItemClick(data[finalI]);
                         }
                     });
                     view.setScaleType(ImageView.ScaleType.CENTER_CROP);
 //                    Glide.with(context).load(data.get(i)).into(view);
-                    GlideEngine.loadImage(view,data.get(i));
+                    GlideEngine.loadImage(view,data[i]);
                     addView(view);
                 }
             }
@@ -171,5 +171,9 @@ public class NinthPalaceViewGroup extends ViewGroup {
 
     public void setOnItemPosListener(OnItemPosListener onItemPosListener) {
         this.onItemPosListener = onItemPosListener;
+    }
+
+    public void clearImg(){
+        this.removeAllViews();
     }
 }

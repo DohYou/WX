@@ -6,10 +6,8 @@ import android.view.View;
 import com.ylr.hyy.R;
 import com.ylr.hyy.base.BaseContract;
 import com.ylr.hyy.base.BaseFragment;
-import com.ylr.hyy.mvp.view.activity.discovers.AiFinderActivity;
 import com.ylr.hyy.mvp.view.activity.discovers.DiscoversUtilsActivity;
-import com.ylr.hyy.mvp.view.activity.discovers.MomentsCustomerActivity;
-import com.ylr.hyy.mvp.view.activity.me.MomentsFriendActivity;
+import com.ylr.hyy.mvp.view.activity.discovers.MomentsActivity;
 import com.ylr.hyy.utils.ItemViewGroup;
 
 import butterknife.BindView;
@@ -61,12 +59,17 @@ public class DiscoversFragment extends BaseFragment {
     @OnClick({R.id.itm_discover1, R.id.itm_discover2, R.id.itm_discover3, R.id.itm_discover4, R.id.itm_discover5,
             R.id.itm_discover6,R.id.itm_discover8})
     public void onViewClicked(View view) {
+        Intent intent = new Intent();
         switch (view.getId()) {
             case R.id.itm_discover1://好友圈
-                startActivity(new Intent(getActivity(), MomentsFriendActivity.class));
+                intent.setClass(activity, MomentsActivity.class);
+                intent.putExtra("circle","0");
+                startActivity(intent);
                 break;
             case R.id.itm_discover2://客户圈
-                startActivity(new Intent(getActivity(), MomentsCustomerActivity.class));
+                intent.setClass(activity, MomentsActivity.class);
+                intent.putExtra("circle","1");
+                startActivity(intent);
                 break;
             case R.id.itm_discover3://会员商城
                 break;

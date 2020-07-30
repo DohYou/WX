@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingTop="20dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:background="#FFF"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <com.ylr.hyy.utils.RoundImageView
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:id="@+id/riv_item_moments_head"
+            app:round_type="0"
+            app:round_bottomLeft="22dp"
+            app:round_bottomRight="22dp"
+            app:round_topRight="22dp"
+            app:round_topLeft="22dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLength="10"
+            android:id="@+id/tv_item_moments_name"
+            app:layout_constraintLeft_toRightOf="@+id/riv_item_moments_head"
+            app:layout_constraintTop_toTopOf="@+id/riv_item_moments_head"
+            app:layout_constraintBottom_toBottomOf="@+id/riv_item_moments_head"
+            android:layout_marginLeft="12dp"
+            android:textSize="@dimen/text_size_17"
+            android:textColor="@color/black333333"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/riv_item_moments_head"
+            app:layout_constraintBottom_toBottomOf="@+id/riv_item_moments_head"
+            android:textSize="@dimen/text_size_13"
+            android:textColor="@color/grayB3B3B3"
+            android:id="@+id/tv_item_moments_time"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/tv_item_moments_content"
+        android:textColor="@color/black333333"
+        android:layout_marginRight="12dp"
+        android:textSize="@dimen/text_size_15"/>
+
+    <com.ylr.hyy.utils.NinthPalaceViewGroup
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="12dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="12dp"
+        app:itemgap="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tv_item_moments_content"
+        android:layout_marginTop="12dp"
+        android:id="@+id/ninth_item"
+        />
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_marginLeft="12dp"
+        android:layout_height="200dp"
+        android:id="@+id/iv_moments_video"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:layout_marginTop="12dp"
+        android:background="@color/all_line_bg"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_gravity="right"
+        android:layout_height="wrap_content">
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:layout_alignParentRight="true"
+            android:textSize="@dimen/text_size_12"
+            android:textColor="@color/grayB3B3B3"
+            android:id="@+id/tv_item_comments"/>
+        
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/tv_item_comments"
+            android:layout_height="18dp"
+            android:background="@drawable/huifu"
+            android:id="@+id/iv_item_comments"/>
+
+
+        <TextView
+            android:layout_marginRight="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:layout_toLeftOf="@+id/iv_item_comments"
+            android:textSize="@dimen/text_size_12"
+            android:textColor="@color/grayB3B3B3"
+            android:id="@+id/tv_item_zan"/>
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/tv_item_zan"
+            android:layout_height="18dp"
+            android:background="@drawable/huifu"
+            android:id="@+id/iv_item_zan"/>
+
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -83,7 +83,7 @@ public class AiFinderActivity extends BaseActivity<AiFinderContract.View, AiFind
         adapter = new AiFinderAdapter(this);
         LinearLayoutManager manager = new LinearLayoutManager(this);
         manager.setOrientation(RecyclerView.HORIZONTAL);
-        rv.addItemDecoration(new RVSpace(SizeUtils.dp2px(6)));
+        rv.addItemDecoration(new RVSpace(6,6,6,6));
         rv.setLayoutManager(manager);
         rv.setAdapter(adapter);
 

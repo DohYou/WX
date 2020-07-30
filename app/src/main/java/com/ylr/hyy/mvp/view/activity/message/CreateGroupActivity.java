@@ -110,14 +110,14 @@ public class CreateGroupActivity extends BaseActivity<CreateGroupContract.View,C
         sortAdapter = new CreateGroupSortAdapter(this);
         LinearLayoutManager manager = new LinearLayoutManager(this);
         manager.setOrientation(RecyclerView.HORIZONTAL);
-        rvCreateSort.addItemDecoration(new RVSpace(SizeUtils.dp2px(5)));
+        rvCreateSort.addItemDecoration(new RVSpace(5,5,5,5));
         rvCreateSort.setLayoutManager(manager);
         rvCreateSort.setAdapter(sortAdapter);
 
         selectAdapter = new CreateGroupSelectAdapter(this);
         manager = new LinearLayoutManager(this);
         manager.setOrientation(RecyclerView.HORIZONTAL);
-        rvCreateSelect.addItemDecoration(new RVSpace(SizeUtils.dp2px(5)));
+        rvCreateSelect.addItemDecoration(new RVSpace(5,5,5,5));
         rvCreateSelect.setLayoutManager(manager);
         rvCreateSelect.setAdapter(selectAdapter);
 

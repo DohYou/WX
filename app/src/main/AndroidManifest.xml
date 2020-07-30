@@ -52,7 +52,6 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.ylr.hyy.mvp.view.activity.me.MomentsFriendActivity"/>
         <activity android:name="com.ylr.hyy.mvp.view.activity.login.GuideActivity" />
         <activity android:name="com.ylr.hyy.mvp.view.activity.login.RegisterActivity"/>
         <activity android:name="com.ylr.hyy.mvp.view.activity.login.FreezePeopleActivity"/>
@@ -85,8 +84,7 @@
 
         </activity>
         <activity android:name="com.ylr.hyy.mvp.view.activity.message.MessageFindActivity" />
-        <activity android:name="com.ylr.hyy.mvp.view.activity.discovers.MomentsCustomerActivity" />
-        <activity android:name="com.ylr.hyy.mvp.view.activity.discovers.MomentsFriendMeActivity" />
+        <activity android:name="com.ylr.hyy.mvp.view.activity.discovers.MomentsActivity" />
         <activity android:name="com.ylr.hyy.mvp.view.activity.me.MeCoinsBillDetailsActivity" />
         <activity android:name="com.ylr.hyy.mvp.view.activity.me.MeChangeNameActivity" />
         <activity android:name="com.ylr.hyy.mvp.view.activity.me.MeChangePhoneActivity" />
@@ -95,7 +93,6 @@
         <activity android:name="com.ylr.hyy.mvp.view.activity.discovers.DiscoversUtilsActivity" />
         <activity android:name="com.ylr.hyy.mvp.view.activity.discovers.AiFinderActivity" />
         <activity android:name="com.ylr.hyy.mvp.view.activity.discovers.AiHelperAddActivity" />
-        <activity android:name="com.ylr.hyy.mvp.view.activity.discovers.MomentsCustomerMeActivity" />
         <activity android:name="com.ylr.hyy.mvp.view.activity.me.MeSettingCurrencyActivity" />
         <activity android:name="com.ylr.hyy.mvp.view.activity.me.MeSettingPrivacyActivity" />
         <activity android:name="com.ylr.hyy.mvp.view.activity.ChatActivity" />

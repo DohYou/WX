@@ -3,6 +3,7 @@ package com.ylr.hyy.mvp.view.activity.discovers;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -83,21 +84,21 @@ public class SendMomentsActivity extends BaseActivity<SendMomentContract.View, S
         list = new ArrayList<>();
 //        list.add("添加");
         list.add("https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1596006948&di=6fbde7578de6a0746370f522cb077b2a&src=http://a2.att.hudong.com/36/48/19300001357258133412489354717.jpg");
-        list.add("https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1596006948&di=6fbde7578de6a0746370f522cb077b2a&src=http://a2.att.hudong.com/36/48/19300001357258133412489354717.jpg");
-        list.add("https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1596006948&di=6fbde7578de6a0746370f522cb077b2a&src=http://a2.att.hudong.com/36/48/19300001357258133412489354717.jpg");
-        list.add("https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1596006948&di=6fbde7578de6a0746370f522cb077b2a&src=http://a2.att.hudong.com/36/48/19300001357258133412489354717.jpg");
-        list.add("https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1596006948&di=6fbde7578de6a0746370f522cb077b2a&src=http://a2.att.hudong.com/36/48/19300001357258133412489354717.jpg");
-        list.add("https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1596006948&di=6fbde7578de6a0746370f522cb077b2a&src=http://a2.att.hudong.com/36/48/19300001357258133412489354717.jpg");
-        list.add("https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1596006948&di=6fbde7578de6a0746370f522cb077b2a&src=http://a2.att.hudong.com/36/48/19300001357258133412489354717.jpg");
-        list.add("https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1596006948&di=6fbde7578de6a0746370f522cb077b2a&src=http://a2.att.hudong.com/36/48/19300001357258133412489354717.jpg");
-        list.add("https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1596006948&di=6fbde7578de6a0746370f522cb077b2a&src=http://a2.att.hudong.com/36/48/19300001357258133412489354717.jpg");
+//        list.add("https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1596006948&di=6fbde7578de6a0746370f522cb077b2a&src=http://a2.att.hudong.com/36/48/19300001357258133412489354717.jpg");
+//        list.add("https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1596006948&di=6fbde7578de6a0746370f522cb077b2a&src=http://a2.att.hudong.com/36/48/19300001357258133412489354717.jpg");
+//        list.add("https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1596006948&di=6fbde7578de6a0746370f522cb077b2a&src=http://a2.att.hudong.com/36/48/19300001357258133412489354717.jpg");
+//        list.add("https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1596006948&di=6fbde7578de6a0746370f522cb077b2a&src=http://a2.att.hudong.com/36/48/19300001357258133412489354717.jpg");
+//        list.add("https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1596006948&di=6fbde7578de6a0746370f522cb077b2a&src=http://a2.att.hudong.com/36/48/19300001357258133412489354717.jpg");
+//        list.add("https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1596006948&di=6fbde7578de6a0746370f522cb077b2a&src=http://a2.att.hudong.com/36/48/19300001357258133412489354717.jpg");
+//        list.add("https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1596006948&di=6fbde7578de6a0746370f522cb077b2a&src=http://a2.att.hudong.com/36/48/19300001357258133412489354717.jpg");
+//        list.add("https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1596006948&di=6fbde7578de6a0746370f522cb077b2a&src=http://a2.att.hudong.com/36/48/19300001357258133412489354717.jpg");
 //        list.add("https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1596006948&di=6fbde7578de6a0746370f522cb077b2a&src=http://a2.att.hudong.com/36/48/19300001357258133412489354717.jpg");
     }
 
     @Override
     protected void initDatas() {
         adapter = new PublishImageAdapter(this);
-        recyclerView.addItemDecoration(new RVSpace(10));
+        recyclerView.addItemDecoration(new RVSpace(2,2,2,2));
         recyclerView.setLayoutManager(new GridLayoutManager(this, 3));
         recyclerView.setAdapter(adapter);
         adapter.setList(list);
@@ -175,18 +176,23 @@ public class SendMomentsActivity extends BaseActivity<SendMomentContract.View, S
                 finish();
                 break;
             case R.id.tv_send_moment:
-                String imgs = list.toString().substring(1);
-                Log.i(TAG, "onViewClicked: "+list.toString());
+                String imgs = "";
+                if (list.size() != 0) {
+                    if (list.get(list.size() - 1).equals("添加")) {
+                        list.remove(list.size() - 1);
+                    }
+                    imgs = list.toString().substring(1);
+                }
                 JsonObject jsonObject = new JsonObject();
                 jsonObject.addProperty("writtenwords",etContent.getText().toString());
                 jsonObject.addProperty("videos",videoPath);
-                jsonObject.addProperty("imgs",imgs.substring(0,imgs.length()-1));
-                Log.i(TAG, "onViewClicked: "+imgs.substring(0,imgs.length()-1));
+                jsonObject.addProperty("imgs", TextUtils.isEmpty(imgs)?"":imgs.substring(0,imgs.length()-1));
                 jsonObject.addProperty("latitude","");
                 jsonObject.addProperty("longitude","");
                 jsonObject.addProperty("address","");
                 jsonObject.addProperty("issite",tvAddress.getText().toString().endsWith("是否显示位置")?0:1);//是否显示地址 0否 1显示
                 jsonObject.addProperty("iscircle",iscircle);
+                jsonObject.addProperty("isselfsee","3");
                 jsonObject.addProperty("errouserid","");
                 jsonObject.addProperty("okouserid","");
                 RequestBody body = RequestBody.create(MediaType.parse(HttpType),jsonObject.toString());

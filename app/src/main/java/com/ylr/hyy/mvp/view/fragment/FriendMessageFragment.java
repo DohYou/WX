@@ -83,6 +83,7 @@ public class FriendMessageFragment extends BaseFragment implements TIMMessageLis
                 switch (i) {
                     case 6208:
                         ToastUtils.showToast("登录已失效，请重新登录");
+                        SPUtils.getInstance().clear();
                         startActivity(new Intent(activity, LoginActivity.class));
                         activity.finish();
                         break;
