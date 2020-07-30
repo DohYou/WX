@@ -37,11 +37,8 @@ import rx.Observer;
 
 public interface HttpService {
 
-   String BASE_URL = "http://39.101.218.47:81/api/app/";
-
-//    String BASE_URL = "http://192.168.1.8:81/api/app/";
-
-
+// public  static String BASE_URL = "http://39.101.218.47:81/api/app/";
+ public  static String BASE_URL = "http://192.168.1.4:81/api/app/";
 
     //获取验证码登录
     @POST("GetLoginCode")
@@ -201,4 +198,9 @@ public interface HttpService {
     //根据标签获取里面的用户
     @POST("GetLabelById")
      Observable<LabelModel> upLabelList(@Body RequestBody body);
+
+    //发布朋友圈
+     @POST("SendMoments")
+     Observable<Base> sendMoments(@Body RequestBody body);
+
 }

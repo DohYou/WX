@@ -34,7 +34,7 @@ public class MVPApplication extends Application {
     public void onCreate() {
         super.onCreate();
         mContext = this;
-        //如果不需要阿里热修复  注释这行   并且在AndroidManifest切换Application！
+        //如果不需要阿里热修复  注释这行   并且 在AndroidManifest切换Application！
 //        SophixManager.getInstance().queryAndLoadNewPatch();
         //bugly初始化
 //        CrashReport.initCrashReport(getApplicationContext(),"e425870bea",false);

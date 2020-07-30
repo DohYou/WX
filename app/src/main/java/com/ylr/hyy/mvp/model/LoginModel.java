@@ -4,6 +4,8 @@ package com.ylr.hyy.mvp.model;
 import com.google.gson.annotations.SerializedName;
 import com.ylr.hyy.base.Base;
 
+import java.util.List;
+
 /**
  * Created by Administrator on 2017/8/24.
  */
@@ -11,7 +13,7 @@ import com.ylr.hyy.base.Base;
 public class LoginModel extends Base {
 
     /**
-     * data : {"balance":0,"city":"","country":"东城区","friendMap":{"1":"0","73520":"1","735200":"0"},"headimgurl":"https://image.renlaibang.com/image_1594635515373","id":4,"ispasswrod":0,"isrealn":1,"nickname":"面对疾风吧","onlyaccount":"12580","onlyid":"97009","paypass":1,"phone":"18583368210","province":"北京市","qiniutoken":"5dM1z-TkC0Y5gKKOJJyPj5voQDmTJm8zg4jiDpaT:zTjaPomOAIFwaV37S1oUAiUigwQ=:eyJzY29wZSI6ImFpc2liaSIsImRlYWRsaW5lIjoxNTk0NjM5MTk3fQ==","question":"","recommender":"97009","recommenderurl":"baidu.com","sex":2,"signature":"啦啦啦啦","status":1,"token":"4B25885C9A2DE3AB","userSig":"eJyrVgrxCdZLrSjILEpVsjI2NDU2MzAw0AGLlqUWKVkpGekZKEH4xSnZiQUFmSlKVoYmBgbGFoZmZsYQmcyU1LySzLRMsAYTmPLMdCDPLKwgPNc0vLSsqszEzSfDxKUo2a0w0NDVI9c0KNivPNLCPdnSTT8oMrvEwBaqsSQzF*gWQ1NLEzNjU1NL81oAO-kvWg__","vipgrade":1,"vipoverdue":1597712057000}
+     * data : {"androidFriendMap":{"friends":[48,40,47,49,50,51],"customer":[]},"balance":0,"city":"","country":"东城区","friendMap":{"47":"0","48":"0","49":"0","50":"0","40":"0","51":"0"},"headimgurl":"https://image.renlaibang.com/image_1594635515373","id":4,"ispasswrod":0,"isrealn":1,"nickname":"面对疾风吧","onlyaccount":"12580","onlyid":"97009","paypass":1,"phone":"18583368210","province":"北京市","qiniutoken":"5dM1z-TkC0Y5gKKOJJyPj5voQDmTJm8zg4jiDpaT:1l13U0fOl1NDTyPgUoDiAcQCs2A=:eyJzY29wZSI6ImFpc2liaSIsImRlYWRsaW5lIjoxNTk2MDE1NTE2fQ==","question":"","recommender":"97009","recommenderurl":"baidu.com","sex":2,"signature":"啦啦啦啦","status":1,"token":"4B25885C9A2DE3AB","userSig":"eJyrVgrxCdZLrSjILEpVsjI2NDU2MzAw0AGLlqUWKVkpGekZKEH4xSnZiQUFmSlKVoYmBgbGFoZmZsYQmcyU1LySzLRMsAYTmPLMdCCvKqCySL*iOCMrOCivPMQr2STY0TAgJ8ow3cwtvMzLI8oyP9g3rDyiNDU83RaqsSQzF*gWQ1NLMwNDQ0tDs1oAZZ0wQQ__","vipgrade":1,"vipoverdue":1597712057000}
      */
 
     private DataBean data;
@@ -26,10 +28,11 @@ public class LoginModel extends Base {
 
     public static class DataBean {
         /**
+         * androidFriendMap : {"friends":[48,40,47,49,50,51],"customer":[]}
          * balance : 0
          * city :
          * country : 东城区
-         * friendMap : {"1":"0","73520":"1","735200":"0"}
+         * friendMap : {"47":"0","48":"0","49":"0","50":"0","40":"0","51":"0"}
          * headimgurl : https://image.renlaibang.com/image_1594635515373
          * id : 4
          * ispasswrod : 0
@@ -40,7 +43,7 @@ public class LoginModel extends Base {
          * paypass : 1
          * phone : 18583368210
          * province : 北京市
-         * qiniutoken : 5dM1z-TkC0Y5gKKOJJyPj5voQDmTJm8zg4jiDpaT:zTjaPomOAIFwaV37S1oUAiUigwQ=:eyJzY29wZSI6ImFpc2liaSIsImRlYWRsaW5lIjoxNTk0NjM5MTk3fQ==
+         * qiniutoken : 5dM1z-TkC0Y5gKKOJJyPj5voQDmTJm8zg4jiDpaT:1l13U0fOl1NDTyPgUoDiAcQCs2A=:eyJzY29wZSI6ImFpc2liaSIsImRlYWRsaW5lIjoxNTk2MDE1NTE2fQ==
          * question :
          * recommender : 97009
          * recommenderurl : baidu.com
@@ -48,15 +51,15 @@ public class LoginModel extends Base {
          * signature : 啦啦啦啦
          * status : 1
          * token : 4B25885C9A2DE3AB
-         * userSig : eJyrVgrxCdZLrSjILEpVsjI2NDU2MzAw0AGLlqUWKVkpGekZKEH4xSnZiQUFmSlKVoYmBgbGFoZmZsYQmcyU1LySzLRMsAYTmPLMdCDPLKwgPNc0vLSsqszEzSfDxKUo2a0w0NDVI9c0KNivPNLCPdnSTT8oMrvEwBaqsSQzF*gWQ1NLEzNjU1NL81oAO-kvWg__
+         * userSig : eJyrVgrxCdZLrSjILEpVsjI2NDU2MzAw0AGLlqUWKVkpGekZKEH4xSnZiQUFmSlKVoYmBgbGFoZmZsYQmcyU1LySzLRMsAYTmPLMdCCvKqCySL*iOCMrOCivPMQr2STY0TAgJ8ow3cwtvMzLI8oyP9g3rDyiNDU83RaqsSQzF*gWQ1NLMwNDQ0tDs1oAZZ0wQQ__
          * vipgrade : 1
          * vipoverdue : 1597712057000
          */
 
+        private AndroidFriendMapBean androidFriendMap;
         private int balance;
         private String city;
         private String country;
-        private FriendMapBean friendMap;
         private String headimgurl;
         private int id;
         private int ispasswrod;
@@ -78,6 +81,14 @@ public class LoginModel extends Base {
         private String userSig;
         private int vipgrade;
         private long vipoverdue;
+
+        public AndroidFriendMapBean getAndroidFriendMap() {
+            return androidFriendMap;
+        }
+
+        public void setAndroidFriendMap(AndroidFriendMapBean androidFriendMap) {
+            this.androidFriendMap = androidFriendMap;
+        }
 
         public int getBalance() {
             return balance;
@@ -101,14 +112,6 @@ public class LoginModel extends Base {
 
         public void setCountry(String country) {
             this.country = country;
-        }
-
-        public FriendMapBean getFriendMap() {
-            return friendMap;
-        }
-
-        public void setFriendMap(FriendMapBean friendMap) {
-            this.friendMap = friendMap;
         }
 
         public String getHeadimgurl() {
@@ -279,43 +282,26 @@ public class LoginModel extends Base {
             this.vipoverdue = vipoverdue;
         }
 
-        public static class FriendMapBean {
-            /**
-             * 1 : 0
-             * 73520 : 1
-             * 735200 : 0
-             */
+        public static class AndroidFriendMapBean {
+            private List<Integer> friends;
+            private List<Integer> customer;
 
-            @SerializedName("1")
-            private String _$1;
-            @SerializedName("73520")
-            private String _$73520;
-            @SerializedName("735200")
-            private String _$735200;
-
-            public String get_$1() {
-                return _$1;
+            public List<Integer> getFriends() {
+                return friends;
             }
 
-            public void set_$1(String _$1) {
-                this._$1 = _$1;
+            public void setFriends(List<Integer> friends) {
+                this.friends = friends;
             }
 
-            public String get_$73520() {
-                return _$73520;
+            public List<Integer> getCustomer() {
+                return customer;
             }
 
-            public void set_$73520(String _$73520) {
-                this._$73520 = _$73520;
-            }
-
-            public String get_$735200() {
-                return _$735200;
-            }
-
-            public void set_$735200(String _$735200) {
-                this._$735200 = _$735200;
+            public void setCustomer(List<Integer> customer) {
+                this.customer = customer;
             }
         }
+
     }
 }

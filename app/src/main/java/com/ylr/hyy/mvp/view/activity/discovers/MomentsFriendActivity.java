@@ -75,7 +75,10 @@ public class MomentsFriendActivity extends BaseActivity {
                 finish();
                 break;
             case R.id.iv_firendme_sendpyq:
-                startActivity(new Intent(this,SendMomentsActivity.class));
+                Intent intent = new Intent();
+                intent.putExtra("iscircle",0);
+                intent.setClass(this,SendMomentsActivity.class);
+                startActivity(intent);
                 break;
         }
     }

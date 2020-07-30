@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.util.Log;
 import android.view.View;
 
+import com.blankj.utilcode.util.SPUtils;
 import com.google.gson.Gson;
 import com.tencent.imsdk.TIMConversationType;
 import com.tencent.qcloud.tim.uikit.modules.chat.base.ChatInfo;
@@ -37,19 +38,25 @@ public class CustomerMessageFragment extends BaseFragment {
     public void onHiddenChanged(boolean hidden) {
         super.onHiddenChanged(hidden);
         if (!hidden) {
-            conversationLayout.initDefault(2);
+            init();
         }
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        conversationLayout.initDefault(2);
+        init();
     }
 
     @Override
     protected void initDatas() {
-        conversationLayout.initDefault(2);
+
+
+    }
+
+    private void init(){
+        String[] ids = SPUtils.getInstance().getString("customer").split(",");
+        conversationLayout.initDefault(2,ids);
         conversationLayout.getConversationList().getListLayout().setOnItemClickListener(new ConversationListLayout.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position, ConversationInfo messageInfo) {
@@ -59,14 +66,13 @@ public class CustomerMessageFragment extends BaseFragment {
 //                String chatName = messageInfo.getLastMessage().getTIMMessage().getConversation().getPeer();
                 chatInfo.setType(TIMConversationType.C2C);
                 chatInfo.setId(messageInfo.getId());
-                chatInfo.setChatName("chatName");
+                chatInfo.setChatName(messageInfo.getTitle());
                 Intent intent = new Intent(activity, ChatActivity.class);
                 intent.putExtra("chatMsg", new Gson().toJson(chatInfo));
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
             }
         });
-
     }
 
     @Override

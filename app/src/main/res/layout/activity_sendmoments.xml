@@ -13,6 +13,7 @@
             android:layout_width="44dp"
             android:layout_height="match_parent"
             android:src="@drawable/turn_left"
+            android:id="@+id/iv_send_return"
             android:padding="12dp"/>
 
         <TextView
@@ -26,6 +27,7 @@
         <TextView
             android:layout_width="60dp"
             android:layout_height="30dp"
+            android:id="@+id/tv_send_moment"
             android:textSize="@dimen/text_size_15"
             android:textColor="@color/all_activity_FFFFFF"
             android:background="@drawable/re_solid_r3_purple"
@@ -43,6 +45,7 @@
         android:paddingLeft="15dp"
         android:background="@null"
         android:textSize="@dimen/text_size_15"
+        android:id="@+id/et_send_content"
         android:textColor="@color/grayBFBFBF"
         android:hint="文字描述你的想法..."/>
 
@@ -76,6 +79,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/text_size_15"
+            android:id="@+id/tv_send_address"
             android:textColor="@color/black333333"
             android:text="是否显示位置"
             android:layout_centerVertical="true"
@@ -115,6 +119,7 @@
         android:layout_height="25dp"
         android:background="@drawable/purple_lock"
         android:layout_marginRight="15dp"
+        android:id="@+id/iv_send_visibility"
         android:layout_gravity="center_vertical|right"/>
 
     <View
@@ -142,6 +147,7 @@
         <ImageView
             android:layout_width="35dp"
             android:layout_height="25dp"
+            android:id="@+id/iv_send_open"
             android:background="@drawable/purple_lock"
             android:layout_marginRight="15dp"
             android:layout_gravity="center_vertical|right"/>
@@ -157,6 +163,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="70dp"
+        android:id="@+id/rl_send_no_sees"
         android:background="@color/all_activity_FFFFFF">
 
         <TextView
@@ -174,6 +181,8 @@
             android:layout_height="wrap_content"
             android:textSize="@dimen/text_size_13"
             android:textColor="@color/grayB3B3B3"
+            android:maxLength="12"
+            android:ellipsize="end"
             android:layout_below="@id/tv_whocantsee"
             android:text="用户A，用户B，用户C, 用户D......"
             android:layout_marginLeft="15dp"
@@ -202,6 +211,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="70dp"
+        android:id="@+id/rl_send_sees"
         android:background="@color/all_activity_FFFFFF">
 
         <TextView
@@ -218,6 +228,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/text_size_13"
+            android:maxLength="12"
+            android:ellipsize="end"
             android:textColor="@color/grayB3B3B3"
             android:layout_below="@id/tv_whocansee"
             android:text="用户A，用户B，用户C, 用户D......"

@@ -2,6 +2,7 @@ package com.ylr.hyy.mvp.view.activity.login;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.text.Editable;
 import android.text.Spannable;
@@ -31,6 +32,9 @@ import com.ylr.hyy.utils.ToastUtils;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -219,12 +223,16 @@ public class LoginActivity extends BaseActivity<LoginContract.View, LoginContrac
         SPUtils.getInstance().put("token",loginModel.getData().getToken());
         SPUtils.getInstance().put("userSig",loginModel.getData().getUserSig());
         SPUtils.getInstance().put("userId",loginModel.getData().getId());
+        SPUtils.getInstance().put("friends",loginModel.getData().getAndroidFriendMap().getFriends().toString());
+        SPUtils.getInstance().put("customer",loginModel.getData().getAndroidFriendMap().getCustomer().toString());
+
         Intent intent = new Intent();
         intent.putExtra("isrealn",loginModel.getData().getIsrealn());
         intent.setClass(this,MainActivity.class);
         startActivity(intent);
         finish();
     }
+
 
     @Override
     public void getCodeSus(Base base) {
@@ -370,6 +378,7 @@ public class LoginActivity extends BaseActivity<LoginContract.View, LoginContrac
         public void onFinish() {
             tvGetCode.setText("获取验证码");
             isNowTime = true;
+            time = 59;
         }
     };
 

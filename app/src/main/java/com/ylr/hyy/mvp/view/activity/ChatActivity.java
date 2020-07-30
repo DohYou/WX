@@ -41,8 +41,8 @@ public class ChatActivity extends BaseActivity {
     protected void initDatas() {
         // 单聊面板的默认 UI 和交互初始化
         chatLayout.initDefault();
-// 传入 ChatInfo 的实例，这个实例必须包含必要的聊天信息，一般从调用方传入
-// 构造 mChatInfo 可参考 StartC2CChatActivity.java 的方法 startConversation
+        // 传入 ChatInfo 的实例，这个实例必须包含必要的聊天信息，一般从调用方传入
+        // 构造 mChatInfo 可参考 StartC2CChatActivity.java 的方法 startConversation
         String data = getIntent().getStringExtra("chatMsg");
         Type type = new TypeToken<ChatInfo>() {}.getType();
         ChatInfo chatInfo = new Gson().fromJson(data, type);

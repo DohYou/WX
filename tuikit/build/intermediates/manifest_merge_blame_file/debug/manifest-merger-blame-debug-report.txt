@@ -6,91 +6,91 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="23"
-8-->D:\ZK\AndroidStudioProject\WX-master\tuikit\src\main\AndroidManifest.xml
+8-->E:\Other\WX\tuikit\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="29" />
-9-->D:\ZK\AndroidStudioProject\WX-master\tuikit\src\main\AndroidManifest.xml
+9-->E:\Other\WX\tuikit\src\main\AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-11-->D:\ZK\AndroidStudioProject\WX-master\tuikit\src\main\AndroidManifest.xml:4:5-79
-11-->D:\ZK\AndroidStudioProject\WX-master\tuikit\src\main\AndroidManifest.xml:4:22-76
+11-->E:\Other\WX\tuikit\src\main\AndroidManifest.xml:4:5-79
+11-->E:\Other\WX\tuikit\src\main\AndroidManifest.xml:4:22-76
 12    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-12-->D:\ZK\AndroidStudioProject\WX-master\tuikit\src\main\AndroidManifest.xml:5:5-76
-12-->D:\ZK\AndroidStudioProject\WX-master\tuikit\src\main\AndroidManifest.xml:5:22-73
+12-->E:\Other\WX\tuikit\src\main\AndroidManifest.xml:5:5-76
+12-->E:\Other\WX\tuikit\src\main\AndroidManifest.xml:5:22-73
 13    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-13-->D:\ZK\AndroidStudioProject\WX-master\tuikit\src\main\AndroidManifest.xml:6:5-75
-13-->D:\ZK\AndroidStudioProject\WX-master\tuikit\src\main\AndroidManifest.xml:6:22-72
+13-->E:\Other\WX\tuikit\src\main\AndroidManifest.xml:6:5-75
+13-->E:\Other\WX\tuikit\src\main\AndroidManifest.xml:6:22-72
 14    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-14-->D:\ZK\AndroidStudioProject\WX-master\tuikit\src\main\AndroidManifest.xml:7:5-81
-14-->D:\ZK\AndroidStudioProject\WX-master\tuikit\src\main\AndroidManifest.xml:7:22-78
+14-->E:\Other\WX\tuikit\src\main\AndroidManifest.xml:7:5-81
+14-->E:\Other\WX\tuikit\src\main\AndroidManifest.xml:7:22-78
 15    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-15-->D:\ZK\AndroidStudioProject\WX-master\tuikit\src\main\AndroidManifest.xml:8:5-80
-15-->D:\ZK\AndroidStudioProject\WX-master\tuikit\src\main\AndroidManifest.xml:8:22-77
+15-->E:\Other\WX\tuikit\src\main\AndroidManifest.xml:8:5-80
+15-->E:\Other\WX\tuikit\src\main\AndroidManifest.xml:8:22-77
 16
 17    <application>
-17-->D:\ZK\AndroidStudioProject\WX-master\tuikit\src\main\AndroidManifest.xml:10:5-44:19
+17-->E:\Other\WX\tuikit\src\main\AndroidManifest.xml:10:5-44:19
 18        <activity
-18-->D:\ZK\AndroidStudioProject\WX-master\tuikit\src\main\AndroidManifest.xml:11:9-13:52
+18-->E:\Other\WX\tuikit\src\main\AndroidManifest.xml:11:9-13:52
 19            android:name="com.tencent.qcloud.tim.uikit.component.video.CameraActivity"
-19-->D:\ZK\AndroidStudioProject\WX-master\tuikit\src\main\AndroidManifest.xml:12:13-59
+19-->E:\Other\WX\tuikit\src\main\AndroidManifest.xml:12:13-59
 20            android:screenOrientation="portrait" />
-20-->D:\ZK\AndroidStudioProject\WX-master\tuikit\src\main\AndroidManifest.xml:13:13-49
+20-->E:\Other\WX\tuikit\src\main\AndroidManifest.xml:13:13-49
 21        <activity
-21-->D:\ZK\AndroidStudioProject\WX-master\tuikit\src\main\AndroidManifest.xml:14:9-16:77
+21-->E:\Other\WX\tuikit\src\main\AndroidManifest.xml:14:9-16:77
 22            android:name="com.tencent.qcloud.tim.uikit.component.video.VideoViewActivity"
-22-->D:\ZK\AndroidStudioProject\WX-master\tuikit\src\main\AndroidManifest.xml:15:13-62
+22-->E:\Other\WX\tuikit\src\main\AndroidManifest.xml:15:13-62
 23            android:configChanges="keyboardHidden|orientation|screenSize" />
-23-->D:\ZK\AndroidStudioProject\WX-master\tuikit\src\main\AndroidManifest.xml:16:13-74
+23-->E:\Other\WX\tuikit\src\main\AndroidManifest.xml:16:13-74
 24        <activity
-24-->D:\ZK\AndroidStudioProject\WX-master\tuikit\src\main\AndroidManifest.xml:17:9-19:52
+24-->E:\Other\WX\tuikit\src\main\AndroidManifest.xml:17:9-19:52
 25            android:name="com.tencent.qcloud.tim.uikit.component.photoview.PhotoViewActivity"
-25-->D:\ZK\AndroidStudioProject\WX-master\tuikit\src\main\AndroidManifest.xml:18:13-66
+25-->E:\Other\WX\tuikit\src\main\AndroidManifest.xml:18:13-66
 26            android:screenOrientation="portrait" />
-26-->D:\ZK\AndroidStudioProject\WX-master\tuikit\src\main\AndroidManifest.xml:19:13-49
+26-->E:\Other\WX\tuikit\src\main\AndroidManifest.xml:19:13-49
 27        <activity
-27-->D:\ZK\AndroidStudioProject\WX-master\tuikit\src\main\AndroidManifest.xml:20:9-22:52
+27-->E:\Other\WX\tuikit\src\main\AndroidManifest.xml:20:9-22:52
 28            android:name="com.tencent.qcloud.tim.uikit.modules.group.info.GroupInfoActivity"
-28-->D:\ZK\AndroidStudioProject\WX-master\tuikit\src\main\AndroidManifest.xml:21:13-65
+28-->E:\Other\WX\tuikit\src\main\AndroidManifest.xml:21:13-65
 29            android:screenOrientation="portrait" />
-29-->D:\ZK\AndroidStudioProject\WX-master\tuikit\src\main\AndroidManifest.xml:22:13-49
+29-->E:\Other\WX\tuikit\src\main\AndroidManifest.xml:22:13-49
 30        <activity
-30-->D:\ZK\AndroidStudioProject\WX-master\tuikit\src\main\AndroidManifest.xml:23:9-25:52
+30-->E:\Other\WX\tuikit\src\main\AndroidManifest.xml:23:9-25:52
 31            android:name="com.tencent.qcloud.tim.uikit.component.SelectionActivity"
-31-->D:\ZK\AndroidStudioProject\WX-master\tuikit\src\main\AndroidManifest.xml:24:13-56
+31-->E:\Other\WX\tuikit\src\main\AndroidManifest.xml:24:13-56
 32            android:screenOrientation="portrait" />
-32-->D:\ZK\AndroidStudioProject\WX-master\tuikit\src\main\AndroidManifest.xml:25:13-49
+32-->E:\Other\WX\tuikit\src\main\AndroidManifest.xml:25:13-49
 33        <activity
-33-->D:\ZK\AndroidStudioProject\WX-master\tuikit\src\main\AndroidManifest.xml:26:9-29:73
+33-->E:\Other\WX\tuikit\src\main\AndroidManifest.xml:26:9-29:73
 34            android:name="com.tencent.qcloud.tim.uikit.modules.group.apply.GroupApplyManagerActivity"
-34-->D:\ZK\AndroidStudioProject\WX-master\tuikit\src\main\AndroidManifest.xml:27:13-74
+34-->E:\Other\WX\tuikit\src\main\AndroidManifest.xml:27:13-74
 35            android:screenOrientation="portrait"
-35-->D:\ZK\AndroidStudioProject\WX-master\tuikit\src\main\AndroidManifest.xml:28:13-49
+35-->E:\Other\WX\tuikit\src\main\AndroidManifest.xml:28:13-49
 36            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
-36-->D:\ZK\AndroidStudioProject\WX-master\tuikit\src\main\AndroidManifest.xml:29:13-70
+36-->E:\Other\WX\tuikit\src\main\AndroidManifest.xml:29:13-70
 37        <activity
-37-->D:\ZK\AndroidStudioProject\WX-master\tuikit\src\main\AndroidManifest.xml:30:9-33:73
+37-->E:\Other\WX\tuikit\src\main\AndroidManifest.xml:30:9-33:73
 38            android:name="com.tencent.qcloud.tim.uikit.modules.group.apply.GroupApplyMemberActivity"
-38-->D:\ZK\AndroidStudioProject\WX-master\tuikit\src\main\AndroidManifest.xml:31:13-73
+38-->E:\Other\WX\tuikit\src\main\AndroidManifest.xml:31:13-73
 39            android:screenOrientation="portrait"
-39-->D:\ZK\AndroidStudioProject\WX-master\tuikit\src\main\AndroidManifest.xml:32:13-49
+39-->E:\Other\WX\tuikit\src\main\AndroidManifest.xml:32:13-49
 40            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
-40-->D:\ZK\AndroidStudioProject\WX-master\tuikit\src\main\AndroidManifest.xml:33:13-70
+40-->E:\Other\WX\tuikit\src\main\AndroidManifest.xml:33:13-70
 41
 42        <provider
-42-->D:\ZK\AndroidStudioProject\WX-master\tuikit\src\main\AndroidManifest.xml:35:9-43:20
+42-->E:\Other\WX\tuikit\src\main\AndroidManifest.xml:35:9-43:20
 43            android:name="com.tencent.qcloud.tim.uikit.utils.TUIKitFileProvider"
-43-->D:\ZK\AndroidStudioProject\WX-master\tuikit\src\main\AndroidManifest.xml:36:13-53
+43-->E:\Other\WX\tuikit\src\main\AndroidManifest.xml:36:13-53
 44            android:authorities="${applicationId}.uikit.fileprovider"
-44-->D:\ZK\AndroidStudioProject\WX-master\tuikit\src\main\AndroidManifest.xml:37:13-70
+44-->E:\Other\WX\tuikit\src\main\AndroidManifest.xml:37:13-70
 45            android:exported="false"
-45-->D:\ZK\AndroidStudioProject\WX-master\tuikit\src\main\AndroidManifest.xml:38:13-37
+45-->E:\Other\WX\tuikit\src\main\AndroidManifest.xml:38:13-37
 46            android:grantUriPermissions="true" >
-46-->D:\ZK\AndroidStudioProject\WX-master\tuikit\src\main\AndroidManifest.xml:39:13-47
+46-->E:\Other\WX\tuikit\src\main\AndroidManifest.xml:39:13-47
 47            <meta-data
-47-->D:\ZK\AndroidStudioProject\WX-master\tuikit\src\main\AndroidManifest.xml:40:13-42:60
+47-->E:\Other\WX\tuikit\src\main\AndroidManifest.xml:40:13-42:60
 48                android:name="android.support.FILE_PROVIDER_PATHS"
-48-->D:\ZK\AndroidStudioProject\WX-master\tuikit\src\main\AndroidManifest.xml:41:17-67
+48-->E:\Other\WX\tuikit\src\main\AndroidManifest.xml:41:17-67
 49                android:resource="@xml/file_paths_public" />
-49-->D:\ZK\AndroidStudioProject\WX-master\tuikit\src\main\AndroidManifest.xml:42:17-58
+49-->E:\Other\WX\tuikit\src\main\AndroidManifest.xml:42:17-58
 50        </provider>
 51    </application>
 52

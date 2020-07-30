@@ -54,17 +54,15 @@ public class PeopleMessageFragment extends BaseFragment {
     }
 
     private void initIM(){
-        conversationLayout.initDefault(3);
+        conversationLayout.initDefault(3,null);
         conversationLayout.getConversationList().getListLayout().setOnItemClickListener(new ConversationListLayout.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position, ConversationInfo messageInfo) {
                 Log.i(IM_SDK, "跳转: "+new Gson().toJson(messageInfo));
-
                 ChatInfo chatInfo = new ChatInfo();
                 chatInfo.setType(TIMConversationType.Group);
-                String chatName = messageInfo.getLastMessage().getExtra()+"(" + messageInfo.getLastMessage().getFromUser() + ")";
                 chatInfo.setId(messageInfo.getId());
-                chatInfo.setChatName(chatName);
+                chatInfo.setChatName(messageInfo.getTitle());
                 Intent intent = new Intent(activity, ChatActivity.class);
                 intent.putExtra("chatMsg", new Gson().toJson(chatInfo));
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

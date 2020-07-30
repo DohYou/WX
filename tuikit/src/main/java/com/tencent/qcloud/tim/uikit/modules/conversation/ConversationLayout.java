@@ -17,6 +17,7 @@ import com.tencent.qcloud.tim.uikit.modules.conversation.interfaces.IConversatio
 import com.tencent.qcloud.tim.uikit.utils.ToastUtil;
 
 import java.lang.reflect.Type;
+import java.util.List;
 
 public class ConversationLayout extends RelativeLayout implements IConversationLayout {
     public static final String IM_SDK = "TXIM";//区分腾讯im日志
@@ -55,7 +56,7 @@ public class ConversationLayout extends RelativeLayout implements IConversationL
      *
      * @param msgType  1好友消息  2客户消息  3群消息
      */
-    public void initDefault(final int msgType) {
+    public void initDefault(final int msgType, final String[] ids) {
         mTitleBarLayout.setTitle(getResources().getString(R.string.conversation_title), TitleBarLayout.POSITION.MIDDLE);
         mTitleBarLayout.getLeftGroup().setVisibility(View.GONE);
         mTitleBarLayout.setRightIcon(R.drawable.conversation_more);
@@ -69,40 +70,50 @@ public class ConversationLayout extends RelativeLayout implements IConversationL
                 Log.i(IM_SDK, "onSuccess: "+model);
                 Type type = new TypeToken<ConversationProvider>() {}.getType();
                 ConversationProvider base = new Gson().fromJson(model, type);
+
+
                 for (int i = 0; i < base.getDataSource().size(); i++) {
                     Log.i(IM_SDK, "第"+i+"条数据= " + new Gson().toJson(base.getDataSource().get(i)));
                     if (msgType == 1) {//是好友消息就把群消息和客户消息删除掉
-                        if (base.getDataSource().get(i).isGroup() || base.getDataSource().get(i).getLastMessage() != null
-                                && base.getDataSource().get(i).getLastMessage().getTIMMessage() != null
-                                && base.getDataSource().get(i).getLastMessage().getTIMMessage().getConversation() != null
-                                && !base.getDataSource().get(i).getLastMessage().getTIMMessage().getConversation().getPeer().equals("735200")) {
-                            //这里我们要的是好友消息
-                            //我们isGroup代表是否是群消息
-                            //如果是   那么我们把这条消息删了
-                            //deleteConversation   删除了之后这条消息就不见了
-                            //123456    当i是2的时候会把第3条删除  那么第4条就会
-                            //变成第3条    因为没有第3条了1 1
-                            //然后当下次循环的时候   i是3   那么12456取出来的是第5条数据
-                            //然后就会变成第4条没有判断  会漏掉他
+//                        if (base.getDataSource().get(i).isGroup() || base.getDataSource().get(i).getLastMessage() != null
+//                                && base.getDataSource().get(i).getLastMessage().getTIMMessage() != null
+//                                && base.getDataSource().get(i).getLastMessage().getTIMMessage().getConversation() != null
+//                                && !base.getDataSource().get(i).getLastMessage().getTIMMessage().getConversation().getPeer().equals("735200")) {
+//                            base.deleteConversation(i);
+//                            i--;
+//                        }
+
+                        if (base.getDataSource().get(i).isGroup()){
                             base.deleteConversation(i);
-                            //所以这个地方只要删除了一条数据 i就减1   重新判断当前这条数据
+                            i--;
+                        }else {//判断当前获取的消息列表是否是好友的消息列表   把不是好友的消息列表删除
+                            for (int i1 = 0; i1 < ids.length; i1++) {
+                                if (ids[i1].equals(base.getDataSource().get(i).getId())) {
+                                    break;
+                                }
+                            }
+                            base.deleteConversation(i);
                             i--;
                         }
+
                     }else if (msgType == 2) {//是客户消息 就把……
-                        if (base.getDataSource().get(i).isGroup() || base.getDataSource().get(i).getLastMessage() != null
-                                && base.getDataSource().get(i).getLastMessage().getTIMMessage() != null
-                                && base.getDataSource().get(i).getLastMessage().getTIMMessage().getConversation() != null
-                                && base.getDataSource().get(i).getLastMessage().getTIMMessage().getConversation().getPeer().equals("735200")) {
-                            //这里我们要的是好友消息
-                            //我们isGroup代表是否是群消息
-                            //如果是   那么我们把这条消息删了
-                            //deleteConversation   删除了之后这条消息就不见了
-                            //123456    当i是2的时候会把第3条删除  那么第4条就会
-                            //变成第3条    因为没有第3条了1 1
-                            //然后当下次循环的时候   i是3   那么12456取出来的是第5条数据
-                            //然后就会变成第4条没有判断  会漏掉他
+//                        if (base.getDataSource().get(i).isGroup() || base.getDataSource().get(i).getLastMessage() != null
+//                                && base.getDataSource().get(i).getLastMessage().getTIMMessage() != null
+//                                && base.getDataSource().get(i).getLastMessage().getTIMMessage().getConversation() != null
+//                                && base.getDataSource().get(i).getLastMessage().getTIMMessage().getConversation().getPeer().equals("735200")) {
+//                            base.deleteConversation(i);
+//                            i--;
+//                        }
+                        if (base.getDataSource().get(i).isGroup()){
                             base.deleteConversation(i);
-                            //所以这个地方只要删除了一条数据 i就减1   重新判断当前这条数据
+                            i--;
+                        }else {
+                            for (int i1 = 0; i1 < ids.length; i1++) {
+                                if (ids[i1].equals(base.getDataSource().get(i).getId())) {
+                                    break;
+                                }
+                            }
+                            base.deleteConversation(i);
                             i--;
                         }
                     }else if (msgType == 3) {//是群聊消息 就把……

@@ -75,7 +75,10 @@ public class MomentsCustomerActivity extends BaseActivity {
                 finish();
                 break;
             case R.id.iv_customerq_sendpyq:
-                startActivity(new Intent(this,SendMomentsActivity.class));
+                Intent intent = new Intent();
+                intent.putExtra("iscircle",1);
+                intent.setClass(this,SendMomentsActivity.class);
+                startActivity(intent);
                 break;
         }
     }

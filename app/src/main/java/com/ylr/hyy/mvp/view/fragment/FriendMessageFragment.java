@@ -117,17 +117,17 @@ public class FriendMessageFragment extends BaseFragment implements TIMMessageLis
     };
 
     private void init(){
-        conversationLayout.initDefault(1);//INIT  并且up消息列表 2
+        String[] ids = SPUtils.getInstance().getString("friends").split(",");
+        conversationLayout.initDefault(1,ids);//INIT  并且up消息列表 2
         //列表好友点击事件    跳转聊天记录
         conversationLayout.getConversationList().getListLayout().setOnItemClickListener(new ConversationListLayout.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position, ConversationInfo messageInfo) {
                 Log.i(TAG, "onItemClick: "+new Gson().toJson(messageInfo));
                 ChatInfo chatInfo = new ChatInfo();
-//                    String chatName = messageInfo.getLastMessage().getTIMMessage().getConversation().getPeer();
                 chatInfo.setType(TIMConversationType.C2C);
                 chatInfo.setId(messageInfo.getId());
-                chatInfo.setChatName("chatName");
+                chatInfo.setChatName(messageInfo.getTitle());
                 Intent intent = new Intent(activity, ChatActivity.class);
                 intent.putExtra("chatMsg", new Gson().toJson(chatInfo));
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
