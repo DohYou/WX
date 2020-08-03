@@ -17,6 +17,14 @@ public class MomentsModel extends Base {
     }
 
     public static class DataBean {
+        public void setHandimg(String handimg) {
+            this.handimg = handimg;
+        }
+
+        public void setNickname(String nickname) {
+            this.nickname = nickname;
+        }
+
         /**
          * id : 13
          * writtenwords : 我是aisibi,第二个圈子,所有人可以看看
@@ -32,6 +40,29 @@ public class MomentsModel extends Base {
          * evea : [{"id":2,"userid":2,"friendid":13,"usernickname":"用户8193","creattime":1592209946000,"content":"我给自己评价","altuserid":"","altnickname":""}]
          * fabulous : [{"id":14,"userid":2,"friendid":13,"usernickname":"用户昵称_8192","creattime":1592205318000},{"id":12,"userid":1,"friendid":13,"usernickname":"aisibi","creattime":1592204796000}]
          */
+
+
+
+        private int likeuself;
+
+        public int getLikeuself() {
+            return likeuself;
+        }
+
+        public void setLikeuself(int likeuself) {
+            this.likeuself = likeuself;
+        }
+
+        private String handimg;
+        private String nickname;
+
+        public String getNickname() {
+            return nickname;
+        }
+
+        public String getHandimg() {
+            return handimg;
+        }
 
         private int id;
         private String writtenwords;

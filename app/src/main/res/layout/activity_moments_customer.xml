@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@color/grayF5F5F5"
     xmlns:android="http://schemas.android.com/apk/res/android">
@@ -45,11 +46,15 @@
                 android:layout_height="161dp"
                 android:background="@color/black333333">
 
-                <ImageView
+                <com.ylr.hyy.utils.RoundImageView
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:background="@drawable/re_solid_r37_white"
                     android:layout_gravity="bottom"
+                    app:round_topLeft="30dp"
+                    app:round_bottomLeft="30dp"
+                    app:round_bottomRight="30dp"
+                    app:round_topRight="30dp"
+                    app:round_type="0"
                     android:layout_marginBottom="17dp"
                     android:layout_marginLeft="15dp"
                     android:id="@+id/iv_customermoments_header"/>
@@ -64,7 +69,7 @@
                         android:textSize="@dimen/text_size_19"
                         android:textColor="@color/all_activity_FFFFFF"
                         android:gravity="center"
-                        android:text="赫敏格兰杰"
+                        android:text="-"
                         android:layout_marginLeft="90dp"
                         android:id="@+id/tv_customerfriendmoments_name"
                         android:layout_marginTop="84dp"/>
@@ -73,7 +78,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/text_size_14"
-                        android:text="签名签名签名签名签名~"
+                        android:text="-~"
                         android:textColor="@color/all_activity_FFFFFF"
                         android:id="@+id/tv_friendmoments_sign"
                         android:layout_below="@id/tv_customerfriendmoments_name"

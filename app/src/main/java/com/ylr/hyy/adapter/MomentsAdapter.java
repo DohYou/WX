@@ -1,6 +1,9 @@
 package com.ylr.hyy.adapter;
 
 import android.content.Context;
+import android.icu.text.DateFormat;
+import android.icu.text.SimpleDateFormat;
+import android.net.ParseException;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,10 +21,13 @@ import com.ylr.hyy.utils.NinthPalaceViewGroup;
 import com.ylr.hyy.utils.RoundImageView;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class MomentsAdapter extends RecyclerView.Adapter<MomentsAdapter.ViewHolder> {
     private Context mContext;
+    private int pos;
     public MomentsAdapter(Context context){
         mContext = context;
         list  = new ArrayList<>();
@@ -39,6 +45,12 @@ public class MomentsAdapter extends RecyclerView.Adapter<MomentsAdapter.ViewHold
         notifyDataSetChanged();
     }
 
+    public void upData(MomentsModel.DataBean dataBean){
+        this.list.remove(pos);
+        this.list.add(pos,dataBean);
+        notifyItemChanged(pos);
+    }
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -48,14 +60,16 @@ public class MomentsAdapter extends RecyclerView.Adapter<MomentsAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-//        Glide.with(mContext).load(list.get(position).get)
+        Glide.with(mContext).load(list.get(position).getHandimg()).into(holder.roundImageView);
+        holder.tvName.setText(list.get(position).getNickname());
+        holder.tvContent.setText(list.get(position).getWrittenwords());
         holder.ninthPalaceViewGroup.clearImg();
+        holder.tvTime.setText(getDateToString(list.get(position).getCreattime()));
 
         if (!TextUtils.isEmpty(list.get(position).getImgs())) {
             String [] img = list.get(position).getImgs().split(",");
             holder.ninthPalaceViewGroup.addChild(img);
         }
-
         if (TextUtils.isEmpty(list.get(position).getVideos())) {
             holder.ivVideo.setVisibility(View.GONE);
         }else {
@@ -64,6 +78,22 @@ public class MomentsAdapter extends RecyclerView.Adapter<MomentsAdapter.ViewHold
 
         holder.tvComment.setText(list.get(position).getEvea().size()+"");
         holder.tvLike.setText(list.get(position).getFabulous().size()+"");
+
+        holder.tvLike.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                pos = position;
+                onItemClickListener.like(list.get(position).getId(),list.get(position).getLikeuself(),list.get(position));
+            }
+        });
+
+        holder.tvComment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                pos = position;
+                onItemClickListener.reply(list.get(position).getId(),list.get(position).getNickname(),list.get(position));
+            }
+        });
 
     }
 
@@ -90,5 +120,34 @@ public class MomentsAdapter extends RecyclerView.Adapter<MomentsAdapter.ViewHold
             ivLike = itemView.findViewById(R.id.iv_item_zan);
             ninthPalaceViewGroup = itemView.findViewById(R.id.ninth_item);
         }
+    }
+
+    private String DateFormat(String data){
+        String[] strs=data.split("T");
+        return strs[0];
+    }
+
+
+    /**
+     * 时间戳转换成字符窜
+     * @param milSecond
+     * @return
+     */
+    private String getDateToString(long milSecond) {
+        Date date = new Date(milSecond);
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+        return DateFormat(format.format(date));
+    }
+
+
+    public interface OnItemClickListener{
+        void like(int id, int type, MomentsModel.DataBean dataBean);
+        void reply(int id,String name,MomentsModel.DataBean dataBean);
+    }
+
+    private OnItemClickListener onItemClickListener;
+
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+        this.onItemClickListener = onItemClickListener;
     }
 }

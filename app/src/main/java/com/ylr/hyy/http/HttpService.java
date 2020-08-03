@@ -208,4 +208,11 @@ public interface HttpService {
     @POST("LooksMoments")
     Observable<MomentsModel> upMomentsList(@Body RequestBody body);
 
+    //点赞
+    @POST("FabulousMoments")
+    Observable<Base> fabulous (@Body RequestBody body);
+
+    //回复
+    @POST("EveaMoments")
+    Observable<Base> reply(@Body RequestBody body);
 }

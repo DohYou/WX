@@ -215,12 +215,6 @@ public class MeFragment extends BaseFragment<MeDetailsContract.View,MeDetailsCon
     @Override
     public void upMeInfoSus(MeDetailsModel meDetailsModel) {
         disMissDialog();
-        Log.i(TAG, "upMeInfoSus: "+new Gson().toJson(meDetailsModel));
-        String data = "{\"data\":{\"balance\":0,\"city\":\"\",\"country\":\"东城区\",\"headimgurl\":\"https://image.renlaibang.com/image_1594635515373\",\"id\":4,\"ispasswrod\":0,\"isrealn\":1,\"nickname\":\"面对疾风吧\",\"onlyaccount\":\"12580\",\"onlyid\":\"97009\",\"paypass\":1,\"phone\":\"18583368210\",\"province\":\"北京市\",\"question\":\"\",\"recommender\":\"97009\",\"recommenderurl\":\"baidu.com\",\"sex\":2,\"signature\":\"啦啦啦啦\",\"status\":1,\"vipgrade\":1,\"vipoverdue\":1597712057000},\"code\":200,\"msg\":\"\",\"success\":true}";
-        Type type = new TypeToken<MeDetailsModel>() {}.getType();
-        MeDetailsModel meDetailsModel1 = new Gson().fromJson(data, type);
-        Log.i(TAG, "upMeInfoSus: "+meDetailsModel.getData().getSignature());
-
         GlideEngine.loadImage(rivHead,meDetailsModel.getData().getHeadimgurl());
         tvName.setText(meDetailsModel.getData().getNickname());
         tvId.setText("我的ID："+meDetailsModel.getData().getId());

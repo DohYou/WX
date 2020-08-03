@@ -19,7 +19,6 @@ import java.util.List;
  */
 
 public class NinthPalaceViewGroup extends ViewGroup {
-    private static final String TAG = "NinthPalaceViewGroup";
     private Context context;
     private int itemWidth;
     private int itemGap;//todo 自定义属性
@@ -113,7 +112,6 @@ public class NinthPalaceViewGroup extends ViewGroup {
         if (getChildCount() == 1) {
             widthSpec = MeasureSpec.makeMeasureSpec(44, MeasureSpec.EXACTLY);
             heightSpec = widthSpec;
-            Log.i(TAG, "onMeasure: ");
         } else {
             widthSpec = MeasureSpec.makeMeasureSpec(itemWidth, MeasureSpec.EXACTLY);
             heightSpec = MeasureSpec.makeMeasureSpec(itemWidth, MeasureSpec.EXACTLY);
@@ -135,7 +133,6 @@ public class NinthPalaceViewGroup extends ViewGroup {
     protected void onLayout(boolean b, int l, int t, int r, int bot) {
         //1、只有一个孩子
         if (getChildCount() == 1) {
-            Log.i(TAG, "onLayout: " + getChildAt(0).getHeight());
             getChildAt(0).layout(0, 0, SizeUtils.dp2px(220),  SizeUtils.dp2px(220));
 
         } else if (getChildCount() == 4) {//2、4个孩子
