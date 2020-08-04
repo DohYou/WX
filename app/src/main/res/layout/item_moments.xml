@@ -97,7 +97,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="20dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:paddingLeft="40dp"
+            android:paddingRight="30dp"
             android:layout_alignParentRight="true"
             android:textSize="@dimen/text_size_12"
             android:textColor="@color/grayB3B3B3"
@@ -108,29 +111,52 @@
             android:layout_centerVertical="true"
             android:layout_toLeftOf="@+id/tv_item_comments"
             android:layout_height="18dp"
-            android:background="@drawable/huifu"
+            android:background="@drawable/friendfrag_msg"
+            android:layout_marginRight="-28dp"
             android:id="@+id/iv_item_comments"/>
 
 
         <TextView
-            android:layout_marginRight="12dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="20dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:paddingLeft="40dp"
+            android:paddingRight="30dp"
             android:layout_toLeftOf="@+id/iv_item_comments"
             android:textSize="@dimen/text_size_12"
             android:textColor="@color/grayB3B3B3"
             android:id="@+id/tv_item_zan"/>
 
         <ImageView
+            android:layout_marginRight="-28dp"
             android:layout_width="18dp"
             android:layout_centerVertical="true"
             android:layout_toLeftOf="@+id/tv_item_zan"
             android:layout_height="18dp"
-            android:background="@drawable/huifu"
             android:id="@+id/iv_item_zan"/>
 
 
     </RelativeLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        android:background="#EEEEEE"
+        android:id="@+id/tv_item_like_num"
+        android:gravity="center_vertical"
+        android:drawablePadding="4dp"
+        android:text="1321231321"
+        android:textSize="@dimen/text_size_14"
+        android:textColor="#999"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/ll_comment_list"/>
 
 </LinearLayout>

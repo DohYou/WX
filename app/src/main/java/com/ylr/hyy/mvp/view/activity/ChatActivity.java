@@ -1,5 +1,8 @@
 package com.ylr.hyy.mvp.view.activity;
 
+import android.content.Intent;
+import android.util.Log;
+
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.tencent.qcloud.tim.uikit.modules.chat.ChatLayout;
@@ -27,6 +30,7 @@ public class ChatActivity extends BaseActivity {
 
     }
 
+    private static final String TAG = "ChatActivity";
     @Override
     protected BaseContract.BasePresenter initPresenter() {
         return null;
@@ -41,6 +45,11 @@ public class ChatActivity extends BaseActivity {
     protected void initDatas() {
         // 单聊面板的默认 UI 和交互初始化
         chatLayout.initDefault();
+        chatLayout.setOnRightListener(() -> {
+            Log.i(TAG, "initDatas: ");
+            Intent intent = new Intent();
+//            intent.setClass()
+        });
         // 传入 ChatInfo 的实例，这个实例必须包含必要的聊天信息，一般从调用方传入
         // 构造 mChatInfo 可参考 StartC2CChatActivity.java 的方法 startConversation
         String data = getIntent().getStringExtra("chatMsg");

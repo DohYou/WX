@@ -34,6 +34,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:hint="请输入手机号"
+                android:text="18583368210"
                 android:theme="@style/InputEditText"
                 android:inputType="number"
                 android:textColor="@color/black333333"

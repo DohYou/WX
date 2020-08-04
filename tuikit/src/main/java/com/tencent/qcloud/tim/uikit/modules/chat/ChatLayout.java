@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 
 import androidx.annotation.Nullable;
@@ -71,9 +72,10 @@ public class ChatLayout extends AbsChatLayout implements GroupChatManagerKit.Gro
                 @Override
                 public void onClick(View view) {
                     if (mGroupInfo != null) {
-                        Intent intent = new Intent(getContext(), GroupInfoActivity.class);
-                        intent.putExtra(TUIKitConstants.Group.GROUP_ID, mGroupInfo.getId());
-                        getContext().startActivity(intent);
+                        onRightListener.right();
+//                        Intent intent = new Intent(getContext(), GroupInfoActivity.class);
+//                        intent.putExtra(TUIKitConstants.Group.GROUP_ID, mGroupInfo.getId());
+//                        getContext().startActivity(intent);
                     } else {
                         ToastUtil.toastLongMessage("请稍后再试试~");
                     }
@@ -102,6 +104,16 @@ public class ChatLayout extends AbsChatLayout implements GroupChatManagerKit.Gro
         } else {
             return mC2CChatManager;
         }
+    }
+
+    public interface OnRightListener{
+        void right();
+    }
+
+    private OnRightListener onRightListener;
+
+    public void setOnRightListener(OnRightListener onRightListener) {
+        this.onRightListener = onRightListener;
     }
 
     private void loadApplyList() {

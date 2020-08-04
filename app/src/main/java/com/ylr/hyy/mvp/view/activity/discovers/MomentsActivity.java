@@ -29,6 +29,7 @@ import com.ylr.hyy.mvp.contract.MomentsContract;
 import com.ylr.hyy.mvp.model.MeDetailsModel;
 import com.ylr.hyy.mvp.model.MomentsModel;
 import com.ylr.hyy.mvp.presenter.MomentsPresenter;
+import com.ylr.hyy.mvp.view.dialog.InputDialog;
 import com.ylr.hyy.utils.RVSpace;
 import com.ylr.hyy.utils.RoundImageView;
 import com.ylr.hyy.utils.ToastUtils;
@@ -72,6 +73,7 @@ public class MomentsActivity extends BaseActivity<MomentsContract.View,MomentsCo
 
     private MomentsAdapter adapter;
     private MomentsModel.DataBean dataBean;
+    private InputDialog inputDialog = null;
 
     @Override
     protected int getLayoutId() {
@@ -108,22 +110,16 @@ public class MomentsActivity extends BaseActivity<MomentsContract.View,MomentsCo
         RequestBody body = RequestBody.create(MediaType.parse(HttpType),"{}");
         mPresenter.upMeInfo(body);
 
-        smartRefreshLayout.setOnRefreshListener(new OnRefreshListener() {
-            @Override
-            public void onRefresh(@NonNull RefreshLayout refreshLayout) {
-                page = 1;
-                isRefresh = true;
-                up();
-            }
+        smartRefreshLayout.setOnRefreshListener(refreshLayout -> {
+            page = 1;
+            isRefresh = true;
+            up();
         });
 
-        smartRefreshLayout.setOnLoadMoreListener(new OnLoadMoreListener() {
-            @Override
-            public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
-                page ++;
-                isRefresh = false;
-                up();
-            }
+        smartRefreshLayout.setOnLoadMoreListener(refreshLayout -> {
+            page ++;
+            isRefresh = false;
+            up();
         });
 
         adapter.setOnItemClickListener(new MomentsAdapter.OnItemClickListener() {
@@ -140,7 +136,7 @@ public class MomentsActivity extends BaseActivity<MomentsContract.View,MomentsCo
                 showDialog();
                 if (type == 1) {
                     for (int i = 0; i < dataBean.getFabulous().size(); i++) {
-                        if (dataBean.getFabulous().get(i).getId() == meDetailsModelData.getId()) {
+                        if (dataBean.getFabulous().get(i).getUserid() == meDetailsModelData.getId()) {
                             dataBean.setLikeuself(0);
                             dataBean.getFabulous().remove(i);
                         }
@@ -148,9 +144,7 @@ public class MomentsActivity extends BaseActivity<MomentsContract.View,MomentsCo
                 }else {
                     dataBean.setLikeuself(1);
                     MomentsModel.DataBean.FabulousBean fabulousBean = new MomentsModel.DataBean.FabulousBean();
-                    fabulousBean.setId(meDetailsModelData.getId());
-                    fabulousBean.setCreattime(System.currentTimeMillis());
-                    fabulousBean.setFriendid(id);
+                    fabulousBean.setUserid(meDetailsModelData.getId());
                     fabulousBean.setUsernickname(meDetailsModelData.getNickname());
                     dataBean.getFabulous().add(fabulousBean);
                 }
@@ -174,8 +168,24 @@ public class MomentsActivity extends BaseActivity<MomentsContract.View,MomentsCo
                 }
                 MomentsActivity.this.dataBean = dataBean;
                 JsonObject jsonObject = new JsonObject();
-                jsonObject.addProperty("fabulousid",id);
-
+                jsonObject.addProperty("friendid",id);
+                if (inputDialog == null) {
+                    inputDialog = new InputDialog();
+                    inputDialog.setOnCommentListener(content -> {
+                        showDialog();
+                        MomentsModel.DataBean.EveaBean eveaBean = new MomentsModel.DataBean.EveaBean();
+                        eveaBean.setContent(content);
+                        eveaBean.setUsernickname(name);
+                        MomentsActivity.this.dataBean.getEvea().add(eveaBean);
+                        jsonObject.addProperty("usernickname",name);
+                        jsonObject.addProperty("content",content);
+                        inputDialog.clearText();
+                        RequestBody body1 = RequestBody.create(MediaType.parse(HttpType),jsonObject.toString());
+                        mPresenter.reply(body1);
+                    });
+                }
+                inputDialog.setDialogHint("回复 " + name + " ：");
+                inputDialog.show(getSupportFragmentManager(),"");
             }
         });
     }

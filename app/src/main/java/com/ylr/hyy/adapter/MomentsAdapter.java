@@ -1,19 +1,29 @@
 package com.ylr.hyy.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.icu.text.DateFormat;
 import android.icu.text.SimpleDateFormat;
 import android.net.ParseException;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
+import android.text.method.LinkMovementMethod;
+import android.text.style.ClickableSpan;
+import android.text.style.ForegroundColorSpan;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.blankj.utilcode.util.SizeUtils;
 import com.bumptech.glide.Glide;
 import com.ylr.hyy.R;
 import com.ylr.hyy.mvp.model.MomentsModel;
@@ -58,6 +68,7 @@ public class MomentsAdapter extends RecyclerView.Adapter<MomentsAdapter.ViewHold
         return new ViewHolder(view);
     }
 
+    private static final String TAG = "MomentsAdapter";
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Glide.with(mContext).load(list.get(position).getHandimg()).into(holder.roundImageView);
@@ -76,23 +87,74 @@ public class MomentsAdapter extends RecyclerView.Adapter<MomentsAdapter.ViewHold
             holder.ivVideo.setVisibility(View.VISIBLE);
         }
 
+        if (list.get(position).getLikeuself() == 0) {
+            Glide.with(mContext).load(R.drawable.heart_nocheck).into(holder.ivLike);
+        }else {
+            Glide.with(mContext).load(R.drawable.heart_check).into(holder.ivLike);
+        }
+
+        //点赞
+        if (list.get(position).getFabulous().size() != 0) {
+            Drawable drawableLeft = mContext.getDrawable(R.drawable.heart_check);
+            Log.i(TAG, "onBindViewHolder: "+drawableLeft.getMinimumWidth());
+            drawableLeft.setBounds(0, 0, SizeUtils.dp2px(16),SizeUtils.dp2px(16));
+            holder.tvLikeNum.setCompoundDrawables(drawableLeft,null, null, null);
+
+            holder.tvLikeNum.setVisibility(View.VISIBLE);
+            StringBuilder buffer = new StringBuilder();
+            for (int i = 0; i < list.get(position).getFabulous().size(); i++) {
+                buffer.append(list.get(position).getFabulous().get(i).getUsernickname()+"、");
+            }
+            SpannableStringBuilder spannable = new SpannableStringBuilder(buffer.toString());
+            holder.tvLikeNum.setMovementMethod(LinkMovementMethod.getInstance());
+            int start = 0;
+            int end = 0;
+            for (int i = 0; i < list.get(position).getFabulous().size(); i++) {
+                if (i != 0) {
+                    start += list.get(position).getFabulous().get(i - 1).getUsernickname().length() + 1;
+                }
+                end += list.get(position).getFabulous().get(i).getUsernickname().length() + 1;
+                spannable.setSpan(new ClickableSpan() {
+                    @Override
+                    public void onClick(@NonNull View widget) {
+                        avoidHintColor(widget);
+                    }
+                }, start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            }
+            holder.tvLikeNum.setText(spannable);
+        }else {
+            holder.tvLikeNum.setVisibility(View.GONE);
+        }
+
+        //评论
+        holder.linearLayout.removeAllViews();
+        if (list.get(position).getEvea().size() != 0) {
+            for (int i = 0; i < list.get(position).getEvea().size() ; i++) {
+                TextView textView = new TextView(mContext);
+                ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                textView.setLayoutParams(layoutParams);
+                textView.setPadding(0,10,0,10);
+                textView.setTextSize(14);
+                textView.setTextColor(Color.parseColor("#333333"));
+                SpannableStringBuilder builder = new SpannableStringBuilder(list.get(position).getEvea().get(i).getUsernickname() + " ：" + list.get(position).getEvea().get(i).getContent());
+                builder.setSpan(new ForegroundColorSpan(Color.parseColor("#999999")),list.get(position).getEvea().get(i).getUsernickname().length(),builder.length(),Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                textView.setText(builder);
+                holder.linearLayout.addView(textView);
+            }
+
+        }
+
         holder.tvComment.setText(list.get(position).getEvea().size()+"");
         holder.tvLike.setText(list.get(position).getFabulous().size()+"");
 
-        holder.tvLike.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                pos = position;
-                onItemClickListener.like(list.get(position).getId(),list.get(position).getLikeuself(),list.get(position));
-            }
+        holder.tvLike.setOnClickListener(view -> {
+            pos = position;
+            onItemClickListener.like(list.get(position).getId(),list.get(position).getLikeuself(),list.get(position));
         });
 
-        holder.tvComment.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                pos = position;
-                onItemClickListener.reply(list.get(position).getId(),list.get(position).getNickname(),list.get(position));
-            }
+        holder.tvComment.setOnClickListener(view -> {
+            pos = position;
+            onItemClickListener.reply(list.get(position).getId(),list.get(position).getNickname(),list.get(position));
         });
 
     }
@@ -104,11 +166,13 @@ public class MomentsAdapter extends RecyclerView.Adapter<MomentsAdapter.ViewHold
 
     public class  ViewHolder extends RecyclerView.ViewHolder {
         RoundImageView roundImageView;
-        TextView tvName,tvTime,tvContent,tvComment,tvLike;
+        TextView tvName,tvTime,tvContent,tvComment,tvLike,tvLikeNum;
         ImageView ivVideo,ivComment,ivLike;
         NinthPalaceViewGroup ninthPalaceViewGroup;
+        LinearLayout linearLayout;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            tvLikeNum = itemView.findViewById(R.id.tv_item_like_num);
             roundImageView = itemView.findViewById(R.id.riv_item_moments_head);
             tvName = itemView.findViewById(R.id.tv_item_moments_name);
             tvTime = itemView.findViewById(R.id.tv_item_moments_time);
@@ -119,6 +183,7 @@ public class MomentsAdapter extends RecyclerView.Adapter<MomentsAdapter.ViewHold
             ivComment = itemView.findViewById(R.id.iv_item_comments);
             ivLike = itemView.findViewById(R.id.iv_item_zan);
             ninthPalaceViewGroup = itemView.findViewById(R.id.ninth_item);
+            linearLayout = itemView.findViewById(R.id.ll_comment_list);
         }
     }
 
@@ -127,6 +192,11 @@ public class MomentsAdapter extends RecyclerView.Adapter<MomentsAdapter.ViewHold
         return strs[0];
     }
 
+
+    private void avoidHintColor(View view){
+        if(view instanceof TextView)
+            ((TextView)view).setHighlightColor(mContext.getResources().getColor(android.R.color.transparent));
+    }
 
     /**
      * 时间戳转换成字符窜
