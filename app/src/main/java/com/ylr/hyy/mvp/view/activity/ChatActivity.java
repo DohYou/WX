@@ -10,6 +10,7 @@ import com.tencent.qcloud.tim.uikit.modules.chat.base.ChatInfo;
 import com.ylr.hyy.R;
 import com.ylr.hyy.base.BaseActivity;
 import com.ylr.hyy.base.BaseContract;
+import com.ylr.hyy.mvp.view.activity.message.ChatDetailsActivity;
 
 import java.lang.reflect.Type;
 
@@ -48,6 +49,8 @@ public class ChatActivity extends BaseActivity {
         chatLayout.setOnRightListener(() -> {
             Log.i(TAG, "initDatas: ");
             Intent intent = new Intent();
+            intent.setClass(ChatActivity.this, ChatDetailsActivity.class);
+            startActivity(intent);
 //            intent.setClass()
         });
         // 传入 ChatInfo 的实例，这个实例必须包含必要的聊天信息，一般从调用方传入
