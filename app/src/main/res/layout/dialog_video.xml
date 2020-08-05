@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <VideoView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:id="@+id/dialog_video"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="请稍候...."
+        android:id="@+id/tv_show"
+        android:layout_centerInParent="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="关 闭"
+        android:textColor="#333333"
+        android:id="@+id/tv_dialog_close"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:paddingTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:paddingBottom="10dp"
+        android:background="@drawable/re_solid_r5_gray"/>
+
+</RelativeLayout>

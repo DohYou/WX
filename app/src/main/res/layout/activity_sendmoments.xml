@@ -63,6 +63,7 @@
         android:background="@color/grayF5F5F5"/>
 
     <RelativeLayout
+        android:id="@+id/rl_me_address"
         android:layout_width="match_parent"
         android:layout_height="51dp"
         android:background="@color/all_activity_FFFFFF"

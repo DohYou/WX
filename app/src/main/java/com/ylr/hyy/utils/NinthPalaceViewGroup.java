@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.blankj.utilcode.util.SizeUtils;
+import com.bumptech.glide.Glide;
 import com.tencent.qcloud.tim.uikit.component.picture.imageEngine.impl.GlideEngine;
 import com.ylr.hyy.R;
 
@@ -39,6 +40,7 @@ public class NinthPalaceViewGroup extends ViewGroup {
         this.context = context;
     }
 
+    private static final String TAG = "NinthPalaceViewGroup";
     public void addChild(String[] data) {
         if (data.length == 1) {
             ImageView view = new ImageView(context);
@@ -48,14 +50,14 @@ public class NinthPalaceViewGroup extends ViewGroup {
                 }
             });
             view.setScaleType(ImageView.ScaleType.CENTER_CROP);
-//            Glide.with(context).load(data.get(0)).into(view);
-            GlideEngine.loadImage(view,data[0]);
+            Glide.with(context).load(data[0]).into(view);
+//            GlideEngine.loadImage(view,data[0]);
 
             //计算原始图片的大小，如果宽大于父亲的宽就把它等比缩小到父亲的宽那么大，同理
-            LayoutParams lp = new LayoutParams( SizeUtils.dp2px(220),  SizeUtils.dp2px(220));
+            LayoutParams lp = new LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT);
             addView(view, lp);
         } else {
-            for (int i = 0; i < data.length; i++) {
+            for (int i = 0; i < data.length; i++) {//      https://image.renlaibang.com/img_1596618425660, https://image.renlaibang.com/img_1596618426316
                 if (i < 9) {
                     ImageView view = new ImageView(context);
                     int finalI = i;
@@ -65,8 +67,8 @@ public class NinthPalaceViewGroup extends ViewGroup {
                         }
                     });
                     view.setScaleType(ImageView.ScaleType.CENTER_CROP);
-//                    Glide.with(context).load(data.get(i)).into(view);
-                    GlideEngine.loadImage(view,data[i]);
+                    Glide.with(context).load(data[i].trim()).into(view);
+                    Log.i(TAG, "addChild: "+data[i]);
                     addView(view);
                 }
             }
@@ -85,6 +87,7 @@ public class NinthPalaceViewGroup extends ViewGroup {
     }
 
 
+    private int width = 0;
     /**
      * @param widthMeasureSpec  父亲指定孩子的测量宽的结果，widthMeasureSpec代表了宽的类型以及具体的宽度,前4位代表类型，比如Exactly_MOde：20dp，11dp。。。
      * @param heightMeasureSpec
@@ -94,8 +97,6 @@ public class NinthPalaceViewGroup extends ViewGroup {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
 
         //1、获取测量的宽高
-        int width = 0;
-
         if (MeasureSpec.getMode(widthMeasureSpec) == MeasureSpec.EXACTLY || //指明具体尺寸
                 MeasureSpec.getMode(widthMeasureSpec) == MeasureSpec.AT_MOST) { //match_parent
             width = MeasureSpec.getSize(widthMeasureSpec);
@@ -133,7 +134,7 @@ public class NinthPalaceViewGroup extends ViewGroup {
     protected void onLayout(boolean b, int l, int t, int r, int bot) {
         //1、只有一个孩子
         if (getChildCount() == 1) {
-            getChildAt(0).layout(0, 0, SizeUtils.dp2px(220),  SizeUtils.dp2px(220));
+            getChildAt(0).layout(0, 0,(int)(width * 0.8),  (int)(width * 0.8));
 
         } else if (getChildCount() == 4) {//2、4个孩子
             getChildAt(0).layout(0, 0, itemWidth, itemWidth);

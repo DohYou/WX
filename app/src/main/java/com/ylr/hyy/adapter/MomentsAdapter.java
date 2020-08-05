@@ -6,6 +6,7 @@ import android.graphics.drawable.Drawable;
 import android.icu.text.DateFormat;
 import android.icu.text.SimpleDateFormat;
 import android.net.ParseException;
+import android.net.Uri;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
@@ -16,6 +17,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -30,10 +32,13 @@ import com.ylr.hyy.mvp.model.MomentsModel;
 import com.ylr.hyy.utils.NinthPalaceViewGroup;
 import com.ylr.hyy.utils.RoundImageView;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+
+import static com.ylr.hyy.utils.Utils.getNetVideoBitmap;
 
 public class MomentsAdapter extends RecyclerView.Adapter<MomentsAdapter.ViewHolder> {
     private Context mContext;
@@ -76,15 +81,19 @@ public class MomentsAdapter extends RecyclerView.Adapter<MomentsAdapter.ViewHold
         holder.tvContent.setText(list.get(position).getWrittenwords());
         holder.ninthPalaceViewGroup.clearImg();
         holder.tvTime.setText(getDateToString(list.get(position).getCreattime()));
+        holder.tvAddress.setText(list.get(position).getAddress());
 
         if (!TextUtils.isEmpty(list.get(position).getImgs())) {
             String [] img = list.get(position).getImgs().split(",");
             holder.ninthPalaceViewGroup.addChild(img);
         }
         if (TextUtils.isEmpty(list.get(position).getVideos())) {
-            holder.ivVideo.setVisibility(View.GONE);
+            holder.flVideo.setVisibility(View.GONE);
+            holder.ivVideo.setOnClickListener(null);
         }else {
-            holder.ivVideo.setVisibility(View.VISIBLE);
+            holder.flVideo.setVisibility(View.VISIBLE);
+            Glide.with(mContext).load(getNetVideoBitmap(list.get(position).getVideos())).into(holder.ivVideo);
+            holder.ivVideo.setOnClickListener(v -> onItemClickListener.video(list.get(position).getVideos()));
         }
 
         if (list.get(position).getLikeuself() == 0) {
@@ -166,12 +175,15 @@ public class MomentsAdapter extends RecyclerView.Adapter<MomentsAdapter.ViewHold
 
     public class  ViewHolder extends RecyclerView.ViewHolder {
         RoundImageView roundImageView;
-        TextView tvName,tvTime,tvContent,tvComment,tvLike,tvLikeNum;
+        TextView tvName,tvTime,tvContent,tvComment,tvLike,tvLikeNum,tvAddress;
         ImageView ivVideo,ivComment,ivLike;
+        FrameLayout flVideo;
         NinthPalaceViewGroup ninthPalaceViewGroup;
         LinearLayout linearLayout;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            flVideo = itemView.findViewById(R.id.fl_video);
+            tvAddress = itemView.findViewById(R.id.tv_item_address);
             tvLikeNum = itemView.findViewById(R.id.tv_item_like_num);
             roundImageView = itemView.findViewById(R.id.riv_item_moments_head);
             tvName = itemView.findViewById(R.id.tv_item_moments_name);
@@ -213,6 +225,7 @@ public class MomentsAdapter extends RecyclerView.Adapter<MomentsAdapter.ViewHold
     public interface OnItemClickListener{
         void like(int id, int type, MomentsModel.DataBean dataBean);
         void reply(int id,String name,MomentsModel.DataBean dataBean);
+        void video(String url);
     }
 
     private OnItemClickListener onItemClickListener;

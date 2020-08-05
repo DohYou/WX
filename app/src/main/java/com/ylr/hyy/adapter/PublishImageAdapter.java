@@ -48,11 +48,9 @@ public class PublishImageAdapter extends RecyclerView.Adapter<PublishImageAdapte
         if (list.get(position).equals("添加")) {
             holder.ivDelete.setVisibility(View.GONE);
             GlideEngine.loadImage(holder.imageView,R.drawable.add_pics);
-//            Glide.with(mContext).load(R.drawable.add_pics).into(holder.imageView);
         }else {
             holder.ivDelete.setVisibility(View.VISIBLE);
             GlideEngine.loadImage(holder.imageView,list.get(position));
-//            Glide.with(mContext).load(list.get(position)).into(holder.imageView);
         }
         holder.imageView.setOnClickListener(v -> {
             if (list.get(position).equals("添加")) {

@@ -31,6 +31,31 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
 
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <!-- 通过GPS得到精确位置 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 通过网络得到粗略位置 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 访问网络. 某些位置信息需要从网络服务器获取 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 访问WiFi状态. 需要WiFi信息用于网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 修改WiFi状态. 发起WiFi扫描, 需要WiFi信息用于网络定位 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!-- 访问网络状态, 检测网络的可用性. 需要网络运营商相关信息用于网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 访问网络的变化, 需要某些信息用于网络定位 -->
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <!-- 访问手机当前状态, 需要device id用于网络定位 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 支持A-GPS辅助定位 -->
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <!-- 用于 log 日志 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -64,7 +89,6 @@
         <activity android:name="com.ylr.hyy.mvp.view.activity.me.CoinsSafetyChangePasswordNewActivity"/>
         <activity android:name="com.ylr.hyy.mvp.view.activity.me.CoinsSafetyChangePasswordSureActivity"/>
         <activity android:name="com.ylr.hyy.mvp.view.activity.me.CoinsSafetyForgetSureActivity"/>
-        <activity android:name="com.ylr.mvp.mvp.view.activity.me.CoinsSafetyForgetNewActivity"/>
 
         <activity android:name="com.ylr.hyy.mvp.view.activity.me.CoinsSafetyForgetActivity"/>
         <activity android:name="com.ylr.hyy.mvp.view.activity.me.CoinsSafetySetPasswordActivity"/>
@@ -80,9 +104,8 @@
         <activity android:name="com.ylr.hyy.mvp.view.activity.me.MeNoAuditActivity" />
         <activity android:name="com.ylr.hyy.mvp.view.activity.me.MeBankAddCardActivity" />
         <activity android:name="com.ylr.hyy.mvp.view.activity.me.MeOftenProblemsActivity" />
-        <activity android:name="com.ylr.hyy.mvp.view.activity.MainActivity">
-
-        </activity>
+        <activity android:name="com.ylr.hyy.mvp.view.activity.MainActivity"/>
+        <activity android:name=".mvp.view.activity.discovers.SendMomentsActivity"/>
         <activity android:name="com.ylr.hyy.mvp.view.activity.message.MessageFindActivity" />
         <activity android:name="com.ylr.hyy.mvp.view.activity.discovers.MomentsActivity" />
         <activity android:name="com.ylr.hyy.mvp.view.activity.me.MeCoinsBillDetailsActivity" />
@@ -158,7 +181,7 @@
         </activity>
 
         <activity android:name=".mvp.view.activity.me.MeBankAddCardSuccessActivity" />
-        <activity android:name=".mvp.view.activity.discovers.SendMomentsActivity" />
+<!--        <activity android:name=".mvp.view.activity.discovers.SendMomentsActivity" />-->
         <activity android:name=".mvp.view.activity.message.AddFriendActivity" />
         <activity android:name=".mvp.view.activity.message.ChatDetailsActivity" />
         <activity android:name=".mvp.view.activity.message.CreatePeopleTalkActivity" />
@@ -167,8 +190,13 @@
         <activity android:name=".mvp.view.activity.message.FriendNewsActivity" />
         <activity android:name=".mvp.view.activity.message.VerifyMsgActivity" />
         <activity android:name=".mvp.view.activity.message.CreateGroupActivity" />
+        <activity android:name=".mvp.view.activity.discovers.MapActivity" />
 
+        <service android:name="com.amap.api.location.APSService"></service>
 
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="2314ec567beb557b52f7299bea035cbd"/>
     </application>
 
 </manifest>
