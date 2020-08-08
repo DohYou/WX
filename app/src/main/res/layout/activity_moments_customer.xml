@@ -26,9 +26,10 @@
             android:gravity="center"
             android:id="@+id/tv_title_name"/>
         <ImageView
-            android:layout_width="23dp"
-            android:layout_height="18dp"
-            android:background="@drawable/takephotopyq"
+            android:layout_width="44dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/takephotopyq"
+            android:padding="12dp"
             android:layout_gravity="center_vertical|right"
             android:id="@+id/iv_customerq_sendpyq"
             android:layout_marginRight="11dp"/>

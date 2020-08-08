@@ -44,9 +44,10 @@ public abstract class BaseActivity<V, P extends com.ylr.hyy.base.BaseContract.Ba
             ,Manifest.permission.READ_EXTERNAL_STORAGE
             ,Manifest.permission.ACCESS_NETWORK_STATE
             ,Manifest.permission.ACCESS_WIFI_STATE
-            ,Manifest.permission.REQUEST_INSTALL_PACKAGES
             ,Manifest.permission.CAMERA
             ,Manifest.permission.REQUEST_INSTALL_PACKAGES
+            ,Manifest.permission.ACCESS_FINE_LOCATION
+            ,Manifest.permission.READ_PHONE_STATE
                 };
 
 

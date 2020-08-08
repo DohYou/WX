@@ -9,6 +9,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
 import android.content.res.Resources;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -23,8 +24,10 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.NinePatchDrawable;
 import android.media.MediaMetadataRetriever;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
+import android.provider.MediaStore;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.Selection;
@@ -225,41 +228,6 @@ public class Utils {
         return map;
     }
 
-    /**
-     * 加载本地dpf文件
-     * @param filePath
-     */
-//    private void loadAgreement(PDFView pdfView, String filePath){
-//        //从assets目录读取pdf
-//        pdfView.fromAsset(filePath)//设置pdf文件地址
-//                .defaultPage(1) //设置默认显示第1页
-//                .onPageChange(this)//设置翻页监听
-//                .onLoad(this)//加载监听
-//                .onDraw(this)//绘图监听
-//                .showMinimap(false)////pdf放大的时候，是否在屏幕的右上角生成小地图
-//                .swipeVertical(true) //pdf文档翻页是否是垂直翻页，默认是左右滑动翻页
-//                .enableSwipe(true) //是否允许翻页，默认是允许翻页
-//                .load();
-//    }
-
-//    //加载本地文件
-//    private String getContent(String filePath) throws IOException {
-//        File file = new File(filePath);
-//        List<String> newsList = new ArrayList<>();
-//        InputStream inputStream = getResources().openRawResource(R.raw.privacy);
-//        Reader io = new InputStreamReader(inputStream);
-//        BufferedReader reader = new BufferedReader(io);
-//        String Info = null;
-//
-//        while ((Info = reader.readLine()) != null){
-//            newsList.add(Info);
-//        }
-//        reader.close();
-//        io.close();
-//        inputStream.close();
-//
-//        return newsList.toString();
-//    }
 
     /**
      * 裁剪图片为圆形
@@ -762,6 +730,40 @@ public class Utils {
         String replace3 = replace2.replace("&quot;", "\"");
         String replace4 = replace3.replace("&nbsp;", "");
         return replace4.replace("&copy;", "©");
+    }
+
+    //文件content转换
+    public static String getRealPathFromUri(Context context, Uri contentUri) {
+        Cursor cursor = null;
+        try {
+            String[] proj = { MediaStore.Images.Media.DATA };
+            cursor = context.getContentResolver().query(contentUri, proj, null, null, null);
+            int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+            cursor.moveToFirst();
+            return cursor.getString(column_index);
+        } finally {
+            if (cursor != null) {
+                cursor.close();
+            }
+        }
+    }
+
+    //获取网络视频第一帧
+    public static Bitmap getNetVideoBitmap(String videoUrl) {
+        Bitmap bitmap = null;
+
+        MediaMetadataRetriever retriever = new MediaMetadataRetriever();
+        try {
+            //根据url获取缩略图
+            retriever.setDataSource(videoUrl, new HashMap());
+            //获得第一帧图片
+            bitmap = retriever.getFrameAtTime();
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+        } finally {
+            retriever.release();
+        }
+        return bitmap;
     }
 
 }

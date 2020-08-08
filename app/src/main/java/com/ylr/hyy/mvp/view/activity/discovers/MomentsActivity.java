@@ -30,6 +30,7 @@ import com.ylr.hyy.mvp.model.MeDetailsModel;
 import com.ylr.hyy.mvp.model.MomentsModel;
 import com.ylr.hyy.mvp.presenter.MomentsPresenter;
 import com.ylr.hyy.mvp.view.dialog.InputDialog;
+import com.ylr.hyy.mvp.view.dialog.VideoDialog;
 import com.ylr.hyy.utils.RVSpace;
 import com.ylr.hyy.utils.RoundImageView;
 import com.ylr.hyy.utils.ToastUtils;
@@ -74,6 +75,7 @@ public class MomentsActivity extends BaseActivity<MomentsContract.View,MomentsCo
     private MomentsAdapter adapter;
     private MomentsModel.DataBean dataBean;
     private InputDialog inputDialog = null;
+    private VideoDialog videoDialog = null;
 
     @Override
     protected int getLayoutId() {
@@ -97,6 +99,7 @@ public class MomentsActivity extends BaseActivity<MomentsContract.View,MomentsCo
 
     }
 
+    private String circle;
     @Override
     protected void initDatas() {
         adapter = new MomentsAdapter(this);
@@ -106,6 +109,8 @@ public class MomentsActivity extends BaseActivity<MomentsContract.View,MomentsCo
         rvCustomer.setLayoutManager(manager);
         rvCustomer.setAdapter(adapter);
 
+        circle = getIntent().getStringExtra("circle");
+        tvTitleName.setText(circle.equals("0")?"朋友圈":"客户圈");
         showDialog();
         RequestBody body = RequestBody.create(MediaType.parse(HttpType),"{}");
         mPresenter.upMeInfo(body);
@@ -187,6 +192,15 @@ public class MomentsActivity extends BaseActivity<MomentsContract.View,MomentsCo
                 inputDialog.setDialogHint("回复 " + name + " ：");
                 inputDialog.show(getSupportFragmentManager(),"");
             }
+
+            @Override
+            public void video(String url) {
+                if (videoDialog == null) {
+                    videoDialog = new VideoDialog();
+                }
+                videoDialog.setUrl(url);
+                videoDialog.show(getSupportFragmentManager(),"");
+            }
         });
     }
 
@@ -218,7 +232,7 @@ public class MomentsActivity extends BaseActivity<MomentsContract.View,MomentsCo
                 break;
             case R.id.iv_customerq_sendpyq:
                 Intent intent = new Intent();
-                intent.putExtra("iscircle",1);
+                intent.putExtra("iscircle",circle);
                 intent.setClass(this,SendMomentsActivity.class);
                 startActivity(intent);
                 break;

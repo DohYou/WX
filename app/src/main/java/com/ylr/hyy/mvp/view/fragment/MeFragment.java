@@ -215,6 +215,7 @@ public class MeFragment extends BaseFragment<MeDetailsContract.View,MeDetailsCon
     @Override
     public void upMeInfoSus(MeDetailsModel meDetailsModel) {
         disMissDialog();
+        SPUtils.getInstance().put("qiNiuToken",meDetailsModel.getData().getQiniutoken());
         GlideEngine.loadImage(rivHead,meDetailsModel.getData().getHeadimgurl());
         tvName.setText(meDetailsModel.getData().getNickname());
         tvId.setText("我的ID："+meDetailsModel.getData().getId());
