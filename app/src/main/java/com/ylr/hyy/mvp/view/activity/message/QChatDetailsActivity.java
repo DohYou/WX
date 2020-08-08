@@ -67,14 +67,12 @@ public class QChatDetailsActivity extends BaseActivity<DelAndLeaveContract.View,
     RelativeLayout rlQchatdetails6;
     @BindView(R.id.rl_qchatdetails_7)
     RelativeLayout rlQchatdetails7;
-    @BindView(R.id.rv_qchatdetails)
-    RecyclerView rvQChatdetails;
+    @BindView(R.id.rl_qchatdetails_8)
+    RelativeLayout rlQChatdetails8;
     @BindView(R.id.iv_qchatdetails_off3)
     ImageView ivQchatdetailsOff3;
     @BindView(R.id.iv_qchatdetails_on3)
     ImageView ivQchatdetailsOn3;
-    @BindView(R.id.rl_qchatdetails_8)
-    RelativeLayout rlQchatdetails8;
     @BindView(R.id.rl_qchatdetails_9)
     RelativeLayout rlQchatdetails9;
     @BindView(R.id.rl_qchatdetails_10)
