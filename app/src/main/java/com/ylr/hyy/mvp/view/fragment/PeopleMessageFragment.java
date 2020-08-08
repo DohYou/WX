@@ -6,6 +6,7 @@ import android.view.View;
 
 import com.google.gson.Gson;
 import com.tencent.imsdk.TIMConversationType;
+import com.tencent.qcloud.tim.uikit.modules.chat.ChatLayout;
 import com.tencent.qcloud.tim.uikit.modules.chat.base.ChatInfo;
 import com.tencent.qcloud.tim.uikit.modules.conversation.ConversationLayout;
 import com.tencent.qcloud.tim.uikit.modules.conversation.ConversationListLayout;
@@ -54,7 +55,7 @@ public class PeopleMessageFragment extends BaseFragment {
     }
 
     private void initIM(){
-        conversationLayout.initDefault(3,null);
+        conversationLayout.initDefault(3,null);//点进去
         conversationLayout.getConversationList().getListLayout().setOnItemClickListener(new ConversationListLayout.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position, ConversationInfo messageInfo) {
@@ -63,7 +64,7 @@ public class PeopleMessageFragment extends BaseFragment {
                 chatInfo.setType(TIMConversationType.Group);
                 chatInfo.setId(messageInfo.getId());
                 chatInfo.setChatName(messageInfo.getTitle());
-                Intent intent = new Intent(activity, ChatActivity.class);
+                Intent intent = new Intent(activity, ChatActivity.class);//点进去
                 intent.putExtra("chatMsg", new Gson().toJson(chatInfo));
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);

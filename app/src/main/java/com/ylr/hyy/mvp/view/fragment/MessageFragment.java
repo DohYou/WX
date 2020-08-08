@@ -43,7 +43,6 @@ public class MessageFragment extends BaseFragment {
     List<View>views;
 
     private List<Fragment> list;
-
     private FragmentManager manager;
 
     @Override

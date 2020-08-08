@@ -11,6 +11,7 @@ import com.ylr.hyy.R;
 import com.ylr.hyy.base.BaseActivity;
 import com.ylr.hyy.base.BaseContract;
 import com.ylr.hyy.mvp.view.activity.message.ChatDetailsActivity;
+import com.ylr.hyy.mvp.view.activity.message.QChatDetailsActivity;
 
 import java.lang.reflect.Type;
 
@@ -46,10 +47,10 @@ public class ChatActivity extends BaseActivity {
     protected void initDatas() {
         // 单聊面板的默认 UI 和交互初始化
         chatLayout.initDefault();
-        chatLayout.setOnRightListener(() -> {
-            Log.i(TAG, "initDatas: ");
+        chatLayout.setOnRightListener((String id) -> {
             Intent intent = new Intent();
-            intent.setClass(ChatActivity.this, ChatDetailsActivity.class);
+            intent.putExtra("id",id);
+            intent.setClass(ChatActivity.this, QChatDetailsActivity.class);
             startActivity(intent);
 //            intent.setClass()
         });

@@ -87,11 +87,12 @@ public class BeMemberActivity extends BaseActivity<MemberPriceContract.View, Mem
     @Override
     protected void initDatas() {
 
-        showDialog();
+
         JSONObject jsonObject = new JSONObject();
         try {
             jsonObject.put("mold", "1");
             RequestBody body = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), jsonObject.toString());
+            showDialog();
             mPresenter.memberPrice(body);
         } catch (JSONException e) {
             e.printStackTrace();

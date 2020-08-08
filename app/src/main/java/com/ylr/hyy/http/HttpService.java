@@ -5,11 +5,13 @@ import com.ylr.hyy.mvp.model.AddBankCardModel;
 import com.ylr.hyy.mvp.model.AiNewsModel;
 import com.ylr.hyy.mvp.model.CoinsSafetySetPasswordModel;
 import com.ylr.hyy.mvp.model.CreateGroupModel;
+import com.ylr.hyy.mvp.model.DelQAdminModel;
 import com.ylr.hyy.mvp.model.ForgetCodeChangeModel;
 import com.ylr.hyy.mvp.model.ForgetCodeIsCorrectModel;
 import com.ylr.hyy.mvp.model.ForgetPayPasswordCodeModel;
 import com.ylr.hyy.mvp.model.FriendModel;
 import com.ylr.hyy.mvp.model.GetMyBankCardModel;
+import com.ylr.hyy.mvp.model.GetQAdminModel;
 import com.ylr.hyy.mvp.model.LabelModel;
 import com.ylr.hyy.mvp.model.LoginModel;
 import com.ylr.hyy.mvp.model.MeAuditSuccessModel;
@@ -184,9 +186,9 @@ public interface HttpService {
     @POST("SearchFriend")
     Observable<SearchFriendModel> searchFriend(@Body RequestBody body);
 
-     //是否是好友
-     @POST("GetFriendInfo")
-     Observable<FriendModel> getFriendNews(@Body RequestBody body);
+    //是否是好友
+    @POST("GetFriendInfo")
+    Observable<FriendModel> getFriendNews(@Body RequestBody body);
 
      //添加好友
     @POST("AddFriend")
@@ -215,4 +217,36 @@ public interface HttpService {
     //回复
     @POST("EveaMoments")
     Observable<Base> reply(@Body RequestBody body);
+
+    //添加群管理
+    @POST("AddAdminGroup")
+    Observable<Base> setQAdmin(@Body RequestBody body);
+
+    //获取群管理
+    @POST("GetAllAdminGroup")
+    Observable<GetQAdminModel>getQAdmin(@Body RequestBody body);
+
+    //删除群管理
+    @POST("DelAdminGroup")
+    Observable<DelQAdminModel>delQAdmin(@Body RequestBody body);
+
+    //转让群主
+    @POST("TransferAdmin")
+    Observable<Base>transferAdmin(@Body RequestBody body);
+
+    //开启/关闭群认证
+    @POST("OpenOrCloseVerification")
+    Observable<Base>openOrCloseVerify(@Body RequestBody body);
+
+    //开启/关闭全员禁言
+    @POST("GroupProhibit")
+    Observable<Base>openOrCloseProhibit(@Body RequestBody body);
+
+    //开启/关闭全员群成员保护
+    @POST("GroupProtect")
+    Observable<Base>openOrCloseProtect(@Body RequestBody body);
+
+    //删除并退出群聊
+    @POST("DelUserGroup")
+    Observable<Base>delAndLeave(@Body RequestBody body);
 }

@@ -20,7 +20,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/rv_qchatdetails"/>
+                android:id="@+id/rv_chatdetails"/>
             <!--    <ImageView-->
             <!--        android:layout_width="53dp"-->
             <!--        android:layout_height="53dp"-->
@@ -42,182 +42,7 @@
                 android:orientation="horizontal"
                 android:background="@color/all_activity_FFFFFF"
                 android:layout_marginTop="10dp"
-                android:id="@+id/rl_qchatdetails_1">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/text_size_15"
-                    android:textColor="@color/black333333"
-                    android:text="群聊名称"
-                    android:layout_centerVertical="true"
-                    android:paddingLeft="15dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/text_size_15"
-                    android:textColor="@color/grayB3B3B3"
-                    android:text="一起暴富群"
-                    android:layout_centerVertical="true"
-                    android:paddingRight="8dp"
-                    android:layout_toLeftOf="@id/iv_qchatdetailsname"/>
-
-                <ImageView
-                    android:layout_width="5dp"
-                    android:layout_height="10dp"
-                    android:background="@drawable/turn_right"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="10dp"
-                    android:id="@+id/iv_qchatdetailsname"/>
-            </RelativeLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/line_height"
-                android:background="@color/grayE0E0E0"
-                android:layout_marginLeft="15dp"/>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="51dp"
-                android:orientation="horizontal"
-                android:id="@+id/rl_qchatdetails_2"
-                android:background="@color/all_activity_FFFFFF">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/text_size_15"
-                    android:textColor="@color/black333333"
-                    android:text="我在本群的昵称"
-                    android:layout_centerVertical="true"
-                    android:paddingLeft="15dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/text_size_15"
-                    android:textColor="@color/grayB3B3B3"
-                    android:text="派大星128"
-                    android:layout_centerVertical="true"
-                    android:paddingRight="8dp"
-                    android:layout_toLeftOf="@id/iv_qchatdetails_myname"/>
-
-                <ImageView
-                    android:layout_width="5dp"
-                    android:layout_height="10dp"
-                    android:background="@drawable/turn_right"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="10dp"
-                    android:id="@+id/iv_qchatdetails_myname"/>
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="51dp"
-                android:id="@+id/rl_qchatdetails_3"
-                android:orientation="horizontal"
-                android:background="@color/all_activity_FFFFFF">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/text_size_15"
-                    android:textColor="@color/black333333"
-                    android:text="群二维码"
-                    android:layout_centerVertical="true"
-                    android:paddingLeft="15dp"/>
-
-                <ImageView
-                    android:layout_width="13dp"
-                    android:layout_height="13dp"
-                    android:background="@drawable/weima"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="8dp"
-                    android:layout_toLeftOf="@id/iv_qchatdetails_qtwo"/>
-                <ImageView
-                    android:layout_width="5dp"
-                    android:layout_height="10dp"
-                    android:background="@drawable/turn_right"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="10dp"
-                    android:id="@+id/iv_qchatdetails_qtwo"/>
-            </RelativeLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/line_height"
-                android:background="@color/grayE0E0E0"
-                android:layout_marginLeft="15dp"/>
-
-            <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="51dp"
-            android:orientation="horizontal"
-                android:id="@+id/rl_qchatdetails_4"
-            android:background="@color/all_activity_FFFFFF">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="@dimen/text_size_15"
-                android:textColor="@color/black333333"
-                android:text="群公告"
-                android:layout_centerVertical="true"
-                android:paddingLeft="15dp"/>
-
-            <ImageView
-                android:layout_width="5dp"
-                android:layout_height="10dp"
-                android:background="@drawable/turn_right"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="10dp"/>
-            </RelativeLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/line_height"
-                android:background="@color/grayE0E0E0"
-                android:layout_marginLeft="15dp"/>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="51dp"
-                android:orientation="horizontal"
-                android:id="@+id/rl_qchatdetails_5"
-                android:background="@color/all_activity_FFFFFF">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/text_size_15"
-                    android:textColor="@color/black333333"
-                    android:text="群管理"
-                    android:layout_centerVertical="true"
-                    android:paddingLeft="15dp"/>
-
-                <ImageView
-                    android:layout_width="5dp"
-                    android:layout_height="10dp"
-                    android:background="@drawable/turn_right"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="10dp"/>
-            </RelativeLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/line_height"
-                android:background="@color/grayE0E0E0"
-                android:layout_marginLeft="15dp"/>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="51dp"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp"
-                android:id="@+id/rl_qchatdetails_6"
-                android:background="@color/all_activity_FFFFFF">
+                android:id="@+id/rl_findsendpicorvideo">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -233,7 +58,7 @@
                     android:background="@drawable/turn_right"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginRight="10dp"/>
+                    android:layout_marginRight="10dp" />
             </RelativeLayout>
 
             <View
@@ -246,8 +71,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="51dp"
                 android:orientation="horizontal"
-                android:id="@+id/rl_qchatdetails_7"
-                android:background="@color/all_activity_FFFFFF">
+                android:background="@color/all_activity_FFFFFF"
+                android:id="@+id/rl_findchatcontent">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -266,17 +91,11 @@
                     android:layout_marginRight="10dp"/>
             </RelativeLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/line_height"
-                android:background="@color/grayE0E0E0"
-                android:layout_marginLeft="15dp"/>
-
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="51dp"
-                android:background="@color/all_activity_FFFFFF"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="10dp"
+                android:background="@color/all_activity_FFFFFF">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -293,7 +112,7 @@
                     android:background="@drawable/gray_lock"
                     android:layout_gravity="center_vertical|right"
                     android:layout_marginRight="15dp"
-                    android:id="@+id/iv_qchatdetails_off1"/>
+                    android:id="@+id/iv_chatdetails_off1"/>
 
                 <ImageView
                     android:layout_width="35dp"
@@ -302,7 +121,7 @@
                     android:layout_gravity="center_vertical|right"
                     android:layout_marginRight="15dp"
                     android:visibility="gone"
-                    android:id="@+id/iv_qchatdetails_on1"/>
+                    android:id="@+id/iv_chatdetails_on1"/>
 
                 <View
                     android:layout_width="match_parent"
@@ -312,6 +131,7 @@
                     android:layout_marginLeft="15dp"/>
 
             </FrameLayout>
+
 
             <FrameLayout
                 android:layout_width="match_parent"
@@ -333,7 +153,7 @@
                     android:background="@drawable/gray_lock"
                     android:layout_gravity="center_vertical|right"
                     android:layout_marginRight="15dp"
-                    android:id="@+id/iv_qchatdetails_off2"/>
+                    android:id="@+id/iv_chatdetails_off2"/>
 
                 <ImageView
                     android:layout_width="35dp"
@@ -342,7 +162,7 @@
                     android:layout_gravity="center_vertical|right"
                     android:layout_marginRight="15dp"
                     android:visibility="gone"
-                    android:id="@+id/iv_qchatdetails_on2"/>
+                    android:id="@+id/iv_chatdetails_on2"/>
 
                 <View
                     android:layout_width="match_parent"
@@ -353,11 +173,12 @@
 
             </FrameLayout>
 
+
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="51dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/all_activity_FFFFFF">
+                android:background="@color/all_activity_FFFFFF"
+                android:layout_marginTop="10dp">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -374,7 +195,7 @@
                     android:background="@drawable/gray_lock"
                     android:layout_gravity="center_vertical|right"
                     android:layout_marginRight="15dp"
-                    android:id="@+id/iv_qchatdetails_off3"/>
+                    android:id="@+id/iv_chatdetails_off3"/>
 
                 <ImageView
                     android:layout_width="35dp"
@@ -383,7 +204,39 @@
                     android:layout_gravity="center_vertical|right"
                     android:layout_marginRight="15dp"
                     android:visibility="gone"
-                    android:id="@+id/iv_qchatdetails_on3"/>
+                    android:id="@+id/iv_chatdetails_on3"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_height"
+                    android:background="@color/grayE0E0E0"
+                    android:layout_gravity="bottom"
+                    android:layout_marginLeft="15dp"/>
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="51dp"
+                android:background="@color/all_activity_FFFFFF"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textSize="@dimen/text_size_15"
+                    android:textColor="@color/black333333"
+                    android:text="安全加密"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="15dp"/>
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/suosecret"
+                    android:layout_gravity="center_vertical|right"
+                    android:layout_marginRight="15dp"
+                    android:id="@+id/iv_suosecret"/>
 
                 <View
                     android:layout_width="match_parent"
@@ -398,33 +251,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="51dp"
                 android:orientation="horizontal"
-                android:id="@+id/rl_qchatdetails_8"
-                android:background="@color/all_activity_FFFFFF">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/text_size_15"
-                    android:textColor="@color/black333333"
-                    android:text="安全加密"
-                    android:layout_centerVertical="true"
-                    android:paddingLeft="15dp"/>
-
-                <ImageView
-                    android:layout_width="15dp"
-                    android:layout_height="20dp"
-                    android:background="@drawable/suosecret"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="15dp"/>
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="51dp"
-                android:orientation="horizontal"
+                android:background="@color/all_activity_FFFFFF"
                 android:layout_marginTop="10dp"
-                android:id="@+id/rl_qchatdetails_9"
-                android:background="@color/all_activity_FFFFFF">
+                android:id="@+id/rl_chatdetails_cleanchat">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -440,45 +269,33 @@
                     android:background="@drawable/turn_right"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginRight="10dp"/>
+                    android:layout_marginRight="10dp" />
             </RelativeLayout>
 
-            <RelativeLayout
+
+            <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="51dp"
                 android:orientation="horizontal"
+                android:background="@color/all_activity_FFFFFF"
                 android:layout_marginTop="10dp"
-                android:id="@+id/rl_qchatdetails_10"
-                android:background="@color/all_activity_FFFFFF">
+                android:id="@+id/rl_chatdetails_complain">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/text_size_15"
                     android:textColor="@color/black333333"
                     android:text="投诉"
-                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
                     android:paddingLeft="15dp"/>
 
                 <ImageView
                     android:layout_width="5dp"
                     android:layout_height="10dp"
                     android:background="@drawable/turn_right"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
+                    android:layout_gravity="right|center_vertical"
                     android:layout_marginRight="10dp"/>
-            </RelativeLayout>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="51dp"
-                android:background="@color/all_activity_FFFFFF"
-                android:textSize="@dimen/text_size_15"
-                android:textColor="#EB2F3D"
-                android:text="删除并退出"
-                android:gravity="center"
-                android:id="@+id/tv_deleteandleave"
-                android:layout_marginTop="10dp"/>
-
+            </FrameLayout>
 
 
         </LinearLayout>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/grayF5F5F5"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <include
+        layout="@layout/title_layout"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:textColor="@color/grayB3B3B3"
+        android:gravity="center"
+        android:layout_marginLeft="15dp"
+        android:textSize="@dimen/text_size_14"
+        android:text="管理员拥有以下权限"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="51dp"
+        android:background="@color/all_activity_FFFFFF">
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black333333"
+            android:textSize="@dimen/text_size_15"
+            android:text="邀请好友进群无需验证"
+            android:gravity="center"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:background="@color/grayE0E0E0"
+            android:layout_marginLeft="15dp"
+            android:layout_gravity="bottom"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="51dp"
+        android:background="@color/all_activity_FFFFFF">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black333333"
+            android:textSize="@dimen/text_size_15"
+            android:text="移除群成员"
+            android:gravity="center"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:background="@color/grayE0E0E0"
+            android:layout_marginLeft="15dp"
+            android:layout_gravity="bottom"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="51dp"
+        android:background="@color/all_activity_FFFFFF">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black333333"
+            android:textSize="@dimen/text_size_15"
+            android:text="审核群成员进群申请"
+            android:gravity="center"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:background="@color/grayE0E0E0"
+            android:layout_marginLeft="15dp"
+            android:layout_gravity="bottom"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="51dp"
+        android:background="@color/all_activity_FFFFFF">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black333333"
+            android:textSize="@dimen/text_size_15"
+            android:text="查看不活跃群成员"
+            android:gravity="center"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:background="@color/grayE0E0E0"
+            android:layout_marginLeft="15dp"
+            android:layout_gravity="bottom"/>
+
+    </LinearLayout>
+
+</LinearLayout>

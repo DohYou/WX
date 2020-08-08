@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="53dp"
+    android:layout_height="53dp"
+    android:id="@+id/item_dchatdetailspeople"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+</RelativeLayout>

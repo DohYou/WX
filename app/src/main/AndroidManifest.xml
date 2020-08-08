@@ -167,6 +167,15 @@
         <activity android:name=".mvp.view.activity.message.FriendNewsActivity" />
         <activity android:name=".mvp.view.activity.message.VerifyMsgActivity" />
         <activity android:name=".mvp.view.activity.message.CreateGroupActivity" />
+        <activity android:name=".mvp.view.activity.message.QAdminActivity" />
+        <activity android:name=".mvp.view.activity.message.QChatDetailsActivity" />
+        <activity android:name=".mvp.view.activity.message.SetQAdminActivity" />
+        <activity android:name=".mvp.view.activity.message.AdminPowerActivity" />
+        <activity android:name=".mvp.view.activity.message.AddQAdminActivity" />
+        <activity android:name=".mvp.view.activity.message.InactiveQMembersActivity" />
+        <activity android:name=".mvp.view.activity.message.InactiveThreedaysActivity" />
+        <activity android:name=".mvp.view.activity.message.InactiveAWeekActivity" />
+        <activity android:name=".mvp.view.activity.message.TransferQActivity" />
 
 
     </application>

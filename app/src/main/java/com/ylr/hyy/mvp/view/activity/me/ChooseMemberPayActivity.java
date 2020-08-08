@@ -108,11 +108,11 @@ public class ChooseMemberPayActivity extends BaseActivity<ChooseMemberPayContrac
                 break;
             case R.id.pay_immediately:
                 if (payType != 0) {
-                    showDialog();
                     JsonObject jsonObject = new JsonObject();
                     jsonObject.addProperty("vipid",getIntent().getStringExtra("vipID"));
                     jsonObject.addProperty("mold","1");
                     RequestBody body = RequestBody.create(MediaType.parse(HttpType),jsonObject.toString());
+                    showDialog();
                     if (payType == 1) {
                         mPresenter.zfb(body);
                     }else {

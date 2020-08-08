@@ -45,6 +45,7 @@ public class ChatLayout extends AbsChatLayout implements GroupChatManagerKit.Gro
         super(context, attrs, defStyleAttr);
     }
 
+
     public void setChatInfo(ChatInfo chatInfo) {
         super.setChatInfo(chatInfo);
         if (chatInfo == null) {
@@ -72,7 +73,7 @@ public class ChatLayout extends AbsChatLayout implements GroupChatManagerKit.Gro
                 @Override
                 public void onClick(View view) {
                     if (mGroupInfo != null) {
-                        onRightListener.right();
+                        onRightListener.right(mGroupInfo.getId());
 //                        Intent intent = new Intent(getContext(), GroupInfoActivity.class);
 //                        intent.putExtra(TUIKitConstants.Group.GROUP_ID, mGroupInfo.getId());
 //                        getContext().startActivity(intent);
@@ -107,7 +108,7 @@ public class ChatLayout extends AbsChatLayout implements GroupChatManagerKit.Gro
     }
 
     public interface OnRightListener{
-        void right();
+        void right(String id);
     }
 
     private OnRightListener onRightListener;

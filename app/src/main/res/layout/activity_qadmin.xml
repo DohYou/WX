@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/grayF5F5F5"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <include
+        layout="@layout/title_layout"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:orientation="horizontal"
+        android:background="@color/all_activity_FFFFFF"
+        android:layout_marginTop="10dp"
+        android:id="@+id/rl_setadmin">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_15"
+            android:textColor="@color/black333333"
+            android:text="设置管理员"
+            android:layout_centerVertical="true"
+            android:paddingLeft="15dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_15"
+            android:textColor="@color/black333333"
+            android:text="2人"
+            android:layout_centerVertical="true"
+            android:paddingRight="8dp"
+            android:layout_toLeftOf="@id/iv_setadminamount"/>
+
+        <ImageView
+            android:layout_width="5dp"
+            android:layout_height="10dp"
+            android:background="@drawable/turn_right"
+            android:layout_alignParentRight="true"
+            android:id="@+id/iv_setadminamount"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:background="@color/grayE0E0E0"
+        android:layout_marginLeft="15dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:orientation="horizontal"
+        android:background="@color/all_activity_FFFFFF"
+        android:id="@+id/rl_inactive">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_15"
+            android:textColor="@color/black333333"
+            android:text="不活跃成员"
+            android:layout_centerVertical="true"
+            android:paddingLeft="15dp"/>
+
+        <ImageView
+            android:layout_width="5dp"
+            android:layout_height="10dp"
+            android:background="@drawable/turn_right"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"/>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:background="@color/grayE0E0E0"
+        android:layout_marginLeft="15dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:orientation="horizontal"
+        android:background="@color/all_activity_FFFFFF"
+        android:id="@+id/rl_qoriginatortransfer">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_15"
+            android:textColor="@color/black333333"
+            android:text="群主管理权转让"
+            android:layout_centerVertical="true"
+            android:paddingLeft="15dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_15"
+            android:textColor="@color/black333333"
+            android:text="175214451298"
+            android:layout_centerVertical="true"
+            android:paddingRight="8dp"
+            android:layout_toLeftOf="@id/iv_qoriginatortransfer"/>
+
+        <ImageView
+            android:layout_width="5dp"
+            android:layout_height="10dp"
+            android:background="@drawable/turn_right"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:id="@+id/iv_qoriginatortransfer"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="73dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/all_activity_FFFFFF">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_15"
+        android:textColor="@color/black333333"
+        android:text="全员禁言"
+        android:paddingTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:id="@+id/tv_qadmin1"/>
+
+    <TextView
+        android:layout_width="273dp"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_13"
+        android:textColor="@color/grayB3B3B3"
+        android:text="开启后，只允许群主发言"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="4dp"
+        android:layout_below="@id/tv_qadmin1"/>
+
+    <ImageView
+        android:layout_width="35dp"
+        android:layout_height="25dp"
+        android:background="@drawable/gray_lock"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="15dp"
+        android:id="@+id/iv_qadmin_off1"/>
+
+    <ImageView
+        android:layout_width="35dp"
+        android:layout_height="25dp"
+        android:background="@drawable/lockblue"
+        android:layout_gravity="center_vertical|right"
+        android:layout_marginRight="15dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:visibility="gone"
+        android:id="@+id/iv_qadmin_on1"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:background="@color/grayE0E0E0"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="15dp"/>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="73dp"
+        android:background="@color/all_activity_FFFFFF">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_15"
+            android:textColor="@color/black333333"
+            android:text="群成员保护模式"
+            android:paddingTop="15dp"
+            android:layout_marginLeft="15dp"
+            android:id="@+id/tv_qadmin2"/>
+
+        <TextView
+            android:layout_width="273dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_13"
+            android:textColor="@color/grayB3B3B3"
+            android:text="开启后，需要群主或管理员同意后才能加入群聊"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="4dp"
+            android:layout_below="@id/tv_qadmin2"/>
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="25dp"
+            android:background="@drawable/gray_lock"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:id="@+id/iv_qadmin_off2"/>
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="25dp"
+            android:background="@drawable/lockblue"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:visibility="gone"
+            android:id="@+id/iv_qadmin_on2"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:background="@color/grayE0E0E0"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="15dp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="73dp"
+        android:background="@color/all_activity_FFFFFF">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_15"
+            android:textColor="@color/black333333"
+            android:text="开启群认证"
+            android:paddingTop="15dp"
+            android:layout_marginLeft="15dp"
+            android:id="@+id/tv_qadmin3"/>
+
+        <TextView
+            android:layout_width="273dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_13"
+            android:textColor="@color/grayB3B3B3"
+            android:text="开启后，需要群主或管理员同意后才能加入群聊"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="4dp"
+            android:layout_below="@id/tv_qadmin3"/>
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="25dp"
+            android:background="@drawable/gray_lock"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:id="@+id/iv_qadmin_off3"/>
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="25dp"
+            android:background="@drawable/lockblue"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:visibility="gone"
+            android:id="@+id/iv_qadmin_on3"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:background="@color/grayE0E0E0"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="15dp"/>
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>
