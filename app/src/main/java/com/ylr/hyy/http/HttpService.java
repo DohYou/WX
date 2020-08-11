@@ -10,6 +10,7 @@ import com.ylr.hyy.mvp.model.ForgetCodeChangeModel;
 import com.ylr.hyy.mvp.model.ForgetCodeIsCorrectModel;
 import com.ylr.hyy.mvp.model.ForgetPayPasswordCodeModel;
 import com.ylr.hyy.mvp.model.FriendModel;
+import com.ylr.hyy.mvp.model.GetGroupMsgAllModel;
 import com.ylr.hyy.mvp.model.GetMyBankCardModel;
 import com.ylr.hyy.mvp.model.GetQAdminModel;
 import com.ylr.hyy.mvp.model.LabelModel;
@@ -28,6 +29,7 @@ import com.ylr.hyy.mvp.model.MemberPriceModel;
 import com.ylr.hyy.mvp.model.MomentsModel;
 import com.ylr.hyy.mvp.model.QiNiuModel;
 import com.ylr.hyy.mvp.model.SearchFriendModel;
+import com.ylr.hyy.mvp.model.UpGroupDetailsModel;
 import com.ylr.hyy.mvp.model.WXPayModel;
 import com.ylr.hyy.mvp.model.ZFBPayModel;
 
@@ -36,7 +38,6 @@ import okhttp3.RequestBody;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
 import rx.Observable;
-import rx.Observer;
 
 public interface HttpService {
 
@@ -249,4 +250,13 @@ public interface HttpService {
     //删除并退出群聊
     @POST("DelUserGroup")
     Observable<Base>delAndLeave(@Body RequestBody body);
+
+    //进入群设置包含的基础数据
+    @POST("GetGroupMsgAll")
+    Observable<GetGroupMsgAllModel>getGroupMsgALL(@Body RequestBody body);
+
+    //修改群基本资料
+    @POST("UpdateGroupMessage")
+    Observable<UpGroupDetailsModel>upGroupDetails(@Body RequestBody body);
+
 }

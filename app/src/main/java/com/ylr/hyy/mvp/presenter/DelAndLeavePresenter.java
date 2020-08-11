@@ -6,6 +6,7 @@ import com.ylr.hyy.http.ObserverImp;
 import com.ylr.hyy.http.RxPresenter;
 import com.ylr.hyy.mvp.contract.DelAndLeaveContract;
 import com.ylr.hyy.mvp.model.CreateGroupModel;
+import com.ylr.hyy.mvp.model.GetGroupMsgAllModel;
 
 import okhttp3.RequestBody;
 import rx.Subscription;
@@ -32,5 +33,26 @@ public class DelAndLeavePresenter extends RxPresenter<DelAndLeaveContract.View> 
                     }
                 });
         addSubscribe(subscription);
+    }
+
+    @Override
+    public void getGroupMsgAll(RequestBody body) {
+        Subscription subscription = HttpManager.getHttpService().getGroupMsgALL(body)
+                .subscribeOn(Schedulers.io())
+                .unsubscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new ObserverImp<GetGroupMsgAllModel>() {
+                    @Override
+                    protected void onErr(int errCode, String str) {
+                        mView.showError(errCode,str);
+                    }
+
+                    @Override
+                    protected void doNext(GetGroupMsgAllModel model) {
+                        mView.getGroupMsgAllSus(model);
+                    }
+                });
+        addSubscribe(subscription);
+
     }
 }

@@ -9,7 +9,9 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
+import com.google.gson.JsonObject;
 import com.tencent.qcloud.tim.uikit.component.gatherimage.DynamicLayoutView;
 import com.ylr.hyy.R;
 import com.ylr.hyy.adapter.QChatDetailsAdapter;
@@ -17,12 +19,16 @@ import com.ylr.hyy.base.Base;
 import com.ylr.hyy.base.BaseActivity;
 import com.ylr.hyy.base.BaseContract;
 import com.ylr.hyy.mvp.contract.DelAndLeaveContract;
+import com.ylr.hyy.mvp.model.GetGroupMsgAllModel;
 import com.ylr.hyy.mvp.presenter.DelAndLeavePresenter;
+import com.ylr.hyy.mvp.view.dialog.DefaultDialog;
 import com.ylr.hyy.utils.RVSpace;
 import com.ylr.hyy.utils.ToastUtils;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -84,6 +90,7 @@ public class QChatDetailsActivity extends BaseActivity<DelAndLeaveContract.View,
     private QChatDetailsAdapter adapter;
 
     private String groupId;//群聊ID
+    private List<GetGroupMsgAllModel.DataBean>list;
 
     @Override
     protected int getLayoutId() {
@@ -104,7 +111,7 @@ public class QChatDetailsActivity extends BaseActivity<DelAndLeaveContract.View,
 
     @Override
     protected void initViews() {
-
+            recyclerView = findViewById(R.id.rv_qchatdetails);
     }
 
     @Override
@@ -112,7 +119,7 @@ public class QChatDetailsActivity extends BaseActivity<DelAndLeaveContract.View,
         tvTitleName.setText("群聊信息(4)");
 
         adapter = new QChatDetailsAdapter(this);
-        recyclerView.setLayoutManager(new GridLayoutManager(this, 5));
+        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(5,RecyclerView.VERTICAL));
         recyclerView.addItemDecoration(new RVSpace(2, 2, 2, 2));
         recyclerView.setAdapter(adapter);
 
@@ -124,10 +131,10 @@ public class QChatDetailsActivity extends BaseActivity<DelAndLeaveContract.View,
     @Override
     protected void onResume() {
         super.onResume();
-        mPresenter.delAndLeave(body);
+        mPresenter.getGroupMsgAll(body);
     }
 
-    private JSONObject jsonObject;
+    Intent intent = new Intent();
     @OnClick({R.id.iv_title_return, R.id.iv_qchatdetails_off1, R.id.iv_qchatdetails_on1, R.id.iv_qchatdetails_off2, R.id.iv_qchatdetails_on2, R.id.rl_qchatdetails_1, R.id.rl_qchatdetails_2, R.id.rl_qchatdetails_3, R.id.rl_qchatdetails_4, R.id.rl_qchatdetails_5, R.id.rl_qchatdetails_6, R.id.rl_qchatdetails_7
     ,R.id.iv_qchatdetails_off3, R.id.iv_qchatdetails_on3, R.id.rl_qchatdetails_8, R.id.rl_qchatdetails_9, R.id.rl_qchatdetails_10, R.id.tv_deleteandleave})
     public void onViewClicked(View view) {
@@ -135,7 +142,7 @@ public class QChatDetailsActivity extends BaseActivity<DelAndLeaveContract.View,
             case R.id.iv_title_return:
                 finish();
                 break;
-            case R.id.iv_qchatdetails_off1://置顶聊天
+            case R.id.iv_qchatdetails_off1://置顶聊天 IM
                 ivQchatdetailsOff1.setVisibility(View.INVISIBLE);
                 ivQchatdetailsOn1.setVisibility(View.VISIBLE);
                 break;
@@ -143,7 +150,7 @@ public class QChatDetailsActivity extends BaseActivity<DelAndLeaveContract.View,
                 ivQchatdetailsOn1.setVisibility(View.INVISIBLE);
                 ivQchatdetailsOff1.setVisibility(View.VISIBLE);
                 break;
-            case R.id.iv_qchatdetails_off2://消息免打扰
+            case R.id.iv_qchatdetails_off2://消息免打扰 本地
                 ivQchatdetailsOff2.setVisibility(View.INVISIBLE);
                 ivQchatdetailsOn2.setVisibility(View.VISIBLE);
                 break;
@@ -160,15 +167,23 @@ public class QChatDetailsActivity extends BaseActivity<DelAndLeaveContract.View,
                 ivQchatdetailsOff3.setVisibility(View.VISIBLE);
                 break;
             case R.id.rl_qchatdetails_1://群聊名称
+                intent.putExtra("GroupId",groupId);
+                intent.setClass(this,QChangeQNameActivity.class);
+                startActivity(intent);
                 break;
             case R.id.rl_qchatdetails_2://我在本群的昵称
                 break;
             case R.id.rl_qchatdetails_3://群二维码
                 break;
             case R.id.rl_qchatdetails_4://群公告
+                intent.putExtra("GroupId",groupId);
+                intent.setClass(this,QChangeNoticeActivity.class);
+                startActivity(intent);
                 break;
             case R.id.rl_qchatdetails_5://群管理
-                startActivity(new Intent(this, QAdminActivity.class));
+                intent.putExtra("GroupId",groupId);
+                intent.setClass(this,QAdminActivity.class);
+                startActivity(intent);
                 break;
             case R.id.rl_qchatdetails_6://查看收发的视频/图片
                 break;
@@ -181,14 +196,21 @@ public class QChatDetailsActivity extends BaseActivity<DelAndLeaveContract.View,
             case R.id.rl_qchatdetails_10://投诉
                 break;
             case R.id.tv_deleteandleave://删除并退出
-                try {
-                    jsonObject.put("GroupId",groupId);
-                    RequestBody body = RequestBody.create(MediaType.parse(HttpType),jsonObject.toString());
-                    showDialog();
-                    mPresenter.delAndLeave(body);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
+                new DefaultDialog.Builder().tipsContent("删除并退出后，将不再接收此群聊天消息").onSureClickListener(new DefaultDialog.OnSureClickListener() {
+                    @Override
+                    public void sure() {
+                        JsonObject jsonObject = new JsonObject();
+                        jsonObject.addProperty("GroupId", groupId);
+                        RequestBody body = RequestBody.create(MediaType.parse(HttpType), jsonObject.toString());
+                        showDialog();
+                        mPresenter.delAndLeave(body);
+                    }
+
+                    @Override
+                    public void cancel() {
+
+                    }
+                }).build().show(getSupportFragmentManager(), "");
                 break;
         }
     }
@@ -197,6 +219,12 @@ public class QChatDetailsActivity extends BaseActivity<DelAndLeaveContract.View,
     public void delAndLeaveSus(Base base) {
         disMissDialog();
         ToastUtils.showToast(base.getMsg());
+
+    }
+
+    @Override
+    public void getGroupMsgAllSus(GetGroupMsgAllModel model) {
+        disMissDialog();
 
     }
 

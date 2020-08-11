@@ -176,6 +176,9 @@
         <activity android:name=".mvp.view.activity.message.InactiveThreedaysActivity" />
         <activity android:name=".mvp.view.activity.message.InactiveAWeekActivity" />
         <activity android:name=".mvp.view.activity.message.TransferQActivity" />
+        <activity android:name=".mvp.view.activity.message.QChangeMyNameActivity" />
+        <activity android:name=".mvp.view.activity.message.QChangeNoticeActivity" />
+        <activity android:name=".mvp.view.activity.message.GetQAdminActivity" />
 
 
     </application>

@@ -22,7 +22,8 @@
             android:textColor="@color/black333333"
             android:text="设置管理员"
             android:layout_centerVertical="true"
-            android:paddingLeft="15dp"/>
+            android:paddingLeft="15dp"
+            android:id="@+id/tv_qadmincount"/>
 
         <TextView
             android:layout_width="wrap_content"

@@ -68,7 +68,7 @@ public class SetQAdminActivity extends BaseActivity<GetQAdminContract.View,GetQA
     protected void onResume() {
         super.onResume();
         mPresenter.getQAdmin(body);
-        mPresenter.delQAdmin(body);
+
     }
 
     @OnClick({R.id.iv_setqadmin_back, R.id.tv_setqadmin_instruction, R.id.tv_setqadmin_add})
@@ -89,13 +89,11 @@ public class SetQAdminActivity extends BaseActivity<GetQAdminContract.View,GetQA
     @Override
     public void getQAdminSus(GetQAdminModel model) {
         disMissDialog();
-        ToastUtils.showToast(model.getMsg());
     }
 
     @Override
     public void delQAdminSus(DelQAdminModel model) {
         disMissDialog();
-        ToastUtils.showToast(model.getMsg());
     }
 
     @Override

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/grayF5F5F5"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@color/all_activity_FFFFFF">
+
+        <ImageView
+            android:layout_width="44dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/turn_left"
+            android:padding="12dp"
+            android:id="@+id/iv_qchangenotice_back"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_17"
+            android:gravity="center"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:textColor="@color/black333333"
+            android:text="发布群公告"/>
+        
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:background="@drawable/re_solid_r3_gray"
+            android:textSize="@dimen/text_size_15"
+            android:textColor="#B2B2B2"
+            android:text="发布"
+            android:id="@+id/tv_sendqnotice"
+            android:gravity="center"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="15dp"/>
+
+    </FrameLayout>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:textColor="@color/grayB3B3B3"
+        android:layout_marginRight="15dp"
+        android:id="@+id/et_qnotice"
+        android:textSize="@dimen/text_size_15"/>
+</LinearLayout>

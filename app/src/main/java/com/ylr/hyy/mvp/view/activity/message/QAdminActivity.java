@@ -7,10 +7,11 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.blankj.utilcode.util.SPUtils;
+import com.google.gson.JsonObject;
 import com.ylr.hyy.R;
 import com.ylr.hyy.base.Base;
 import com.ylr.hyy.base.BaseActivity;
-import com.ylr.hyy.base.BaseContract;
 import com.ylr.hyy.mvp.contract.TransferFounderContract;
 import com.ylr.hyy.mvp.presenter.TransferFounderPresenter;
 import com.ylr.hyy.utils.ToastUtils;
@@ -25,7 +26,7 @@ import okhttp3.RequestBody;
 
 import static com.ylr.hyy.MVPApplication.HttpType;
 
-public class QAdminActivity extends BaseActivity<TransferFounderContract.View,TransferFounderContract.Presenter> implements TransferFounderContract.View{
+public class QAdminActivity extends BaseActivity<TransferFounderContract.View, TransferFounderContract.Presenter> implements TransferFounderContract.View {
     @BindView(R.id.iv_title_return)
     ImageView ivTitleReturn;
     @BindView(R.id.tv_title_name)
@@ -48,7 +49,10 @@ public class QAdminActivity extends BaseActivity<TransferFounderContract.View,Tr
     RelativeLayout rlInactive;
     @BindView(R.id.rl_qoriginatortransfer)
     RelativeLayout rlQoriginatortransfer;
+    @BindView(R.id.tv_qadmincount)
+    TextView tvQadmincount;
 
+    private String groupId;
     @Override
     protected int getLayoutId() {
         return R.layout.activity_qadmin;
@@ -74,18 +78,23 @@ public class QAdminActivity extends BaseActivity<TransferFounderContract.View,Tr
     @Override
     protected void initDatas() {
         tvTitleName.setText("群管理");
+        tvQadmincount.setText(SPUtils.getInstance().getString("AdminCount" + "人"));
+
+        groupId = getIntent().getStringExtra("GroupId");
     }
 
 
-    private RequestBody body = RequestBody.create(MediaType.parse(HttpType),"{}");
+    private RequestBody body = RequestBody.create(MediaType.parse(HttpType), "{}");
+
     @Override
     protected void onResume() {
         super.onResume();
         mPresenter.transferFounder(body);
     }
 
-    private JSONObject jsonObject;
-    @OnClick({R.id.iv_title_return, R.id.iv_qadmin_off1, R.id.rl_setadmin, R.id.rl_inactive, R.id.rl_qoriginatortransfer,R.id.iv_qadmin_on1, R.id.iv_qadmin_off2, R.id.iv_qadmin_on2, R.id.iv_qadmin_off3, R.id.iv_qadmin_on3})
+    private JsonObject jsonObject;
+
+    @OnClick({R.id.iv_title_return, R.id.iv_qadmin_off1, R.id.rl_setadmin, R.id.rl_inactive, R.id.rl_qoriginatortransfer, R.id.iv_qadmin_on1, R.id.iv_qadmin_off2, R.id.iv_qadmin_on2, R.id.iv_qadmin_off3, R.id.iv_qadmin_on3})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.iv_title_return:
@@ -94,32 +103,62 @@ public class QAdminActivity extends BaseActivity<TransferFounderContract.View,Tr
             case R.id.iv_qadmin_off1://全员禁言
                 ivQadminOff1.setVisibility(View.INVISIBLE);
                 ivQadminOn1.setVisibility(View.VISIBLE);
+                jsonObject.addProperty("GroupId",groupId);
+                jsonObject.addProperty("Type",1);
+                RequestBody body = RequestBody.create(MediaType.parse(HttpType),jsonObject.toString());
+                showDialog();
+                mPresenter.openOrCloseProhibit(body);
                 break;
             case R.id.iv_qadmin_on1:
                 ivQadminOn1.setVisibility(View.INVISIBLE);
                 ivQadminOff1.setVisibility(View.VISIBLE);
+                jsonObject.addProperty("GroupId",groupId);
+                jsonObject.addProperty("Type",0);
+                RequestBody body1 = RequestBody.create(MediaType.parse(HttpType),jsonObject.toString());
+                showDialog();
+                mPresenter.openOrCloseProhibit(body1);
                 break;
             case R.id.iv_qadmin_off2://群成员保护模式
                 ivQadminOff2.setVisibility(View.INVISIBLE);
                 ivQadminOn2.setVisibility(View.VISIBLE);
+                jsonObject.addProperty("GroupId",groupId);
+                jsonObject.addProperty("Type",1);
+                RequestBody body2 = RequestBody.create(MediaType.parse(HttpType),jsonObject.toString());
+                showDialog();
+                mPresenter.openOrCloseProhibit(body2);
                 break;
             case R.id.iv_qadmin_on2:
                 ivQadminOn2.setVisibility(View.INVISIBLE);
                 ivQadminOff2.setVisibility(View.VISIBLE);
+                jsonObject.addProperty("GroupId",groupId);
+                jsonObject.addProperty("Type",0);
+                RequestBody body3 = RequestBody.create(MediaType.parse(HttpType),jsonObject.toString());
+                showDialog();
+                mPresenter.openOrCloseProhibit(body3);
                 break;
-            case R.id.iv_qadmin_off3://开启群认证
+            case R.id.iv_qadmin_off3://群认证
                 ivQadminOff3.setVisibility(View.INVISIBLE);
                 ivQadminOn3.setVisibility(View.VISIBLE);
+                jsonObject.addProperty("GroupId",groupId);
+                jsonObject.addProperty("Type",1);
+                RequestBody body4 = RequestBody.create(MediaType.parse(HttpType),jsonObject.toString());
+                showDialog();
+                mPresenter.openOrCloseVerify(body4);
                 break;
             case R.id.iv_qadmin_on3:
                 ivQadminOn3.setVisibility(View.INVISIBLE);
                 ivQadminOff3.setVisibility(View.VISIBLE);
+                jsonObject.addProperty("GroupId",groupId);
+                jsonObject.addProperty("Type",0);
+                RequestBody body5 = RequestBody.create(MediaType.parse(HttpType),jsonObject.toString());
+                showDialog();
+                mPresenter.openOrCloseVerify(body5);
                 break;
             case R.id.rl_setadmin:
-                startActivity(new Intent(this,SetQAdminActivity.class));
+                startActivity(new Intent(this, SetQAdminActivity.class));
                 break;
             case R.id.rl_inactive:
-                startActivity(new Intent(this,InactiveQMembersActivity.class));
+                startActivity(new Intent(this, InactiveQMembersActivity.class));
                 break;
             case R.id.rl_qoriginatortransfer:
 
@@ -136,20 +175,20 @@ public class QAdminActivity extends BaseActivity<TransferFounderContract.View,Tr
     @Override
     public void openOrCloseVerifySus(Base base) {
         disMissDialog();
-        ToastUtils.showToast(base.getMsg());
+
     }
 
     @Override
     public void openOrCloseProhibitSus(Base base) {
         disMissDialog();
-        ToastUtils.showToast(base.getMsg());
+
 
     }
 
     @Override
     public void openOrCloseProtectSus(Base base) {
         disMissDialog();
-        ToastUtils.showToast(base.getMsg());
+
 
     }
 
@@ -158,4 +197,5 @@ public class QAdminActivity extends BaseActivity<TransferFounderContract.View,Tr
         disMissDialog();
         ToastUtils.showToast(message);
     }
+
 }
